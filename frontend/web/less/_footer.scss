@@ -1,0 +1,40 @@
+.footer {
+    margin-top: 50px;
+    padding-bottom: 60px;
+    padding-top: 48px;
+}
+
+.footer__container {
+    display: grid;
+    grid-column-gap: 35px;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr 1.5fr;
+}
+
+.footer__title {
+    color: $black;
+    font-weight: 500;
+}
+
+.footer__nav-wrap {
+    display: grid;
+    grid-column-gap: 32px;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.footer__menu {
+    margin-top: 10px;
+    
+    &-item {
+        margin-top: 6px;
+        
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+}
+
+.footer__menu-link {
+    color: $black;
+    display: block;
+    line-height: 19px;
+}
