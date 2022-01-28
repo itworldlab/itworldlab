@@ -29,44 +29,8 @@ $product_categories = \backend\models\product\ProductCategory::find()->all();
 </head>
 <body class="d-flex flex-column h-100">
 <?php $this->beginBody() ?>
-<div class="modal fade" id="modal">
-    <div class="modal-dialog modal-dialog-centered" id="modal-dialog" role="document">
-        <div class="modal-content tx-size-sm">
-            <div class="modal-header p-0">
-                <button type="button" class="close px-3 py-2 m-0 ml-auto" data-dismiss="modal">×</button>
-            </div>
-            <div class="modal-body pt-0" id="modalBody">asd
-            </div>
-        </div>
-    </div>
-</div>
 
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-    Launch demo modal
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                ...
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-        </div>
-    </div>
-</div>
 <div class="wrapper">
-
     <header class="header">
         <div class="container header__container">
             <div class="header__row">
@@ -77,58 +41,58 @@ $product_categories = \backend\models\product\ProductCategory::find()->all();
                         <div class="box-list menu__box-list">
                             <ul class="box-list__top">
                                 <?php foreach($product_categories as $category):?>
-                                <li class="box-list__top-item">
-                                    <a href="<?=\yii\helpers\Url::to(['/product/index','category_id'=>$category->id])?>" class="box-list__top-link">
-                                        <span class="box-list__top-wrap"><img src="/uploads/<?=$category->icon?>" alt=""></span>
-                                        <span class="box-list__top-text"><?=$category->name?></span>
-                                    </a>
-                                </li>
+                                    <li class="box-list__top-item">
+                                        <a href="<?=\yii\helpers\Url::to(['/product/index','category_id'=>$category->id])?>" class="box-list__top-link">
+                                            <span class="box-list__top-wrap"><img src="/uploads/<?=$category->icon?>" alt=""></span>
+                                            <span class="box-list__top-text"><?=$category->name?></span>
+                                        </a>
+                                    </li>
                                 <?php endforeach;?>
                             </ul>
-<!--                            <div class="box-list__descript">Здесь будет текст с описанием категории которую вы выбрали...</div>-->
+                            <div class="box-list__descript">Здесь будет текст с описанием категории которую вы выбрали...</div>
                         </div>
                     </li>
                     <li class="menu__item">
-                        <a href="" class="menu__link">Услуги <svg class="menu__arrow"><use xlink:href="/images/dist/sprite.svg#arrow-bottom"></use></svg></a>
+                        <a href="/integrators/index" class="menu__link">Услуги <svg class="menu__arrow"><use xlink:href="/images/dist/sprite.svg#arrow-bottom"></use></svg></a>
                         <div class="box-list menu__box-list menu__box-list--posa1">
                             <ul class="box-list__top">
-                                <li class="box-list__top-item"><a href="" class="box-list__top-link">
+                                <li class="box-list__top-item"><a href="/integrators/index" class="box-list__top-link">
                                         <span class="box-list__top-wrap"><img src="/images/dist/iaas.svg" alt=""></span>
                                         <span class="box-list__top-text">IaaS</span>
                                     </a></li>
-                                <li class="box-list__top-item"><a href="" class="box-list__top-link">
+                                <li class="box-list__top-item"><a href="/integrators/index" class="box-list__top-link">
                                         <span class="box-list__top-wrap"><img src="/images/dist/it.svg" alt=""></span>
                                         <span class="box-list__top-text">IT Безопасность</span>
                                     </a></li>
-                                <li class="box-list__top-item"><a href="" class="box-list__top-link">
+                                <li class="box-list__top-item"><a href="/integrators/index" class="box-list__top-link">
                                         <span class="box-list__top-wrap"><img src="/images/dist/crm.svg" alt=""></span>
                                         <span class="box-list__top-text">CRM</span>
                                     </a></li>
-                                <li class="box-list__top-item"><a href="" class="box-list__top-link">
+                                <li class="box-list__top-item"><a href="/integrators/index" class="box-list__top-link">
                                         <span class="box-list__top-wrap"><img src="/images/dist/bpm.svg" alt=""></span>
                                         <span class="box-list__top-text">BPM</span>
                                     </a></li>
-                                <li class="box-list__top-item"><a href="" class="box-list__top-link">
+                                <li class="box-list__top-item"><a href="/integrators/index" class="box-list__top-link">
                                         <span class="box-list__top-wrap"><img src="/images/dist/rpa.svg" alt=""></span>
                                         <span class="box-list__top-text">RPA</span>
                                     </a></li>
-                                <li class="box-list__top-item"><a href="" class="box-list__top-link">
+                                <li class="box-list__top-item"><a href="/integrators/index" class="box-list__top-link">
                                         <span class="box-list__top-wrap"><img src="/images/dist/phone.svg" alt=""></span>
                                         <span class="box-list__top-text">IP<br>              телефония</span>
                                     </a></li>
-                                <li class="box-list__top-item"><a href="" class="box-list__top-link">
+                                <li class="box-list__top-item"><a href="/integrators/index" class="box-list__top-link">
                                         <span class="box-list__top-wrap"><img src="/images/dist/sed.svg" alt=""></span>
                                         <span class="box-list__top-text">СЭД</span>
                                     </a></li>
-                                <li class="box-list__top-item"><a href="" class="box-list__top-link">
+                                <li class="box-list__top-item"><a href="/integrators/index" class="box-list__top-link">
                                         <span class="box-list__top-wrap"><img src="/images/dist/erp.svg" alt=""></span>
                                         <span class="box-list__top-text">ERP</span>
                                     </a></li>
-                                <li class="box-list__top-item"><a href="" class="box-list__top-link">
+                                <li class="box-list__top-item"><a href="/integrators/index" class="box-list__top-link">
                                         <span class="box-list__top-wrap"><img src="/images/dist/office.svg" alt=""></span>
                                         <span class="box-list__top-text">Офисные приложения</span>
                                     </a></li>
-                                <li class="box-list__top-item"><a href="" class="box-list__top-link">
+                                <li class="box-list__top-item"><a href="/integrators/index" class="box-list__top-link">
                                         <span class="box-list__top-wrap"><img src="/images/dist/online-b.svg" alt=""></span>
                                         <span class="box-list__top-text">Онлайн бухгалтерия</span>
                                     </a></li>
@@ -136,25 +100,25 @@ $product_categories = \backend\models\product\ProductCategory::find()->all();
                             <div class="box-list__descript">Здесь будет текст с описанием категории которую вы выбрали...</div>
                         </div>
                     </li>
-                    <li class="menu__item"><a href="" class="menu__link">Интеграторы</a></li>
-                    <li class="menu__item"><a href="" class="menu__link">Обучение</a></li>
-                    <li class="menu__item"><a href="" class="menu__link">Новости</a></li>
+                    <li class="menu__item"><a href="/integrators/index" class="menu__link">Интеграторы</a></li>
+                    <li class="menu__item"><a href="/news/index" class="menu__link">Новости</a></li>
                 </ul>
                 <div class="header__row-right">
                     <ul class="lang header__lang">
                         <li class="lang__choose">
-                            <a class="lang__choose-link" href=""><img src="/images/<?=explode('-',Yii::$app->language)[0]?>.svg" style="width:20px;margin-right: 8px;margin-top: -3px;"/> <?=strtoupper(explode('-',Yii::$app->language)[0])?> <svg class="lang__choose-icon"><use xlink:href="/images/dist/sprite.svg#arrow-bottom"></use></svg></a>
+                            <a class="lang__choose-link" href="">RU <svg class="lang__choose-icon"><use xlink:href="/images/dist/sprite.svg#arrow-bottom"></use></svg></a>
                             <ul class="lang__dropdown">
-                                <li class="lang__dropdown-item"><a href="/?_lang=ru" class="lang__dropdown-link"><img src="/images/ru.svg" style="width:20px;"/> RU</a></li>
-                                <li class="lang__dropdown-item"><a href="/?_lang=en" class="lang__dropdown-link"><img src="/images/en.svg" style="width:20px;"/> ENG</a></li>
+                                <li class="lang__dropdown-item"><a href="" class="lang__dropdown-link">KZ</a></li>
+                                <li class="lang__dropdown-item"><a href="" class="lang__dropdown-link">ENG</a></li>
+                                <li class="lang__dropdown-item"><a href="" class="lang__dropdown-link">RU</a></li>
                             </ul>
                         </li>
                     </ul>
-                    <?php if(Yii::$app->user->isGuest):?>
-                        <a class="btn btn-red btn-modal" href="/site/login">Регистрация / вход</a>
-                    <?php else:?>
-                        <a href="/site/logout">Выход</a>
-                    <?php endif?>
+                    <button type="button" class="btn btn-red">Регистрация / вход</button>
+                </div>
+                <div class="header__mobile">
+                    <a href="" class="header__searchBtn"><img src="/images/dist/search.svg" alt=""></a>
+                    <a href="" class="header__menu js-menuBtn"></a>
                 </div>
             </div>
             <div class="search">
@@ -168,6 +132,77 @@ $product_categories = \backend\models\product\ProductCategory::find()->all();
         </div>
         <!-- /.container header__container -->
     </header>
+    <ul class="mobileMenu" id="mobileMenu">
+        <li class="mobileMenu__item mobileMenu__item-flex">
+            <a href="" class="mobileMenu__link">
+                Регистрация / вход <svg class="reg mobileMenu__reg"><use xlink:href="/images/dist/sprite.svg#user"></use></svg>
+            </a>
+        </li>
+        <li class="mobileMenu__item">
+            <div class="mobileMenu__lang js-title">
+                RU
+            </div>
+            <ul class="mobileMenu__langList js-hidden">
+                <li><a href="">KZ</a></li>
+                <li><a href="">ENG</a></li>
+                <li><a href="">RU</a></li>
+            </ul>
+        </li>
+        <li class="mobileMenu__item">
+            <div class="mobileMenu__menu js-title">Продукты</div>
+            <div class="mobileMenu__slideUp js-hidden">
+                <ul class="verticalMenu">
+                    <?php foreach($product_categories as $category):?>
+                        <li class="verticalMenu__item">
+                            <a href="<?=\yii\helpers\Url::to(['/product/index','category_id'=>$category->id])?>" class="verticalMenu__link">
+                                <?=$category->name?>
+                                <span class="verticalMenu__link-wrap"><img src="/uploads/<?=$category->icon?>" alt=""></span>
+                            </a>
+                        </li>
+                    <?php endforeach;?>
+                </ul>
+            </div>
+        </li>
+        <li class="mobileMenu__item">
+            <div class="mobileMenu__menu js-title">Услуги</div>
+            <div class="mobileMenu__slideUp js-hidden">
+                <ul class="verticalMenu">
+                    <li class="verticalMenu__item"><a href="/integrators/index" class="verticalMenu__link">IaaS <span class="verticalMenu__link-wrap"><img src="/images/dist/iaas.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="/integrators/index" class="verticalMenu__link">IT Безопасность <span class="verticalMenu__link-wrap"><img src="/images/dist/it.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="/integrators/index" class="verticalMenu__link">CRM <span class="verticalMenu__link-wrap"><img src="/images/dist/crm.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="/integrators/index" class="verticalMenu__link">BPM <span class="verticalMenu__link-wrap"><img src="/images/dist/bpm.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="/integrators/index" class="verticalMenu__link">RPA <span class="verticalMenu__link-wrap"><img src="/images/dist/rpa.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="/integrators/index" class="verticalMenu__link">IP - телефония <span class="verticalMenu__link-wrap"><img src="/images/dist/phone.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="/integrators/index" class="verticalMenu__link">СЭД <span class="verticalMenu__link-wrap"><img src="/images/dist/sed.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="/integrators/index" class="verticalMenu__link">ERP <span class="verticalMenu__link-wrap"><img src="/images/dist/erp.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="/integrators/index" class="verticalMenu__link">Офисные приложения <span class="verticalMenu__link-wrap"><img src="/images/dist/office.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="/integrators/index" class="verticalMenu__link">Онлайн бухгалтерия <span class="verticalMenu__link-wrap"><img src="/images/dist/online-b.svg" alt=""></span></a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="mobileMenu__item">
+            <div class="mobileMenu__menu js-title">Интеграторы</div>
+            <div class="mobileMenu__slideUp js-hidden">
+                <ul class="verticalMenu">
+                    <li class="verticalMenu__item"><a href="/integrators/index" class="verticalMenu__link">IaaS <span class="verticalMenu__link-wrap"><img src="/images/dist/iaas.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="/integrators/index" class="verticalMenu__link">IT Безопасность <span class="verticalMenu__link-wrap"><img src="/images/dist/it.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="/integrators/index" class="verticalMenu__link">CRM <span class="verticalMenu__link-wrap"><img src="/images/dist/crm.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="/integrators/index" class="verticalMenu__link">BPM <span class="verticalMenu__link-wrap"><img src="/images/dist/bpm.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="/integrators/index" class="verticalMenu__link">RPA <span class="verticalMenu__link-wrap"><img src="/images/dist/rpa.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="/integrators/index" class="verticalMenu__link">IP - телефония <span class="verticalMenu__link-wrap"><img src="/images/dist/phone.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="/integrators/index" class="verticalMenu__link">СЭД <span class="verticalMenu__link-wrap"><img src="/images/dist/sed.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="/integrators/index" class="verticalMenu__link">ERP <span class="verticalMenu__link-wrap"><img src="/images/dist/erp.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="/integrators/index" class="verticalMenu__link">Офисные приложения <span class="verticalMenu__link-wrap"><img src="/images/dist/office.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="/integrators/index" class="verticalMenu__link">Онлайн бухгалтерия <span class="verticalMenu__link-wrap"><img src="/images/dist/online-b.svg" alt=""></span></a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="mobileMenu__item"><a class="mobileMenu__other" href="/">Обучение <svg class="mobileMenu__location"><use xlink:href="/images/dist/sprite.svg#location"></use></svg></a></li>
+        <li class="mobileMenu__item"><a class="mobileMenu__other" href="/news/index">Новости <svg class="mobileMenu__location"><use xlink:href="/images/dist/sprite.svg#location"></use></svg></a></li>
+        <li class="mobileMenu__item"><a class="mobileMenu__other" href="">Алматы, Казахстан <svg class="mobileMenu__location"><use xlink:href="/images/dist/sprite.svg#location"></use></svg></a></li>
+        <li class="mobileMenu__item"><a class="mobileMenu__other" href="">Не знаете что искать?</a></li>
+    </ul>
+    <!-- /.mobileMenu -->
     <?=$content?>
 
 

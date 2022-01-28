@@ -14,21 +14,21 @@ class AppAsset extends AssetBundle
     public $baseUrl = '@web';
     public $css = [
 //        'css/site.css',
-        'css/app.min.css',
+        'css/select2.min.css',
+        'css/main.min.css',
         'plugins/swiper/swiper.css',
 //        'css/custom2.css',
     ];
     public $js = [
-        /*"https://code.jquery.com/jquery-2.2.4.min.js",
+//        "https://code.jquery.com/jquery-2.2.4.min.js",
+        'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js',
         "js/jquery.fancybox.min.js",
-        "js/jquery.inputmask.bundle.js",
         "js/select2.min.js",
-        ,*/
-        "js/app.min.js",
+        "js/app.js",
 
     ];
     public $depends = [
-//        'yii\web\YiiAsset',
+        'yii\web\YiiAsset',
 //        'yii\bootstrap4\BootstrapPluginAsset',
     ];
 

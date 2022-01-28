@@ -96,7 +96,7 @@ $this->title = 'My Yii Application';
     <!-- /.slider-text container -->
 
     <div class="popular">
-        <h3 class="h3 title-link"><span>Популярные продукты в нашем сервисе</span> <a href="" class="title-link__all">Посмотреть всех <svg class="title-link__all-icon"><use xlink:href="images/dist/sprite.svg#arrow-next"></use></svg></a></h3>
+        <h3 class="h3 title-link"><span>Популярные продукты в нашем сервисе</span> <a href="" class="title-link__all"><span>Посмотреть всех</span> <svg class="title-link__all-icon"><use xlink:href="images/dist/sprite.svg#arrow-next"></use></svg></a></h3>
         <div class="popular-slider js-popular-slider">
             <div>
                 <div class="box">
@@ -199,7 +199,7 @@ $this->title = 'My Yii Application';
     <!-- /.need -->
 
     <div class="integrator">
-        <h3 class="h3 integrator__title title-link"><span>Лучшие интеграторы</span> <a href="" class="title-link__all">Посмотреть всех <svg class="title-link__all-icon"><use xlink:href="images/dist/sprite.svg#arrow-next"></use></svg></a></h3>
+        <h3 class="h3 integrator__title title-link"><span>Лучшие интеграторы</span> <a href="" class="title-link__all"><span>Посмотреть всех</span> <svg class="title-link__all-icon"><use xlink:href="images/dist/sprite.svg#arrow-next"></use></svg></a></h3>
 
         <div class="integrator-slider js-integrator-slider">
             <div>
@@ -362,8 +362,6 @@ $this->title = 'My Yii Application';
     </div>
     <!-- /.news -->
 </div>
-<!-- /.container -->
-
 <div class="resume">
     <div class="container resume__container">
         <img src="images/dist/man.png" class="resume__man" alt="">
@@ -375,4 +373,3 @@ $this->title = 'My Yii Application';
     </div>
     <!-- /.container resume__container -->
 </div>
-<!-- /.resume -->

@@ -18,7 +18,7 @@ return [
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
         'assetManager' => [
-            'bundles' => [
+            /*'bundles' => [
                 'yii\web\JqueryAsset' => [
                     'js'=>[]
                 ],
@@ -32,7 +32,7 @@ return [
                     'css' => [],
                 ],
 
-            ],
+            ],*/
         ],
         'i18n' => [
             'translations' => [
