@@ -1,25 +1,10 @@
 require 'yaml'
 require 'fileutils'
 
-required_plugins_installed = nil
-required_plugins = %w( vagrant-hostmanager vagrant-vbguest )
-required_plugins.each do |plugin|
-  unless Vagrant.has_plugin? plugin
-    system "vagrant plugin install #{plugin}"
-    required_plugins_installed = true
-  end
-end
-
-# IF plugin[s] was just installed - restart required
-if required_plugins_installed
-  # Get CLI command[s] and call again
-  system 'vagrant' + ARGV.to_s.gsub(/\[\"|\", \"|\"\]/, ' ')
-  exit
-end
 
 domains = {
-  frontend: 'y2aa-frontend.test',
-  backend:  'y2aa-backend.test'
+  frontend: 'iwl.test',
+  backend:  'aiwl.test'
 }
 
 config = {
@@ -41,7 +26,7 @@ end
 # vagrant configurate
 Vagrant.configure(2) do |config|
   # select the box
-  config.vm.box = 'bento/ubuntu-16.04'
+  config.vm.box = 'bento/ubuntu-20.04'
 
   # should we ask about box updates?
   config.vm.box_check_update = options['box_check_update']
@@ -71,12 +56,12 @@ Vagrant.configure(2) do |config|
   config.vm.synced_folder '.', '/vagrant', disabled: true
 
   # hosts settings (host machine)
-  config.vm.provision :hostmanager
-  config.hostmanager.enabled            = true
-  config.hostmanager.manage_host        = true
-  config.hostmanager.ignore_private_ip  = false
-  config.hostmanager.include_offline    = true
-  config.hostmanager.aliases            = domains.values
+#   config.vm.provision :hostmanager
+#   config.hostmanager.enabled            = true
+#   config.hostmanager.manage_host        = true
+#   config.hostmanager.ignore_private_ip  = false
+#   config.hostmanager.include_offline    = true
+#   config.hostmanager.aliases            = domains.values
 
   # provisioners
   config.vm.provision 'shell', path: './vagrant/provision/once-as-root.sh', args: [options['timezone'], options['ip']]

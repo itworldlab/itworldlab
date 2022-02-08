@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- <base href="/"> -->
+    <title>UI Kit</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!--	<link rel="icon" href="images/favicon.png">-->
+    <link rel="stylesheet" href="css/main.min.css">
+</head>
+<body>
+<div class="wrapper">
+    <span class="h1">h1 - montserrat 36 bold</span>
+    <span class="h2">h2 - montserrat 36 medium</span>
+    <span class="h3">h3 - montserrat 18 bold</span>
+    <span class="h4">h4 - montserrat 16 medium</span>
+    <span class="h5">h5 - montserrat 16 regular</span>
+    <span class="h6">h6 - montserrat 14 regular</span>
+    
+    <br><br>
+    <ul class="lang">
+        <li class="lang__choose">
+            <a class="lang__choose-link" href="">RU <svg class="lang__choose-icon"><use xlink:href="images/dist/sprite.svg#arrow-bottom"></use></svg></a>
+            <ul class="lang__dropdown">
+                <li class="lang__dropdown-item"><a href="" class="lang__dropdown-link">KZ</a></li>
+                <li class="lang__dropdown-item"><a href="" class="lang__dropdown-link">ENG</a></li>
+                <li class="lang__dropdown-item"><a href="" class="lang__dropdown-link">CH</a></li>
+            </ul>
+        </li>
+    </ul>
+<!--
+    <select class="js-select">
+        <option value="">RU</option>
+        <option value="">KZ</option>
+        <option value="">CH</option>
+    </select>
+-->
+    <br>
+    <button type="button" class="btn btn-red">Регистрация / вход</button>
+    <button type="button" class="btn btn-black">Найти свой вариант</button>
+    <button type="button" class="btn btn-white">Не знаете что искать?</button>
+    <br><Br>
+    <a href="#" class="best">
+        <span class="h3 best__h3">Лучшие IT - решения</span>
+        <span class="best__subtitle">Для развития вашего бизнеса</span>
+    </a>
+    <br><Br>
+    <div class="box">
+        <img class="box__logo" src="images/dist/logo-1c.svg" alt="">
+        <span class="box__logoDesc">1c Бухгалтерия</span>
+        <ul class="box__gray">
+            <li>Использований: 1231</li>
+            <li><svg class="like-icon"><use xlink:href="images/dist/sprite.svg#like"></use></svg>Средняя ценка: 94 133</li>
+            <li><svg class="reviews-icon"><use xlink:href="images/dist/sprite.svg#reviews"></use></svg>Отзывы: 3 123</li>
+        </ul>
+    </div>
+    
+    <div class="selectBox">
+        <span class="selectBox__name">Сфера деятельности компании</span>
+        <select class="js-select-placeholder">
+            <option></option>
+            <option value="">Бытовые услуги;</option>
+            <option value="">Бизнес-услуги;</option>
+            <option value="">Интернет-бизнес;</option>
+            <option value="">ЖКХ;</option>
+            <option value="">Салоны красоты;</option>
+            <option value="">Медицина;</option>
+            <option value="">Образование;</option>
+            <option value="">Общественное питание;</option>
+            <option value="">Производство;</option>
+        </select>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="box-row">
+        <img src="images/dist/logo-1c.svg" class="box-row__logo" alt="">
+        <div class="box-row__info">
+            <strong class="box-row__name">1c Бухгалтерия</strong>
+            <ul class="stars">
+                <li class="stars__item"><a href="" class="stars__link"><svg class="stars__icon"><use xlink:href="images/dist/sprite.svg#star"></use></svg></a></li>
+                <li class="stars__item"><a href="" class="stars__link"><svg class="stars__icon"><use xlink:href="images/dist/sprite.svg#star"></use></svg></a></li>
+                <li class="stars__item"><a href="" class="stars__link"><svg class="stars__icon"><use xlink:href="images/dist/sprite.svg#star"></use></svg></a></li>
+                <li class="stars__item"><a href="" class="stars__link"><svg class="stars__icon"><use xlink:href="images/dist/sprite.svg#star"></use></svg></a></li>
+                <li class="stars__item"><a href="" class="stars__link"><svg class="stars__icon stars__icon--black"><use xlink:href="images/dist/sprite.svg#star-black"></use></svg></a></li>
+            </ul>
+            <span class="box-row__grey">Использований: 1 231</span>
+        </div>
+        <div class="box-row__descript">
+            «Простой бизнес» – идеальный инструмент для организации удалённой работы офиса. Одна программа для управления всей Вашей компанией.
+        </div>
+        <div class="box-row__right">
+            <a href="#" class="compare">Добавить в сравнение <svg class="compare__icon"><use xlink:href="images/dist/sprite.svg#exchange"></use></svg></a>
+            <span class="box-row__price">от 250 000 Т*</span>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="box-dropdown">
+        <div class="box-dropdown__header">
+            <div class="box-dropdown__header-logos">
+                <img src="images/dist/bitriks-logo.svg" class="box-dropdown__header-bitriks" alt="">
+                <span class="box-dropdown__logo">Битрикс24</span>
+            </div>
+            <div class="box-dropdown__header-center">
+                <span class="box-dropdown__status"><svg class="box-dropdown__status-star"><use xlink:href="images/dist/sprite.svg#star"></use></svg>Золотой партнёр</span>
+                <span class="box-dropdown__header-price">от 120 000 тг*</span>
+            </div>
+            <!-- /.box-dropdown__header-center -->
+            
+            <a href="" class="box-dropdown__header-right js-toggle">Дополнительные услуги:</a>
+        </div>
+        <div class="box-dropdown__footer">
+            <div class="box-dropdown__footer-item">
+                <div class="box-dropdown__footer-name">Название пакет услуг</div>
+                <div class="box-dropdown__footer-descript">
+                    IT WORLD LAB - компания, которая развивается в более 10 сферах деятельности, тем самым обеспечивает комплексную автоматизацию и стандартизацию, реализующие непрерывное управлением бизнеса.
+                </div>
+                <div class="box-dropdown__footer-right">
+                    <span class="box-dropdown__footer-price">86 300 Т</span>
+                    <button type="button" class="btn btn-black">Заказать</button>
+                </div>
+            </div>
+            <!-- /.box-dropdown__footer-item -->
+            <div class="box-dropdown__footer-item">
+                <div class="box-dropdown__footer-name">Название пакет услуг №2
+                    в несколько строк</div>
+                <div class="box-dropdown__footer-descript">
+                    IT WORLD LAB - компания, которая развивается в более 10 сферах деятельности, тем самым обеспечивает комплексную автоматизацию
+                </div>
+                <div class="box-dropdown__footer-right">
+                    <span class="box-dropdown__footer-price">1 345 300 Т</span>
+                    <button type="button" class="btn btn-black">Заказать</button>
+                </div>
+            </div>
+            <!-- /.box-dropdown__footer-item -->
+        </div>
+    </div>
+   <br><br>
+   
+   <header class="header">
+       <div class="container header__container">
+            <div class="header__row">
+                <a href="/" class="logo header__logo"><img src="images/dist/logo.svg" alt=""></a>
+                <ul class="menu">
+                    <li class="menu__item"><a href="" class="menu__link">Продукты <svg class="menu__arrow"><use xlink:href="images/dist/sprite.svg#arrow-bottom"></use></svg></a></li>
+                    <li class="menu__item"><a href="" class="menu__link">Услуги <svg class="menu__arrow"><use xlink:href="images/dist/sprite.svg#arrow-bottom"></use></svg></a></li>
+                    <li class="menu__item"><a href="" class="menu__link">Интеграторы</a></li>
+                    <li class="menu__item"><a href="" class="menu__link">Обучение</a></li>
+                    <li class="menu__item"><a href="" class="menu__link">Новости</a></li>
+                </ul>
+                <div class="header__row-right">
+                    <ul class="lang header__lang">
+                        <li class="lang__choose">
+                            <a class="lang__choose-link" href="">RU <svg class="lang__choose-icon"><use xlink:href="images/dist/sprite.svg#arrow-bottom"></use></svg></a>
+                            <ul class="lang__dropdown">
+                                <li class="lang__dropdown-item"><a href="" class="lang__dropdown-link">KZ</a></li>
+                                <li class="lang__dropdown-item"><a href="" class="lang__dropdown-link">ENG</a></li>
+                                <li class="lang__dropdown-item"><a href="" class="lang__dropdown-link">CH</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <button type="button" class="btn btn-red">Регистрация / вход</button>
+                </div>
+            </div>
+           <div class="search">
+                <div class="search__left">
+                    <input type="text" class="search__input" placeholder="Введите свой запрос по поиску">
+                    <a href="" class="btn-text">Алматы, Казахстан<svg class="btn-text__icon"><use xlink:href="images/dist/sprite.svg#location"></use></svg></a>
+                </div>
+               <a href="#" class="btn-text-border">Не знаете что искать?</a>
+               
+           </div>
+       </div>
+       <!-- /.container header__container -->
+   </header>
+   <br>
+   <br>
+   <br>
+   <br>
+   <div class="box-list">
+       <ul class="box-list__top">
+           <li class="box-list__top-item"><a href="" class="box-list__top-link">
+                <span class="box-list__top-wrap"><img src="images/dist/iaas.svg" alt=""></span>
+               <span class="box-list__top-text">IaaS</span>
+           </a></li>
+           <li class="box-list__top-item"><a href="" class="box-list__top-link">
+                <span class="box-list__top-wrap"><img src="images/dist/it.svg" alt=""></span>
+               <span class="box-list__top-text">IT Безопасность</span>
+           </a></li>
+           <li class="box-list__top-item"><a href="" class="box-list__top-link">
+                <span class="box-list__top-wrap"><img src="images/dist/crm.svg" alt=""></span>
+               <span class="box-list__top-text">CRM</span>
+           </a></li>
+           <li class="box-list__top-item"><a href="" class="box-list__top-link">
+               <span class="box-list__top-wrap"><img src="images/dist/bpm.svg" alt=""></span>
+               <span class="box-list__top-text">BPM</span>
+           </a></li>
+           <li class="box-list__top-item"><a href="" class="box-list__top-link">
+               <span class="box-list__top-wrap"><img src="images/dist/rpa.svg" alt=""></span>
+               <span class="box-list__top-text">RPA</span>
+           </a></li>
+           <li class="box-list__top-item"><a href="" class="box-list__top-link">
+               <span class="box-list__top-wrap"><img src="images/dist/phone.svg" alt=""></span>
+               <span class="box-list__top-text">IP<br>              телефония</span>
+           </a></li>
+           <li class="box-list__top-item"><a href="" class="box-list__top-link">
+               <span class="box-list__top-wrap"><img src="images/dist/sed.svg" alt=""></span>
+               <span class="box-list__top-text">СЭД</span>
+               </a></li>
+           <li class="box-list__top-item"><a href="" class="box-list__top-link">
+               <span class="box-list__top-wrap"><img src="images/dist/erp.svg" alt=""></span>
+               <span class="box-list__top-text">ERP</span>
+           </a></li>
+           <li class="box-list__top-item"><a href="" class="box-list__top-link">
+               <span class="box-list__top-wrap"><img src="images/dist/office.svg" alt=""></span>
+               <span class="box-list__top-text">Офисные приложения</span>
+           </a></li>
+           <li class="box-list__top-item"><a href="" class="box-list__top-link">
+               <span class="box-list__top-wrap"><img src="images/dist/online-b.svg" alt=""></span>
+               <span class="box-list__top-text">Онлайн бухгалтерия</span>
+           </a></li>
+       </ul>
+       <div class="box-list__descript">Здесь будет текст с описанием категории которую вы выбрали...</div>
+   </div>
+    <br>
+    <br>
+    <br>
+    <div class="box-list">
+        <ul class="box-list__top">
+            <li class="box-list__top-item"><a href="" class="box-list__top-link">
+                <span class="box-list__top-wrap"><img src="images/dist/iaas.svg" alt=""></span>
+                <span class="box-list__top-text">IaaS</span>
+                </a></li>
+            <li class="box-list__top-item"><a href="" class="box-list__top-link">
+                <span class="box-list__top-wrap"><img src="images/dist/it.svg" alt=""></span>
+                <span class="box-list__top-text">IT Безопасность</span>
+                </a></li>
+            <li class="box-list__top-item"><a href="" class="box-list__top-link">
+                <span class="box-list__top-wrap"><img src="images/dist/crm.svg" alt=""></span>
+                <span class="box-list__top-text">CRM</span>
+                </a></li>
+            <li class="box-list__top-item"><a href="" class="box-list__top-link">
+                <span class="box-list__top-wrap"><img src="images/dist/bpm.svg" alt=""></span>
+                <span class="box-list__top-text">BPM</span>
+                </a></li>
+            <li class="box-list__top-item"><a href="" class="box-list__top-link">
+                <span class="box-list__top-wrap"><img src="images/dist/rpa.svg" alt=""></span>
+                <span class="box-list__top-text">RPA</span>
+                </a></li>
+            <li class="box-list__top-item"><a href="" class="box-list__top-link">
+                <span class="box-list__top-wrap"><img src="images/dist/phone.svg" alt=""></span>
+                <span class="box-list__top-text">IP<br>              телефония</span>
+                </a></li>
+            <li class="box-list__top-item"><a href="" class="box-list__top-link">
+                <span class="box-list__top-wrap"><img src="images/dist/sed.svg" alt=""></span>
+                <span class="box-list__top-text">СЭД</span>
+                </a></li>
+            <li class="box-list__top-item"><a href="" class="box-list__top-link">
+                <span class="box-list__top-wrap"><img src="images/dist/erp.svg" alt=""></span>
+                <span class="box-list__top-text">ERP</span>
+                </a></li>
+            <li class="box-list__top-item"><a href="" class="box-list__top-link">
+                <span class="box-list__top-wrap"><img src="images/dist/office.svg" alt=""></span>
+                <span class="box-list__top-text">Офисные приложения</span>
+                </a></li>
+            <li class="box-list__top-item"><a href="" class="box-list__top-link">
+                <span class="box-list__top-wrap"><img src="images/dist/online-b.svg" alt=""></span>
+                <span class="box-list__top-text">Онлайн бухгалтерия</span>
+                </a></li>
+        </ul>
+        <div class="box-list__descript">Infrastructure as a Service, то есть инфраструктура как услуга. К инфраструктуре относят вычислительные ресурсы: виртуальные серверы, хранилища, сети. Это что-то вроде виртуальных «компьютеров», на которые можно установить что угодно: операционную систему, программное обеспечение, приложения.</div>
+        <div class="bestOffer">
+            <h5 class="h5 bestOffer__title">Лучшее предложение по категории</h5>
+            <div class="bestOffer__list">
+                <div class="box">
+                    <div class="box__wrap">
+                        <img class="box__logo" src="images/dist/logo-1c.svg" alt="">
+                    </div>
+                    <span class="box__logoDesc">1c Бухгалтерия</span>
+                    <ul class="box__gray">
+                        <li><svg class="like-icon"><use xlink:href="images/dist/sprite.svg#like"></use></svg>Оценка: 99 999</li>
+                    </ul>
+                </div>
+                <div class="box">
+                    <div class="box__wrap">
+                        <img class="box__logo" src="images/dist/bitriks-logo.svg" alt="">
+                    </div>
+                    <span class="box__logoDesc">Битрикс24</span>
+                    <ul class="box__gray">
+                        <li><svg class="like-icon"><use xlink:href="images/dist/sprite.svg#like"></use></svg>Оценка: 99 999</li>
+                    </ul>
+                </div>
+                <div class="box">
+                    <div class="box__wrap">
+                        <img class="box__logo" src="images/dist/sap-logo.svg" alt="">
+                    </div>
+                    <span class="box__logoDesc">Sap</span>
+                    <ul class="box__gray">
+                        <li><svg class="like-icon"><use xlink:href="images/dist/sprite.svg#like"></use></svg>Оценка: 99 999</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- END bestOffer__list -->
+        </div>
+    </div>
+        <br>
+        <br>
+        <br>
+        
+        <div class="category">
+            <div class="category__list">
+                <a href="" class="category__link"><img src="images/dist/Bag.svg" class="category__img" alt=""><span class="category__name">Консалтинг</span></a>
+                <a href="" class="category__link"><img src="images/dist/Mouse.svg" class="category__img" alt=""><span class="category__name">Разработка ПО</span></a>
+                <a href="" class="category__link"><img src="images/dist/Headset.svg" class="category__img" alt=""><span class="category__name">Аутсорсинг</span></a>
+                <a href="" class="category__link"><img src="images/dist/At-sign.svg" class="category__img" alt=""><span class="category__name">Тех. поддержка</span></a>
+            </div>
+            <div class="category__text">Здесь будет текст с описанием категории которую вы выбрали...</div>
+        </div>
+        
+        <div class="popup">
+            <svg class="close popup__close"><use xlink:href="images/dist/sprite.svg#close"></use></svg>
+            <ul class="popup__tabs">
+                <li class="popup__tabs-item is-active">
+                    <a href="" class="popup__tabs-link">Вход</a>
+                </li>
+                <li class="popup__tabs-item">
+                    <a href="" class="popup__tabs-link">Регистрация</a>
+                </li>
+            </ul>
+            <form action="#" method="post" class="myform popup__myform">
+                <input type="text" class="myform__input" placeholder="Логин, почта или телефон" required>
+                <div class="myform__wrap">
+                    <input type="password" class="myform__input" placeholder="Пароль" required>
+                    <svg class="myform__eye js-togglePassword"><use xlink:href="images/dist/sprite.svg#eye"></use></svg>
+                </div>
+                <a href="#" class="myform__link">Напомнить пароль</a>
+                <input type="submit" value="Войти" class="btn btn-black myform__submit">
+            </form>
+            <div class="enterHelp">
+                <span class="enterHelp__title">Войти с помощью</span>
+                <ul class="social">
+                    <li class="social__item"><a href="" class="social__link">
+                            <svg class="social__icon social__icon-google"><use xlink:href="images/dist/sprite.svg#google"></use></svg>
+                        </a></li>
+                    <li class="social__item"><a href="" class="social__link">
+                            <svg class="social__icon social__icon-fb"><use xlink:href="images/dist/sprite.svg#fb"></use></svg>
+                        </a></li>
+                </ul>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <!-- popup -->
+    <div class="popup">
+        <svg class="close popup__close"><use xlink:href="images/dist/sprite.svg#close"></use></svg>
+        <ul class="popup__tabs">
+            <li class="popup__tabs-item">
+                <a href="" class="popup__tabs-link">Вход</a>
+            </li>
+            <li class="popup__tabs-item is-active">
+                <a href="" class="popup__tabs-link">Регистрация</a>
+            </li>
+        </ul>
+        <form action="#" method="post" class="myform popup__myform">
+            <input type="text" class="myform__input" placeholder="Логин" required>
+            <div class="myform__prompt">Не рекомендуем использовать в качестве логина номер телефона или адрес электронной почты</div>
+            <input type="email" class="myform__input" placeholder="Электронная почта" required>
+            <div class="myform__wrap">
+                <input type="password" class="myform__input" placeholder="Пароль">
+                <svg class="myform__eye js-togglePassword"><use xlink:href="images/dist/sprite.svg#eye"></use></svg>
+            </div>
+            <div class="myform__prompt">Не рекомендуем использовать в качестве логина номер телефона или адрес электронной почты</div>
+            <div class="agree">
+                <input type="checkbox" name="agree" class="agree__checkbox" id="agree">
+                <label for="agree" class="agree__label">
+                    Я соглашаюсь с  и предоставляю своё  на обработку моих персональных данных и на получение рекламы, распространяемой по сетям электросвязи
+                </label>
+            </div>
+            <input type="submit" value="Войти" class="btn btn-black myform__submit">
+        </form>
+        <div class="enterHelp">
+            <span class="enterHelp__title">Войти с помощью</span>
+            <ul class="social">
+                <li class="social__item"><a href="" class="social__link">
+                    <svg class="social__icon social__icon-google"><use xlink:href="images/dist/sprite.svg#google"></use></svg>
+                    </a></li>
+                <li class="social__item"><a href="" class="social__link">
+                    <svg class="social__icon social__icon-fb"><use xlink:href="images/dist/sprite.svg#fb"></use></svg>
+                    </a></li>
+            </ul>
+        </div>
+    </div>
+       <!-- END popup -->
+       <br>
+       <br>
+       <br>
+    <!-- popup -->
+    <div class="popup">
+        <svg class="close popup__close"><use xlink:href="images/dist/sprite.svg#close"></use></svg>
+        <h3 class="h3">Заказать</h3>
+        <form action="#" method="post" class="myform popup__myform">
+            <input type="text" class="myform__input" placeholder="Как к вам обращаться" required>
+            <input type="tel" class="myform__input" placeholder="Ваш номер телефона" required>
+            <input type="email" class="myform__input" placeholder="Ваша электронная почта" required>
+            
+            <input type="submit" value="Отправить" class="btn btn-black myform__submit">
+        </form>
+    </div>
+    <!-- END popup -->
+        
+    <!--#include virtual="/parts/footer.html" -->

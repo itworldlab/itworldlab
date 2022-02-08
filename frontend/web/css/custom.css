@@ -1,0 +1,7 @@
+.box{
+    box-shadow: 0 1px 2px 0 rgb(22 33 54 / 16%);
+}
+.links__item {
+    box-shadow: 0 1px 2px 0 rgb(22 33 54 / 16%);
+    border: 1px solid rgb(22 33 54 / 16%);
+}

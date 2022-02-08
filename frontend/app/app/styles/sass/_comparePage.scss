@@ -1,0 +1,122 @@
+.comparePage__header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 24px;
+}
+
+.comparePage__content {
+    display: grid;
+    grid-column-gap: 20px;
+    grid-row-gap: 8px;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 26px;
+}
+
+.comparePage__item {
+    background: #FFFFFF;
+    border: 1px solid #EFF1F2;
+    border-radius: 8px;
+    box-shadow: 0px 10px 23px 2px rgba(2, 35, 67, 0.08);
+}
+
+.comparePage__content-big {
+    padding: 24px 12px;
+}
+
+.comparePage__content-header {
+    display: grid;
+    grid-column-gap: 24px;
+    grid-template-columns: 168px 1fr;
+}
+
+.comparePage__stars {
+    margin-top: 9px;
+}
+
+.comparePage__info-row {
+    margin-top: 15px;
+}
+
+.comparePage__text {
+    font-size: 16px;
+    line-height: 22px;
+    margin-top: 24px;
+}
+
+.comparePage__h3 {
+    margin-top: 24px;
+}
+
+.comparePage__btn {
+    margin-top: 27px;
+}
+
+.comparePage__content-flex {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 13px 18px;
+}
+
+.comparePage__green-check {
+    margin-right: 10px;
+}
+
+.comparePage__content-close {
+    fill: $red;
+    height: 8px;
+    margin-right: 12px;
+    width: 8px;
+}
+
+.faq-icon {
+    fill: transparent;
+    height: 12px;
+    width: 12px;
+}
+
+//.cloud-icon {
+//    fill: $black;
+//    height: 14px;
+//    width: 22px;
+//}
+
+.arrow-bottom {
+    fill: $black;
+    height: 8px;
+    width: 8px;    
+}
+
+.comparePage__cloud {
+    margin-right: 9px;
+}
+
+.comparePage__accordeon {
+    margin-bottom: 8px;
+}
+
+.comparePage__accordeon-title {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 13px;
+    
+    span {
+        align-items: center;
+        display: flex;
+    }
+}
+
+.comparePage__accordeon-faq {
+    margin-right: 18px;
+}
+
+.accordeon__icon {
+    transition: transform .3s ease;
+}
+
+.accordeon__icon--active {
+    transform: rotate(-180deg);
+}

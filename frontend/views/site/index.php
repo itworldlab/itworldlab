@@ -9,6 +9,7 @@ use yii\bootstrap4\Html;
 
 $this->title = 'My Yii Application';
 ?>
+
 <div class="container main-container">
     <h1 class="h1">Самый большой супермаркет IT решений в Казахстане</h1>
 

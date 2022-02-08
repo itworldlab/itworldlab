@@ -17,14 +17,14 @@ class AppAsset extends AssetBundle
         'css/select2.min.css',
         'css/main.min.css',
         'plugins/swiper/swiper.css',
-//        'css/custom2.css',
+        'css/custom.css',
     ];
     public $js = [
 //        "https://code.jquery.com/jquery-2.2.4.min.js",
         'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js',
         "js/jquery.fancybox.min.js",
         "js/select2.min.js",
-        "js/app.js",
+        "js/app.min.js",
 
     ];
     public $depends = [
