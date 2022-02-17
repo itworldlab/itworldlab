@@ -13,6 +13,7 @@ class AppAsset extends AssetBundle
     public $baseUrl = '@web';
     public $css = [
         'css/bootstrap.min.css',
+        'css/animate.min.css',
         'https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900',
         'plugins/icomoon/styles.min.css',
         'plugins/croppie/croppie.css',

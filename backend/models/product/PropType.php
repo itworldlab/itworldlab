@@ -11,6 +11,8 @@ use Yii;
  *
  * @property int $id
  * @property string $type
+ * @property string $name
+ * @property int $category_id
 
  *
  * @property PropTypeLang[] $propTypeLangs

@@ -27,6 +27,19 @@ AppAsset::register($this);
 </head>
 <body>
 <?php $this->beginBody() ?>
+<div class="modal fade" id="modal"  data-animation-in="bounceIn"  data-animation-out="bounceOut">
+    <div class="modal-dialog modal-dialog-centered" id="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitle"></h5>
+                <button type="button" class="close" data-dismiss="modal">×</button>
+            </div>
+
+            <div class="modal-body" id="modalBody">
+            </div>
+        </div>
+    </div>
+</div>
 <script>
     Noty.overrideDefaults({
         theme: "limitless",
@@ -34,9 +47,46 @@ AppAsset::register($this);
         type: "alert",
         timeout: 2500
     });
+    var modal = $("#modal");
+    modal.on('show.bs.modal', function (e) {
+        var anim = $(this).attr('data-animation-in');
+        modalAnimation(anim);
+    })
+    modal.on('hide.bs.modal', function (e) {
+        var anim = $(this).attr('data-animation-out');
+        modalAnimation(anim);
+    })
+    function modalAnimation(animation) {
+        $('.modal .modal-dialog').attr('class', 'modal-dialog  ' + animation + ' animated');
+    }
+
+    document.addEventListener("DOMContentLoaded",function(){
+        $(".btn-modal").click(function(e){
+            e.preventDefault();
+            // $('#test').modal();
+            $("#modalBody").html('<img src="/img/loader.gif"/>');
+            $("#modal").modal();
+            if($(this).hasClass("btn-modal-lg")){
+                $("#modal-dialog").addClass("modal-lg2");
+            }
+            var href = $(this).attr("href");
+
+            $.ajax({
+                type:"get",
+                url:href,
+                success:function(res){
+                    $("#modalBody").html(res);
+                    // $("#modal").modal();
+                },
+                error:function(xhr){
+                    $("#modalBody").html(xhr.responseText);
+                    // $("#modal").modal();
+                }
+            })
+        })
+    });
 </script>
 <?= \common\widgets\Alert::widget() ?>
-
 <!-- Main navbar -->
 <div class="navbar navbar-expand-md navbar-dark">
     <div class="navbar-brand text-center text-lg-left">

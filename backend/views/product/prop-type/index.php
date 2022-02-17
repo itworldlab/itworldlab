@@ -9,16 +9,26 @@ use yii\grid\GridView;
 
 $this->title = 'Свойства товаров';
 $this->params['breadcrumbs'][] = $this->title;
-$cat_id = ['create'];
+$cat_url = ['create'];
+$cat_id = 0;
+
 if(isset($_GET['category_id']))
-    $cat_id = ['create','category_id'=>Yii::$app->request->get("category_id")];
+{
+    $cat_url = ['create','category_id'=>Yii::$app->request->get("category_id")];
+    $cat_id = intval($_GET['category_id']);
+}
 ?>
 <div class="product-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Добавить свойство', $cat_id, ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Добавить свойство', $cat_url, ['class' => 'btn btn-success']) ?>
+
+        <?php
+        if($cat_id != 0)
+            echo Html::a('Импорт', ['/product/prop-type/import','cat_id'=>$cat_id], ['class' => 'btn btn-primary btn-modal']);
+        ?>
     </p>
 
     <?php

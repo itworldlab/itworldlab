@@ -13,7 +13,7 @@ class AppAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-//        'css/site.css',
+        '//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css',
         'css/select2.min.css',
         'css/main.min.css',
         'plugins/swiper/swiper.css',

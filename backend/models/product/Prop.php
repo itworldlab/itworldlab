@@ -11,6 +11,7 @@ use Yii;
  *
  * @property int $id
  * @property string|null $type
+ * @property string|null $name
  * @property int $prop_type_id
  * @property int|null $status
  * @property string|null $icon

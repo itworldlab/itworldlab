@@ -3,8 +3,8 @@ require 'fileutils'
 
 
 domains = {
-  frontend: 'iwl.test',
-  backend:  'aiwl.test'
+  frontend: 'iwl.local',
+  backend:  'aiwl.local'
 }
 
 config = {
