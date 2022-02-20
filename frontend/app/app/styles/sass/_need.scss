@@ -1,35 +1,61 @@
 .need {
-    padding-bottom: 22px;
-    padding-top: 24px;
+    background: url(/images/dist/need-bg.jpg) no-repeat center top;
+    background-size: cover;
+    color: #FFFFFF;
+    padding-bottom: 48px;
+    padding-top: 48px;
 }
 
 .need__title {
-    margin-bottom: 20px;
+    color:#fff;
+    text-align: right;
 }
 
 .links {
     display: flex;
     flex-wrap: wrap;
-    
+    justify-content: flex-end;
+    margin-top: 24px;
+    margin-left: auto;
+    max-width: 940px;
+
     &__item {
-        border: 1px solid $grey;
-        border-radius: 8px;
-        font-size: 14px;
+        background: transparent;
+        border: 1px solid #EFF1F2;
+        border-radius: 12px;
+        color: #EFF1F2;
         margin-bottom: 12px;
         margin-right: 12px;
         padding: 16px;
-        transition: all .3s ease;
-        
+        transition: all .3s ease-in;
+
+        &:nth-child(3n) {
+            margin-right: 0;
+        }
+
         &:hover {
-            border-color: $outline-grey;
-            box-shadow: 0px 10px 23px 2px rgba(2, 35, 67, 0.08);
+            background: #FFFFFF;
+            border: 1px solid #EFF1F2;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+            color: #007CE8;
         }
     }
 }
 
-@media (max-width: $media-5) {
-    .links__item {
-        font-size: 12px;
-        padding: 10px 16px;
+.need__goldBtn {
+    margin-left: auto;
+    margin-top: 12px;
+}
+
+@media (max-width: $media-3) {
+    .links {
+        max-width: 100%;
+
+        &__item {
+
+            &:nth-child(3n) {
+                margin-right: 10px;
+            }
+        }
     }
 }

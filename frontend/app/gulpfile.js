@@ -88,11 +88,6 @@ function buildcopy() {
 	.pipe(dest('../web'))
 }
 
-async function buildhtml() {
-	let includes = new ssi('app/', 'dist/', '/**/*.html')
-	includes.compile()
-	del('dist/parts', { force: true })
-}
 
 function cleandist() {
 	return del('dist/**/*', { force: true })

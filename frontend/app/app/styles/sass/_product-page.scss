@@ -1,24 +1,24 @@
 .product-page {
-    margin-top: 24px;
+    margin-top: 99px;
     padding-top: 24px;
 }
 
 .breadcrumbs {
     display: flex;
     flex-wrap: wrap;
-    
+
     &__item {
         color: $blue;
-        
+
         &:after {
             content: '/';
             display: inline-block;
             margin-left: 4px;
             margin-right: 4px;
         }
-        
+
         &:last-child {
-            
+
             &:after {
                 display: none;
             }
@@ -48,7 +48,7 @@
 
 .info-row {
     display: flex;
-    
+
     span {
         color: #737373;
         font-size: 14px;
@@ -70,7 +70,7 @@
     color: #1F2025;
     display: inline-flex;
     padding: 17px 27px;
-    
+
     &__icon {
         fill: $black;
         height: 24px;
@@ -81,13 +81,13 @@
 
 .list-check {
     margin-top: 14px;
-    
+
     > li {
         background: url(../images/dist/check-icon.svg) no-repeat left top 5px;
         line-height: 22px;
         margin-top: 10px;
         padding-left: 21px;
-        
+
         &:first-child {
             margin-top: 0;
         }
@@ -103,13 +103,13 @@
 
 .infoBoxGrid__list {
     margin-top: 10px;
-    
+
     > li {
         line-height: 22px;
         padding-left: 30px;
         padding-top: 3px;
         margin-top: 10px;
-        
+
         &:first-child {
             margin-top: 0;
         }
@@ -118,10 +118,10 @@
 
 .screenshots {
     margin-top: 24px;
-    
+
     &-slider {
         margin-top: 10px;
-        
+
         a[data-fancybox] {
             display: block;
         }
@@ -130,8 +130,8 @@
             margin-top: 24px;
         }
     }
-    
-    
+
+
 }
 
 .screenshots__title {
@@ -154,15 +154,15 @@
 }
 
 .app-icon {
-    background: url(../images/dist/app-icon.svg) no-repeat left top;    
+    background: url(../images/dist/app-icon.svg) no-repeat left top;
 }
 
 .andr-icon {
-    background: url(../images/dist/andr-icon.svg) no-repeat left top;        
+    background: url(../images/dist/andr-icon.svg) no-repeat left top;
 }
 
 .ios-icon {
-    background: url(../images/dist/ios-icon.svg) no-repeat left top;        
+    background: url(../images/dist/ios-icon.svg) no-repeat left top;
 }
 
 .small-business-icon {
@@ -174,15 +174,15 @@
 }
 
 .large-business-icon {
-    background: url(../images/dist/large-business-icon.svg) no-repeat left top;   
+    background: url(../images/dist/large-business-icon.svg) no-repeat left top;
 }
 
 .cloud-icon {
-    background: url(../images/dist/cloud-icon.svg) no-repeat left top;   
+    background: url(../images/dist/cloud-icon.svg) no-repeat left top;
 }
 
 .server-icon {
-    background: url(../images/dist/server-icon.svg) no-repeat left top;   
+    background: url(../images/dist/server-icon.svg) no-repeat left top;
 }
 
 .comp-icon {
@@ -206,10 +206,10 @@
 
 .tabs__item {
     margin-left: 12px;
-    
+
     &.is-active {
         position: relative;
-        
+
         &:after {
             background: #fff;
             content: '';
@@ -218,15 +218,15 @@
             position: absolute;
             right: 0;
         }
-        
+
         .tabs__link {
             border-color: transparent;
             border-radius: 8px 8px 0 0;
             box-shadow: 0px 10px 23px rgba(2, 35, 67, 0.08);
         }
-        
+
     }
-    
+
 }
 
 .tabs__link {
@@ -243,7 +243,7 @@
     margin-top: 10px;
     position: relative;
     z-index: 2;
-    
+
     &__item {
         border-radius: 8px;
         display: none;
@@ -253,7 +253,7 @@
         padding-right: 18px;
         padding-top: 26px;
     }
-    
+
     &__link {
         color: $blue;
         line-height: 20px;
@@ -267,23 +267,23 @@
 }
 
 .list1 {
-    
+
     > li {
         padding-left: 23px;
         position: relative;
         margin-top: 16px;
-        
+
         &:first-child {
             margin-top: 0;
         }
     }
-    
+
     &__green-check {
         left: 0;
         position: absolute;
         top: 3px;
     }
-    
+
     &__close {
         fill: $red;
         height: 8px;
@@ -305,7 +305,7 @@
     display: grid;
     grid-column-gap: 20px;
     grid-template-columns: repeat(4, 1fr);
-    
+
     &__item {
         border: 1px solid $outline-grey;
         border-radius: 8px;
@@ -315,39 +315,39 @@
         padding-right: 12px;
         padding-top: 24px;
     }
-    
+
     &__text {
         display: block;
         font-size: 14px;
         line-height: 19px;
         margin-top: 9px;
     }
-    
+
     &__price {
         display: block;
         font-weight: 600;
         margin-top: 8px;
     }
-    
+
     &__btn-orange {
         margin-top: 10px;
     }
-    
+
     &__list {
         margin-left: -12px;
         margin-right: -12px;
         margin-top: 12px;
         width: calc(100% + 24px);
-        
+
         > li {
             line-height: 22px;
             margin-top: 10px;
             min-height: 22px;
             padding-left: 28px;
             position: relative;
-            
+
             &.package__list-dot {
-                
+
                 &:before {
                     background: $black;
                     border-radius: 50%;
@@ -359,9 +359,9 @@
                     width: 8px;
                 }
             }
-            
-            
-            
+
+
+
             &:first-child {
                 border-bottom: 1px solid $outline-grey;
                 border-top: 1px solid $outline-grey;
@@ -374,13 +374,13 @@
 }
 
 .list-dots {
-    
+
     > li {
         line-height: 22px;
         margin-bottom: 8px;
         padding-left: 17px;
         position: relative;
-        
+
         &:before {
             background: $black;
             border-radius: 50%;
@@ -409,7 +409,7 @@
     border-radius: 8px;
     border: 1px solid #EFF1F2;
     padding: 12px;
-    
+
     &:hover {
         box-shadow: 0px 10px 23px 2px rgba(2, 35, 67, 0.08);
     }
@@ -428,13 +428,13 @@
 }
 
 .partner-row__list {
-    
+
     > li {
         font-size: 14px;
         line-height: 19px;
         margin-top: 6px;
         padding-left: 20px;
-        
+
         &:first-child {
             margin-top: 0;
         }
@@ -447,7 +447,7 @@
     &-location {
         background: url(../images/dist/location-icon.svg) no-repeat left top;
     }
-    
+
     &-open {
         background: url(../images/dist/Lightbulb-icon.svg) no-repeat left top;
     }
@@ -462,26 +462,26 @@
     margin-bottom: 12px;
     padding-bottom: 14px;
     padding-top: 16px;
-    
+
     &__logo {
         @include center();
         height: 100%;
     }
-    
+
     .box__gray {
         margin-top: 0;
-        
+
         > li {
             color: $black;
         }
     }
-    
+
     &__grid {
         display: grid;
         grid-column-gap: 20px;
         grid-template-columns: 1fr 1fr 3fr 1fr;
     }
-    
+
     &__title {
         margin-bottom: 7px;
     }
@@ -508,22 +508,22 @@
 }
 
 .reviews {
-    
+
     &__header {
         display: flex;
         justify-content: space-between;
     }
-    
+
     &__name {
         color: #737373;
         display: block;
         font-size: 14px;
     }
-    
+
     .stars {
         margin-top: 5px;
     }
-    
+
     &__count {
         display: block;
         margin-top: 12px;
@@ -538,34 +538,34 @@
     margin-top: 24px;
     padding-bottom: 24px;
     padding-top: 24px;
-    
+
     + .reviews-grid {
         margin-top: 0;
     }
-    
+
     &__name {
         display: block;
     }
-    
+
     &__time {
         color: #737373;
         display: block;
         font-size: 14px;
     }
-    
+
     &__descript {
         margin-top: 6px;
         line-height: 22px;
     }
-    
+
     &__text {
         line-height: 22px;
         margin-bottom: 8px;
         margin-top: 8px;
     }
-    
+
     &__stars {
-        
+
         .stars {
             margin-bottom: 15px;
         }
@@ -574,11 +574,11 @@
 
 .partner-row--services {
     grid-template-columns: 210px 1fr;
-    
+
     .partner-row__grid {
         grid-template-columns: 1fr 3fr 1fr;
     }
-   
+
     .box__gray {
         margin-top: 9px;
     }
@@ -594,7 +594,7 @@
     border-radius: 8px;
     box-shadow: 0px 10px 23px 2px rgba(2, 35, 67, 0.08);
     margin-bottom: 4px;
-    
+
     &:last-child {
         margin-bottom: 0;
     }
@@ -606,7 +606,7 @@
     font-size: 14px;
     line-height: 19px;
     padding: 12px;
-    
+
     &.is-active {
         background: url(../images/dist/close.svg) no-repeat right 19px center;
     }
@@ -638,33 +638,33 @@
 }
 
 .reviews--vertical {
-    
+
     .reviews__header {
         display: grid;
         grid-row-gap: 8px;
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .reviews__btn-orange {
         grid-column: 1 / 3;
         grid-row: 1 / 2;
     }
-    
+
     .reviews__header-item--1 {
         grid-column: 1 / 3;
         grid-row: 2 / 3;
     }
-    
+
     .reviews__header-item--2 {
         grid-column: 1 / 2;
         grid-row: 3 / 4;
     }
-    
+
     .reviews__header-item--3 {
         grid-column: 1 / 2;
         grid-row: 4 / 5;
     }
-    
+
     .reviews__header-item--4 {
         grid-column: 2 / 3;
         grid-row: 4 / 5;
@@ -674,36 +674,36 @@
         grid-column: 2 / 3;
         grid-row: 3 / 4;
     }
-    
+
     .reviews-grid {
         display: block;
         padding: 12px;
     }
-    
+
     .reviews-grid__time {
         margin-top: 8px;
     }
-    
+
     .reviews-grid__descript {
         font-size: 14px;
     }
-    
+
     .reviews-grid__column {
         margin-top: 12px;
     }
-    
+
     .reviews-grid__text {
         font-size: 14px;
         line-height: 19px;
     }
-    
+
     .reviews-grid__stars {
         display: grid;
         grid-column-gap: 45px;
         grid-row-gap: 8px;
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .stars {
         margin-bottom: 0;
     }
@@ -712,7 +712,7 @@
 .reviews-grid__row {
     align-items: center;
     display: flex;
-    
+
     .reviews-grid__photo {
         border-radius: 8px;
         flex-shrink: 0;
@@ -721,11 +721,11 @@
         overflow: hidden;
         width: 42px;
     }
-    
+
     .reviews-grid__name {
         font-size: 16px;
     }
-    
+
     .reviews-grid__column {
         margin-top: 0;
     }
@@ -746,7 +746,7 @@
         box-shadow: none;
         margin-bottom: 12px;
         padding: 12px;
-        
+
         &:last-child {
             margin-bottom: 0;
         }
@@ -761,7 +761,7 @@
         font-size: 14px;
         margin-top: 4px;
         min-height: auto;
-        
+
         &:first-child {
             padding-bottom: 8px;
             padding-top: 8px;
@@ -782,11 +782,11 @@
         border-bottom: 1px solid #eff1f2;
         display: block;
         padding-left: 0;
-        
+
         &:last-child {
             border-bottom: none;
         }
-        
+
         &:hover {
             box-shadow: none;
         }
@@ -794,7 +794,7 @@
     .partner-row {
         display: block;
         margin-bottom: 20px;
-        
+
         &:last-child {
             margin-bottom: 0;
         }
@@ -820,15 +820,15 @@
     .tabs, .tabContent {
         display: none;
     }
-    
+
     .partner-row--services {
         display: grid;
-        
+
         .partner-row__grid {
             display: grid;
             margin-top: 0;
         }
-        
+
         .partner-row__content {
             margin-top: 0;
         }
@@ -865,22 +865,22 @@
     }
     .product__header-right {
         margin-top: 12px;
-        
+
         .compareBtn {
             font-size: 14px;
             padding: 14px 16px;
         }
     }
     .partner-row--services {
-        
+
         .partner-row__grid {
             display: block;
         }
-        
+
         .partner-row__right {
             margin-top: 12px;
         }
-    } 
+    }
 }
 
 @media (max-width: $media-4) {
@@ -895,16 +895,16 @@
     }
     .partner-row--services {
         display: block;
-        
+
         .partner-row__logo {
             justify-content: flex-start;
             margin-bottom: 12px;
         }
-        
+
         .partner-row__grid {
             border-top: 1px solid #EFF1F2;
         }
-        
+
         .box__gray {
             margin-top: 0;
         }
@@ -920,7 +920,7 @@
     }
     .infoBoxGrid__item {
         margin-bottom: 15px;
-        
+
         &:last-child {
             margin-bottom: 0;
         }

@@ -1,5 +1,5 @@
 .integratorPage {
-    padding-top: 42px;
+    padding-top: 105px;
 }
 
 .integratorPage__header {
@@ -38,14 +38,14 @@
 .integratorPage__header-bottom {
     font-size: 14px;
     margin-top: 10px;
-    
+
     span {
         color: #737373;
     }
 }
 
 .integratorPage__header-btns {
-    
+
     .btn {
         font-size: 14px;
         margin-bottom: 10px;
@@ -109,11 +109,11 @@
 }
 
 .contacts__item {
-    
+
     .box__gray {
         margin-bottom: 10px;
     }
-    
+
     .box__gray > li {
         color: #737373;
     }
@@ -121,16 +121,16 @@
 
 .wrap-box-dropdown {
     margin-top: 48px;
-    
+
     &__title {
         color: #737373;
         display: block;
         margin-bottom: 10px;
     }
-    
+
     .box-dropdown {
         margin-bottom: 12px;
-        
+
         &:last-child {
             margin-bottom: 0;
         }
@@ -189,7 +189,7 @@
         position: absolute;
         right: 0;
         top: 0;
-        
+
         &.is-active {
             background-position: top 26px right 20px;
         }
@@ -220,7 +220,7 @@
     }
     .contacts__item {
         margin-bottom: 12px;
-        
+
         &:last-child {
             margin-bottom: 0;
         }

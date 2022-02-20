@@ -77,6 +77,8 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        $this->view->title = "Самый большой супермаркет IT решений в Казахстане";
+//        $this->layout = "main2";
         $model = new Integrator();
         return $this->render('index',[
             'model' => $model

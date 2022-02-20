@@ -1,19 +1,9 @@
 <?php
 
-/* @var $this \yii\web\View */
-/* @var $content string */
-
-use common\widgets\Alert;
-use frontend\assets\AppAsset;
-use yii\bootstrap4\Breadcrumbs;
-use yii\bootstrap4\Html;
-use yii\bootstrap4\Modal;
-use yii\bootstrap4\Nav;
-use yii\bootstrap4\NavBar;
-
-AppAsset::register($this);
 ?>
-<?php $this->beginPage() ?>
+<?php use yii\helpers\Html;
+
+$this->beginPage() ?>
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>" class="h-100">
 <head>
@@ -21,188 +11,348 @@ AppAsset::register($this);
     <meta name="viewport" content="width=device-width">
     <?php $this->registerCsrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
+    <link rel="stylesheet" href="/css/main.min.css"/>
     <?php $this->head() ?>
 </head>
-<body class="d-flex flex-column h-100">
+<body>
 <?php $this->beginBody() ?>
-<?php if(Yii::$app->user->isGuest):?>
-<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <ul class="popup__tabs">
-                    <li class="popup__tabs-item is-active">
-                        <a href="#" class="popup__tabs-link">Вход</a>
-                    </li>
-                    <li class="popup__tabs-item">
-                        <a href="#" data-toggle="modal" data-target="registerModal" class="popup__tabs-link" data-dismiss="modal" onclick="$('#registerModal').modal();">Регистрация</a>
-                    </li>
-                </ul>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form action="#" method="post" class="myform popup__myform">
-                    <input type="text" class="myform__input" placeholder="Логин, почта или телефон" required>
-                    <div class="myform__wrap">
-                        <input type="password" class="myform__input" placeholder="Пароль" required>
-                        <svg class="myform__eye js-togglePassword"><use xlink:href="images/dist/sprite.svg#eye"></use></svg>
-                    </div>
-                    <a href="#" class="myform__link">Напомнить пароль</a>
-                    <input type="submit" value="Войти" class="btn btn-black myform__submit">
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModal" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <ul class="popup__tabs">
-                    <li class="popup__tabs-item">
-                        <a href="#" data-toggle="modal" data-target="loginModal" class="popup__tabs-link" data-dismiss="modal" onclick="$('#loginModal').modal();">Вход</a>
-                    </li>
-                    <li class="popup__tabs-item is-active">
-                        <a href="" class="popup__tabs-link">Регистрация</a>
-                    </li>
-                </ul>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form action="#" method="post" class="myform popup__myform">
-                    <input type="text" class="myform__input" placeholder="Логин" required>
-                    <div class="myform__prompt">Не рекомендуем использовать в качестве логина номер телефона или адрес электронной почты</div>
-                    <input type="email" class="myform__input" placeholder="Электронная почта" required>
-                    <div class="myform__wrap">
-                        <input type="password" class="myform__input" placeholder="Пароль">
-                        <svg class="myform__eye js-togglePassword"><use xlink:href="images/dist/sprite.svg#eye"></use></svg>
-                    </div>
-                    <div class="myform__prompt">Не рекомендуем использовать в качестве логина номер телефона или адрес электронной почты</div>
-                    <div class="agree">
-                        <input type="checkbox" name="agree" class="agree__checkbox" id="agree">
-                        <label for="agree" class="agree__label">
-                            Я соглашаюсь с  и предоставляю своё  на обработку моих персональных данных и на получение рекламы, распространяемой по сетям электросвязи
-                        </label>
-                    </div>
-                    <input type="submit" value="Войти" class="btn btn-black myform__submit">
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-<?php endif?>
 <div class="wrapper">
     <header class="header">
         <div class="container header__container">
-            <div class="header__row">
-                <a href="/" class="logo header__logo"><img src="/images/dist/logo.svg" alt=""></a>
-                <ul class="menu">
-                    <li class="menu__item"><a href="" class="menu__link">Продукты <svg class="menu__arrow"><use xlink:href="images/dist/sprite.svg#arrow-bottom"></use></svg></a></li>
-                    <li class="menu__item"><a href="" class="menu__link">Услуги <svg class="menu__arrow"><use xlink:href="images/dist/sprite.svg#arrow-bottom"></use></svg></a></li>
-                    <li class="menu__item"><a href="" class="menu__link">Интеграторы</a></li>
-                    <li class="menu__item"><a href="" class="menu__link">Обучение</a></li>
-                    <li class="menu__item"><a href="" class="menu__link">Новости</a></li>
+            <a href="/" class="logo header__logo"><img src="images/dist/logo.svg" alt=""></a>
+            <ul class="menu">
+                <li class="menu__item">
+                    <a href="" class="menu__link">Продукты <svg class="menu__arrow"><use xlink:href="images/dist/sprite.svg#arrow-bottom"></use></svg></a>
+                    <div class="box-list menu__box-list">
+                        <ul class="box-list__top">
+                            <li class="box-list__top-item"><a href="" class="box-list__top-link">
+                                    <span class="box-list__top-wrap"><img src="images/dist/iaas.svg" alt=""></span>
+                                    <span class="box-list__top-text">IaaS</span>
+                                </a></li>
+                            <li class="box-list__top-item"><a href="" class="box-list__top-link">
+                                    <span class="box-list__top-wrap"><img src="images/dist/it.svg" alt=""></span>
+                                    <span class="box-list__top-text">IT Безопасность</span>
+                                </a></li>
+                            <li class="box-list__top-item"><a href="" class="box-list__top-link">
+                                    <span class="box-list__top-wrap"><img src="images/dist/crm.svg" alt=""></span>
+                                    <span class="box-list__top-text">CRM</span>
+                                </a></li>
+                            <li class="box-list__top-item"><a href="" class="box-list__top-link">
+                                    <span class="box-list__top-wrap"><img src="images/dist/bpm.svg" alt=""></span>
+                                    <span class="box-list__top-text">BPM</span>
+                                </a></li>
+                            <li class="box-list__top-item"><a href="" class="box-list__top-link">
+                                    <span class="box-list__top-wrap"><img src="images/dist/rpa.svg" alt=""></span>
+                                    <span class="box-list__top-text">RPA</span>
+                                </a></li>
+                            <li class="box-list__top-item"><a href="" class="box-list__top-link">
+                                    <span class="box-list__top-wrap"><img src="images/dist/phone.svg" alt=""></span>
+                                    <span class="box-list__top-text">IP<br>              телефония</span>
+                                </a></li>
+                            <li class="box-list__top-item"><a href="" class="box-list__top-link">
+                                    <span class="box-list__top-wrap"><img src="images/dist/sed.svg" alt=""></span>
+                                    <span class="box-list__top-text">СЭД</span>
+                                </a></li>
+                            <li class="box-list__top-item"><a href="" class="box-list__top-link">
+                                    <span class="box-list__top-wrap"><img src="images/dist/erp.svg" alt=""></span>
+                                    <span class="box-list__top-text">ERP</span>
+                                </a></li>
+                            <li class="box-list__top-item"><a href="" class="box-list__top-link">
+                                    <span class="box-list__top-wrap"><img src="images/dist/office.svg" alt=""></span>
+                                    <span class="box-list__top-text">Офисные приложения</span>
+                                </a></li>
+                            <li class="box-list__top-item"><a href="" class="box-list__top-link">
+                                    <span class="box-list__top-wrap"><img src="images/dist/online-b.svg" alt=""></span>
+                                    <span class="box-list__top-text">Онлайн бухгалтерия</span>
+                                </a></li>
+                        </ul>
+                        <div class="box-list__descript">Здесь будет текст с описанием категории которую вы выбрали...</div>
+                    </div>
+                </li>
+                <li class="menu__item">
+                    <a href="" class="menu__link">Услуги <svg class="menu__arrow"><use xlink:href="images/dist/sprite.svg#arrow-bottom"></use></svg></a>
+                    <div class="box-list menu__box-list menu__box-list--posa1">
+                        <ul class="box-list__top">
+                            <li class="box-list__top-item"><a href="" class="box-list__top-link">
+                                    <span class="box-list__top-wrap"><img src="images/dist/iaas.svg" alt=""></span>
+                                    <span class="box-list__top-text">IaaS</span>
+                                </a></li>
+                            <li class="box-list__top-item"><a href="" class="box-list__top-link">
+                                    <span class="box-list__top-wrap"><img src="images/dist/it.svg" alt=""></span>
+                                    <span class="box-list__top-text">IT Безопасность</span>
+                                </a></li>
+                            <li class="box-list__top-item"><a href="" class="box-list__top-link">
+                                    <span class="box-list__top-wrap"><img src="images/dist/crm.svg" alt=""></span>
+                                    <span class="box-list__top-text">CRM</span>
+                                </a></li>
+                            <li class="box-list__top-item"><a href="" class="box-list__top-link">
+                                    <span class="box-list__top-wrap"><img src="images/dist/bpm.svg" alt=""></span>
+                                    <span class="box-list__top-text">BPM</span>
+                                </a></li>
+                            <li class="box-list__top-item"><a href="" class="box-list__top-link">
+                                    <span class="box-list__top-wrap"><img src="images/dist/rpa.svg" alt=""></span>
+                                    <span class="box-list__top-text">RPA</span>
+                                </a></li>
+                            <li class="box-list__top-item"><a href="" class="box-list__top-link">
+                                    <span class="box-list__top-wrap"><img src="images/dist/phone.svg" alt=""></span>
+                                    <span class="box-list__top-text">IP<br>              телефония</span>
+                                </a></li>
+                            <li class="box-list__top-item"><a href="" class="box-list__top-link">
+                                    <span class="box-list__top-wrap"><img src="images/dist/sed.svg" alt=""></span>
+                                    <span class="box-list__top-text">СЭД</span>
+                                </a></li>
+                            <li class="box-list__top-item"><a href="" class="box-list__top-link">
+                                    <span class="box-list__top-wrap"><img src="images/dist/erp.svg" alt=""></span>
+                                    <span class="box-list__top-text">ERP</span>
+                                </a></li>
+                            <li class="box-list__top-item"><a href="" class="box-list__top-link">
+                                    <span class="box-list__top-wrap"><img src="images/dist/office.svg" alt=""></span>
+                                    <span class="box-list__top-text">Офисные приложения</span>
+                                </a></li>
+                            <li class="box-list__top-item"><a href="" class="box-list__top-link">
+                                    <span class="box-list__top-wrap"><img src="images/dist/online-b.svg" alt=""></span>
+                                    <span class="box-list__top-text">Онлайн бухгалтерия</span>
+                                </a></li>
+                        </ul>
+                        <div class="box-list__descript">Здесь будет текст с описанием категории которую вы выбрали...</div>
+                    </div>
+                </li>
+                <li class="menu__item"><a href="" class="menu__link">Интеграторы</a></li>
+                <li class="menu__item"><a href="" class="menu__link">Обучение</a></li>
+                <li class="menu__item"><a href="" class="menu__link">Новости</a></li>
+            </ul>
+            <div class="header__right">
+                <a class="location header__location" href=""><svg class="location__icon"><use xlink:href="images/dist/sprite.svg#location"></use></svg></a>
+                <a href="" class="search-link header__search-link"><svg class="search-link__icon"><use xlink:href="images/dist/sprite.svg#loupe"></use></svg></a>
+                <ul class="lang header__lang">
+                    <li class="lang__choose">
+                        <a class="lang__choose-link" href="">RU <svg class="lang__choose-icon"><use xlink:href="images/dist/sprite.svg#arrow-bottom"></use></svg></a>
+                        <ul class="lang__dropdown">
+                            <li class="lang__dropdown-item"><a href="" class="lang__dropdown-link">KZ</a></li>
+                            <li class="lang__dropdown-item"><a href="" class="lang__dropdown-link">ENG</a></li>
+                            <li class="lang__dropdown-item"><a href="" class="lang__dropdown-link">CH</a></li>
+                        </ul>
+                    </li>
                 </ul>
-                <div class="header__row-right">
-                    <ul class="lang header__lang">
-                        <li class="lang__choose">
-                            <a class="lang__choose-link" href=""><img src="/images/<?=explode('-',Yii::$app->language)[0]?>.svg" style="width:20px;margin-right: 8px;margin-top: -3px;"/> <?=strtoupper(explode('-',Yii::$app->language)[0])?> <svg class="lang__choose-icon"><use xlink:href="images/dist/sprite.svg#arrow-bottom"></use></svg></a>
-                            <ul class="lang__dropdown">
-                                <li class="lang__dropdown-item"><a href="/?_lang=ru" class="lang__dropdown-link"><img src="/images/ru.svg" style="width:20px;"/> RU</a></li>
-                                <li class="lang__dropdown-item"><a href="/?_lang=en" class="lang__dropdown-link"><img src="/images/en.svg" style="width:20px;"/> ENG</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <button type="button" class="btn btn-red"  data-toggle="modal" data-target="#loginModal">Регистрация / вход</button>
-                </div>
+                <a href="" class="blueBtn">Регистрация / вход</a>
             </div>
-            <div class="search">
-                <div class="search__left">
-                    <input type="text" class="search__input" placeholder="Введите свой запрос по поиску">
-                    <a href="" class="btn-text">Алматы, Казахстан<svg class="btn-text__icon"><use xlink:href="images/dist/sprite.svg#location"></use></svg></a>
-                </div>
-                <a href="#" class="btn-text-border">Не знаете что искать?</a>
-
-            </div>
+            <!-- /.header__right -->
+            <a href="" class="header__mobile js-menuBtn"></a>
         </div>
         <!-- /.container header__container -->
+        <div class="container header__bottom">
+            <strong>Самый большой</strong> супермаркет IT решений в Казахстане
+        </div>
     </header>
+    <ul class="mobileMenu" id="mobileMenu">
+        <li class="mobileMenu__item mobileMenu__item-flex">
+            <a href="" class="mobileMenu__link">
+                Регистрация / вход <svg class="reg mobileMenu__reg"><use xlink:href="images/dist/sprite.svg#user"></use></svg>
+            </a>
+        </li>
+        <li class="mobileMenu__item">
+            <div class="mobileMenu__lang js-title">
+                RU
+            </div>
+            <ul class="mobileMenu__langList js-hidden">
+                <li><a href="">KZ</a></li>
+                <li><a href="">ENG</a></li>
+                <li><a href="">CH</a></li>
+            </ul>
+        </li>
+        <li class="mobileMenu__item">
+            <div class="mobileMenu__menu js-title">Продукты</div>
+            <div class="mobileMenu__slideUp js-hidden">
+                <ul class="verticalMenu">
+                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">IaaS <span class="verticalMenu__link-wrap"><img src="images/dist/iaas.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">IT Безопасность <span class="verticalMenu__link-wrap"><img src="images/dist/it.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">CRM <span class="verticalMenu__link-wrap"><img src="images/dist/crm.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">BPM <span class="verticalMenu__link-wrap"><img src="images/dist/bpm.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">RPA <span class="verticalMenu__link-wrap"><img src="images/dist/rpa.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">IP - телефония <span class="verticalMenu__link-wrap"><img src="images/dist/phone.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">СЭД <span class="verticalMenu__link-wrap"><img src="images/dist/sed.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">ERP <span class="verticalMenu__link-wrap"><img src="images/dist/erp.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">Офисные приложения <span class="verticalMenu__link-wrap"><img src="images/dist/office.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">Онлайн бухгалтерия <span class="verticalMenu__link-wrap"><img src="images/dist/online-b.svg" alt=""></span></a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="mobileMenu__item">
+            <div class="mobileMenu__menu js-title">Услуги</div>
+            <div class="mobileMenu__slideUp js-hidden">
+                <ul class="verticalMenu">
+                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">IaaS <span class="verticalMenu__link-wrap"><img src="images/dist/iaas.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">IT Безопасность <span class="verticalMenu__link-wrap"><img src="images/dist/it.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">CRM <span class="verticalMenu__link-wrap"><img src="images/dist/crm.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">BPM <span class="verticalMenu__link-wrap"><img src="images/dist/bpm.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">RPA <span class="verticalMenu__link-wrap"><img src="images/dist/rpa.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">IP - телефония <span class="verticalMenu__link-wrap"><img src="images/dist/phone.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">СЭД <span class="verticalMenu__link-wrap"><img src="images/dist/sed.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">ERP <span class="verticalMenu__link-wrap"><img src="images/dist/erp.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">Офисные приложения <span class="verticalMenu__link-wrap"><img src="images/dist/office.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">Онлайн бухгалтерия <span class="verticalMenu__link-wrap"><img src="images/dist/online-b.svg" alt=""></span></a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="mobileMenu__item">
+            <div class="mobileMenu__menu js-title">Интеграторы</div>
+            <div class="mobileMenu__slideUp js-hidden">
+                <ul class="verticalMenu">
+                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">IaaS <span class="verticalMenu__link-wrap"><img src="images/dist/iaas.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">IT Безопасность <span class="verticalMenu__link-wrap"><img src="images/dist/it.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">CRM <span class="verticalMenu__link-wrap"><img src="images/dist/crm.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">BPM <span class="verticalMenu__link-wrap"><img src="images/dist/bpm.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">RPA <span class="verticalMenu__link-wrap"><img src="images/dist/rpa.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">IP - телефония <span class="verticalMenu__link-wrap"><img src="images/dist/phone.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">СЭД <span class="verticalMenu__link-wrap"><img src="images/dist/sed.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">ERP <span class="verticalMenu__link-wrap"><img src="images/dist/erp.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">Офисные приложения <span class="verticalMenu__link-wrap"><img src="images/dist/office.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">Онлайн бухгалтерия <span class="verticalMenu__link-wrap"><img src="images/dist/online-b.svg" alt=""></span></a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="mobileMenu__item">
+            <div class="mobileMenu__menu js-title">Обучение</div>
+            <div class="mobileMenu__slideUp js-hidden">
+                <ul class="verticalMenu">
+                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">IaaS <span class="verticalMenu__link-wrap"><img src="images/dist/iaas.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">IT Безопасность <span class="verticalMenu__link-wrap"><img src="images/dist/it.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">CRM <span class="verticalMenu__link-wrap"><img src="images/dist/crm.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">BPM <span class="verticalMenu__link-wrap"><img src="images/dist/bpm.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">RPA <span class="verticalMenu__link-wrap"><img src="images/dist/rpa.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">IP - телефония <span class="verticalMenu__link-wrap"><img src="images/dist/phone.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">СЭД <span class="verticalMenu__link-wrap"><img src="images/dist/sed.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">ERP <span class="verticalMenu__link-wrap"><img src="images/dist/erp.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">Офисные приложения <span class="verticalMenu__link-wrap"><img src="images/dist/office.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">Онлайн бухгалтерия <span class="verticalMenu__link-wrap"><img src="images/dist/online-b.svg" alt=""></span></a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="mobileMenu__item">
+            <div class="mobileMenu__menu js-title">Новости</div>
+            <div class="mobileMenu__slideUp js-hidden">
+                <ul class="verticalMenu">
+                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">IaaS <span class="verticalMenu__link-wrap"><img src="images/dist/iaas.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">IT Безопасность <span class="verticalMenu__link-wrap"><img src="images/dist/it.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">CRM <span class="verticalMenu__link-wrap"><img src="images/dist/crm.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">BPM <span class="verticalMenu__link-wrap"><img src="images/dist/bpm.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">RPA <span class="verticalMenu__link-wrap"><img src="images/dist/rpa.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">IP - телефония <span class="verticalMenu__link-wrap"><img src="images/dist/phone.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">СЭД <span class="verticalMenu__link-wrap"><img src="images/dist/sed.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">ERP <span class="verticalMenu__link-wrap"><img src="images/dist/erp.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">Офисные приложения <span class="verticalMenu__link-wrap"><img src="images/dist/office.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">Онлайн бухгалтерия <span class="verticalMenu__link-wrap"><img src="images/dist/online-b.svg" alt=""></span></a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="mobileMenu__item"><a class="mobileMenu__other" href="">Алматы, Казахстан <svg class="mobileMenu__location"><use xlink:href="images/dist/sprite.svg#location"></use></svg></a></li>
+        <li class="mobileMenu__item"><a class="mobileMenu__other" href="">Не знаете что искать?</a></li>
+    </ul>
 
-    <main role="main" class="flex-shrink-0">
-        <div class="container">
-            <?= Breadcrumbs::widget([
-                'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-            ]) ?>
-            <?= Alert::widget() ?>
-            <?= $content ?>
-        </div>
-    </main>
-
-    <footer class="footer">
-        <div class="container footer__container">
-            <nav class="footer__nav">
-                <h5 class="h5 footer__title">Продукты</h5>
-                <div class="footer__nav-wrap">
-                    <ul class="footer__menu">
-                        <li class="footer__menu-item"><a href="" class="footer__menu-link">IaaS</a></li>
-                        <li class="footer__menu-item"><a href="" class="footer__menu-link">IT Безопасность</a></li>
-                        <li class="footer__menu-item"><a href="" class="footer__menu-link">CRM</a></li>
-                        <li class="footer__menu-item"><a href="" class="footer__menu-link">BPM</a></li>
-                        <li class="footer__menu-item"><a href="" class="footer__menu-link">RPA</a></li>
-                    </ul>
-                    <ul class="footer__menu">
-                        <li class="footer__menu-item"><a href="" class="footer__menu-link">IP телефония</a></li>
-                        <li class="footer__menu-item"><a href="" class="footer__menu-link">СЭД</a></li>
-                        <li class="footer__menu-item"><a href="" class="footer__menu-link">ERP</a></li>
-                        <li class="footer__menu-item"><a href="" class="footer__menu-link">Офисные приложения</a></li>
-                        <li class="footer__menu-item"><a href="" class="footer__menu-link">Онлайн бухгалтерия</a></li>
-                    </ul>
+    <div class="slider-main">
+        <!-- Slider main container -->
+        <div class="swiper js-swiper">
+            <!--                <img src="images/dist/blue-bg.png" class="slider-main__bg" alt="">-->
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                    <img src="images/dist/slide-1.jpg" class="swiper-slide__img" alt="">
+                    <div class="container swiper-slide__container">
+                        <div class="title-1">IT - Academy</div>
+                        <div class="swiper-slide__subtitle">Разместите своё резюме</div>
+                        <a href="" class="goldBtn swiper-slide__goldBtn">Подробнее</a>
+                    </div>
                 </div>
-                <!-- /.footer__nav-wrap -->
-            </nav>
-            <nav class="footer__nav">
-                <h5 class="h5 footer__title">Услуги</h5>
-                <ul class="footer__menu">
-                    <li class="footer__menu-item"><a href="" class="footer__menu-link">Интеграторы</a></li>
-                    <li class="footer__menu-item"><a href="" class="footer__menu-link">Разработка ПО</a></li>
-                    <li class="footer__menu-item"><a href="" class="footer__menu-link">Аутсорсинг</a></li>
-                    <li class="footer__menu-item"><a href="" class="footer__menu-link">Консалтинг</a></li>
-                </ul>
-            </nav>
-            <nav class="footer__nav">
-                <h5 class="h5 footer__title">HH</h5>
-                <ul class="footer__menu">
-                    <li class="footer__menu-item"><a href="" class="footer__menu-link">Найти сотрудника</a></li>
-                    <li class="footer__menu-item"><a href="" class="footer__menu-link">Поиск работы</a></li>
-                </ul>
-            </nav>
-            <nav class="footer__nav">
-                <h5 class="h5 footer__title">Курсы</h5>
-                <ul class="footer__menu">
-                    <li class="footer__menu-item"><a href="" class="footer__menu-link">Повышение квалификации</a></li>
-                    <li class="footer__menu-item"><a href="" class="footer__menu-link">Обучение с 0</a></li>
-                    <li class="footer__menu-item"><a href="" class="footer__menu-link">Обучени сотрудников</a></li>
-                </ul>
-            </nav>
-            <nav class="footer__nav">
-                <a href="/" class="footer__logo"><img src="images/dist/logo.svg" alt=""></a>
-                <ul class="footer__menu">
-                    <li class="footer__menu-item"><a href="" class="footer__menu-link">Карта сайта</a></li>
-                    <li class="footer__menu-item"><a href="" class="footer__menu-link">Поддержка</a></li>
-                    <li class="footer__menu-item"><a href="" class="footer__menu-link">F.A.Q.</a></li>
-                    <li class="footer__menu-item"><a href="" class="footer__menu-link">Зарегистрировать продукт</a></li>
-                    <li class="footer__menu-item"><a href="" class="footer__menu-link">Подать заявку интеграторам</a></li>
-                </ul>
-            </nav>
+                <div class="swiper-slide">
+                    <img src="images/dist/slide-1.jpg" class="swiper-slide__img" alt="">
+                    <div class="container swiper-slide__container">
+                        <div class="title-1">Найдите специалиста</div>
+                        <div class="swiper-slide__subtitle">Разместите своё резюме</div>
+                        <a href="" class="goldBtn swiper-slide__goldBtn">Подробнее</a>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/dist/slide-1.jpg" class="swiper-slide__img" alt="">
+                    <div class="container swiper-slide__container">
+                        <div class="title-1">Лучшие IT - решения</div>
+                        <div class="swiper-slide__subtitle">Разместите своё резюме</div>
+                        <a href="" class="goldBtn swiper-slide__goldBtn">Подробнее</a>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/dist/slide-1.jpg" class="swiper-slide__img" alt="">
+                    <div class="container swiper-slide__container">
+                        <div class="title-1">Зарабатывайте на том,<br>
+                            что умеете</div>
+                        <div class="swiper-slide__subtitle">Разместите своё резюме</div>
+                        <a href="" class="goldBtn swiper-slide__goldBtn">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
         </div>
-        <!-- /.container footer__container -->
-    </footer>
-</div>
+        <div class="container slider-main__container">
+            <ul class="slider-btns">
+                <li class="slider-btns__item" data-slide="1">
+                    <strong class="slider-btns__title">IT - Academy</strong>
+                    <span class="slider-btns__descript">
+                            Отличный старт для успешной карьеры
+                        </span>
+                    <span class="slider-btns__blue"></span>
+                </li>
+                <li class="slider-btns__item" data-slide="2">
+                    <strong class="slider-btns__title">Найдите специалиста</strong>
+                    <span class="slider-btns__descript">
+                            Для внедрения или доработки
+                        </span>
+                    <span class="slider-btns__blue"></span>
+                </li>
+                <li class="slider-btns__item" data-slide="3">
+                    <strong class="slider-btns__title">Лучшие IT - решения</strong>
+                    <span class="slider-btns__descript">
+                            Для развития вашего бизнеса
+                        </span>
+                    <span class="slider-btns__blue"></span>
+                </li>
+                <li class="slider-btns__item" data-slide="4">
+                    <strong class="slider-btns__title">Зарабатывайте на том, что умеете</strong>
+                    <span class="slider-btns__descript">
+                            Разместите своё резюме
+                        </span>
+                    <span class="slider-btns__blue"></span>
+                </li>
+            </ul>
+        </div>
+        <!-- /.container slider-main__container -->
+    </div>
+    <!-- /.slider-main -->
 
+    <section class="need">
+        <div class="container need__container">
+            <h4 class="h4 need__title">Мне нужен IT продукт, для того что бы:</h4>
+            <div class="links">
+                <a href="" class="links__item">Настроить воронку продаж</a>
+                <a href="" class="links__item">Разместить данные в облачном хранилище</a>
+                <a href="" class="links__item">Защитить свои данные</a>
+                <a href="" class="links__item">Отследить качество работы сотрудников</a>
+                <a href="" class="links__item">Автоматизировать бизнес процессы</a>
+                <a href="" class="links__item">Автоматизировать отдел продаж</a>
+                <a href="" class="links__item">Автоматизировать отдел продаж</a>
+                <a href="" class="links__item">Настроить воронку продаж</a>
+                <a href="" class="links__item">Автоматизировать бизнес процессы</a>
+                <a href="" class="links__item">Отследить качество работы сотрудников</a>
+                <a href="" class="links__item">Автоматизировать бизнес процессы</a>
+                <a href="" class="links__item">Автоматизировать отдел продаж</a>
+            </div>
+            <!-- /.links -->
+            <a href="" class="goldBtn need__goldBtn">Найти свой вариант</a>
+        </div>
+        <!-- /.container need__container -->
+    </section>
+</div>
+<script src="/js/app.min.js"></script>
 <?php $this->endBody() ?>
 </body>
 </html>

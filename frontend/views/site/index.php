@@ -7,93 +7,87 @@ use evgeniyrru\yii2slick\Slick;
 use yii\web\JsExpression;
 use yii\bootstrap4\Html;
 
-$this->title = 'My Yii Application';
 ?>
-
-<div class="container main-container">
-    <h1 class="h1">Самый большой супермаркет IT решений в Казахстане</h1>
-
-    <div class="slider-text">
-        <div class="slider-text__list" id="js-slider-text-dots">
-            <div class="slider-text__list-item" data-slide="0">
-                <strong class="slider-text__list-title">Лучшие IT - решения</strong>
-                <span class="slider-text__list-descript">Для развития вашего бизнеса</span>
+<div class="slider-main">
+    <!-- Slider main container -->
+    <div class="swiper js-swiper">
+        <!--                <img src="images/dist/blue-bg.png" class="slider-main__bg" alt="">-->
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+                <img src="images/dist/slide-1.jpg" class="swiper-slide__img" alt="">
+                <div class="container swiper-slide__container">
+                    <div class="title-1">IT - Academy</div>
+                    <div class="swiper-slide__subtitle">Разместите своё резюме</div>
+                    <a href="" class="goldBtn swiper-slide__goldBtn">Подробнее</a>
+                </div>
             </div>
-            <div class="slider-text__list-item" data-slide="1">
-                <strong class="slider-text__list-title">Найдите специалиста</strong>
-                <span class="slider-text__list-descript">Для внедрения или доработки</span>
+            <div class="swiper-slide">
+                <img src="images/dist/slide-1.jpg" class="swiper-slide__img" alt="">
+                <div class="container swiper-slide__container">
+                    <div class="title-1">Найдите специалиста</div>
+                    <div class="swiper-slide__subtitle">Разместите своё резюме</div>
+                    <a href="" class="goldBtn swiper-slide__goldBtn">Подробнее</a>
+                </div>
             </div>
-            <div class="slider-text__list-item" data-slide="2">
-                <strong class="slider-text__list-title">IT - Academy</strong>
-                <span class="slider-text__list-descript">Отличный старт для успешной карьеры</span>
+            <div class="swiper-slide">
+                <img src="images/dist/slide-1.jpg" class="swiper-slide__img" alt="">
+                <div class="container swiper-slide__container">
+                    <div class="title-1">Лучшие IT - решения</div>
+                    <div class="swiper-slide__subtitle">Разместите своё резюме</div>
+                    <a href="" class="goldBtn swiper-slide__goldBtn">Подробнее</a>
+                </div>
             </div>
-            <div class="slider-text__list-item" data-slide="3">
-                <strong class="slider-text__list-title">Зарабатывайте на том, что умеете</strong>
-                <span class="slider-text__list-descript">Разместите своё резюме</span>
+            <div class="swiper-slide">
+                <img src="images/dist/slide-1.jpg" class="swiper-slide__img" alt="">
+                <div class="container swiper-slide__container">
+                    <div class="title-1">Зарабатывайте на том,<br>
+                        что умеете</div>
+                    <div class="swiper-slide__subtitle">Разместите своё резюме</div>
+                    <a href="" class="goldBtn swiper-slide__goldBtn">Подробнее</a>
+                </div>
             </div>
         </div>
-        <!-- /.slider-text__list -->
-        <div class="slider-text__slider">
-            <button class="slick-arrow slick-prev" id="slider-text__prev" type="button"><svg class="slick-prev__icon"><use xlink:href="images/dist/sprite.svg#arrow-prev"></use></svg></button>
-            <button class="slick-arrow slick-next" id="slider-text__next" type="button"><svg class="slick-next__icon"><use xlink:href="images/dist/sprite.svg#arrow-next"></use></svg></button>
-            <div class="js-slider-text slider-text__slider-wrap">
-                <div>
-                    <div class="slider-text__slider-content">
-                        <div class="slider-text__slider-text">
-                                <span class="slider-text__slider-title">
-                                    Лучшие IT - решения
-                                </span>
-                            <a href="#" class="btn btn-black">Подробнее</a>
-                        </div>
-
-                        <img src="images/dist/macbook.png" class="slider-text__slider-macbook" alt="">
-                    </div>
-                    <!-- /.slider-text__slider-content -->
-                </div>
-                <div>
-                    <div class="slider-text__slider-content">
-                        <div class="slider-text__slider-text">
-                                <span class="slider-text__slider-title">
-                                    Найдите специалиста
-                                </span>
-                            <a href="#" class="btn btn-black">Подробнее</a>
-                        </div>
-
-                        <img src="images/dist/macbook.png" class="slider-text__slider-macbook" alt="">
-                    </div>
-                    <!-- /.slider-text__slider-content -->
-                </div>
-                <div>
-                    <div class="slider-text__slider-content">
-                        <div class="slider-text__slider-text">
-                                <span class="slider-text__slider-title">
-                                    IT - Academy
-                                </span>
-                            <a href="#" class="btn btn-black">Подробнее</a>
-                        </div>
-
-                        <img src="images/dist/macbook.png" class="slider-text__slider-macbook" alt="">
-                    </div>
-                    <!-- /.slider-text__slider-content -->
-                </div>
-                <div>
-                    <div class="slider-text__slider-content">
-                        <div class="slider-text__slider-text">
-                                <span class="slider-text__slider-title">
-                                    Зарабатывайте на том, что умеете
-                                </span>
-                            <a href="#" class="btn btn-black">Подробнее</a>
-                        </div>
-
-                        <img src="images/dist/macbook.png" class="slider-text__slider-macbook" alt="">
-                    </div>
-                    <!-- /.slider-text__slider-content -->
-                </div>
-            </div>
-            <!-- /.js-slider-text -->
-        </div>
-        <!-- /.slider-text__slider -->
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
     </div>
+    <div class="container slider-main__container">
+        <ul class="slider-btns">
+            <li class="slider-btns__item" data-slide="1">
+                <strong class="slider-btns__title">IT - Academy</strong>
+                <span class="slider-btns__descript">
+                            Отличный старт для успешной карьеры
+                        </span>
+                <span class="slider-btns__blue"></span>
+            </li>
+            <li class="slider-btns__item" data-slide="2">
+                <strong class="slider-btns__title">Найдите специалиста</strong>
+                <span class="slider-btns__descript">
+                            Для внедрения или доработки
+                        </span>
+                <span class="slider-btns__blue"></span>
+            </li>
+            <li class="slider-btns__item" data-slide="3">
+                <strong class="slider-btns__title">Лучшие IT - решения</strong>
+                <span class="slider-btns__descript">
+                            Для развития вашего бизнеса
+                        </span>
+                <span class="slider-btns__blue"></span>
+            </li>
+            <li class="slider-btns__item" data-slide="4">
+                <strong class="slider-btns__title">Зарабатывайте на том, что умеете</strong>
+                <span class="slider-btns__descript">
+                            Разместите своё резюме
+                        </span>
+                <span class="slider-btns__blue"></span>
+            </li>
+        </ul>
+    </div>
+    <!-- /.container slider-main__container -->
+</div>
+<div class="container main-container">
+
     <!-- /.slider-text container -->
 
     <div class="popular">
@@ -180,23 +174,34 @@ $this->title = 'My Yii Application';
         </div>
         <!-- END popular-slider -->
     </div>
+
+</div>
     <!-- /.popular -->
 
-    <div class="need">
-        <h3 class="h3 need__title">Мне нужен IT продукт, для того что бы:</h3>
-        <div class="links">
-            <a href="" class="links__item">Автоматизировать отдел продаж</a>
-            <a href="" class="links__item">Настроить колл - центр</a>
-            <a href="" class="links__item">Защитить свои данные</a>
-            <a href="" class="links__item">Разместить данные в облачном хранилище</a>
-            <a href="" class="links__item">Настроить воронку продаж</a>
-            <a href="" class="links__item">Автоматизировать бизнес процессы</a>
-            <a href="" class="links__item">Отследить качество работы сотрудников</a>
-            <a href="" class="links__item">Автоматизировать отдел продаж</a>
-            <a href="" class="links__item">Настроить колл - центр</a>
+    <section class="need">
+        <div class="container need__container">
+            <h4 class="h4 need__title">Мне нужен IT продукт, для того что бы:</h4>
+            <div class="links">
+                <a href="" class="links__item">Настроить воронку продаж</a>
+                <a href="" class="links__item">Разместить данные в облачном хранилище</a>
+                <a href="" class="links__item">Защитить свои данные</a>
+                <a href="" class="links__item">Отследить качество работы сотрудников</a>
+                <a href="" class="links__item">Автоматизировать бизнес процессы</a>
+                <a href="" class="links__item">Автоматизировать отдел продаж</a>
+                <a href="" class="links__item">Автоматизировать отдел продаж</a>
+                <a href="" class="links__item">Настроить воронку продаж</a>
+                <a href="" class="links__item">Автоматизировать бизнес процессы</a>
+                <a href="" class="links__item">Отследить качество работы сотрудников</a>
+                <a href="" class="links__item">Автоматизировать бизнес процессы</a>
+                <a href="" class="links__item">Автоматизировать отдел продаж</a>
+            </div>
+            <!-- /.links -->
+            <a href="" class="goldBtn need__goldBtn">Найти свой вариант</a>
         </div>
-        <button type="button" class="btn btn-black">Найти свой вариант</button>
-    </div>
+        <!-- /.container need__container -->
+    </section>
+
+<div class="container">
     <!-- /.need -->
 
     <div class="integrator">

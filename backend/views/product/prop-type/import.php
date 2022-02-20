@@ -24,17 +24,21 @@
     $("#modalTitle").html("От куда импортировать");
 
     $("#prop-cat").change(function(){
-        var cat_id = $(this).val();
-        if(cat_id === ""){
+        var cat_id = $("#prop-cat option:selected").val();
+        if(cat_id === "" || cat_id === 0){
            return;
         }
         $("#content").html("<img src='/img/loader.gif'/>");
+        console.log(cat_id);
         $.ajax({
             type:"get",
             url:"/product/prop-type/import",
-            data:{cat_id:cat_id,form:true},
+            data:{cat_id:cat_id,form:true,scat_id:<?=$_GET['cat_id']?>},
             success:function(data){
                 $("#content").html(data);
+            },
+            error:function(xhr){
+                $("#content").html(xhr.responseText);
             }
         })
     });

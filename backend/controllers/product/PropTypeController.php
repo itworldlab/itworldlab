@@ -74,6 +74,9 @@ class PropTypeController extends Controller
 
     public function actionImport($cat_id,$form = false){
         $cat = ProductCategory::findOne($cat_id);
+        if(empty($cat) && isset($_GET['scat_id'])){
+            $cat = ProductCategory::findOne(Yii::$app->request->get("scat_id"));
+        }
 
         if($form){
             $model = new PropImportForm();
@@ -81,13 +84,14 @@ class PropTypeController extends Controller
             if($model->load(Yii::$app->request->post())){
                 $errors = [];
                 foreach($model->props as $id=>$val){
+//                    echo $id."__".$val."<br/>";
                     if($val == 1){
                         $prop_type = PropType::findOne($id);
                         $props = Prop::find()->where(['prop_type_id'=>$prop_type->id])->all();
                         $prop_t = new PropType();
                         $prop_t->name = $prop_type->name;
                         $prop_t->type = $prop_type->type;
-                        $prop_t->category_id = $model->cat_id;
+                        $prop_t->category_id = $cat->id;
                         if($prop_t->save()){
                             foreach($props as $prop){
                                 $pro_t = new Prop();
