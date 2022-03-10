@@ -10,5 +10,10 @@ return [
     'Install Count' => 'Кол-во установок',
     'rating' => 'Рейтинг',
     'translate' => 'Перевод',
-    'menu_title' => 'Продукты'
+    'menu_title' => 'Продукты',
+
+    'average_rate' => 'Средняя оценка',
+    'reviews' => 'Средняя оценка',
+
+    'integrate_soft' => 'Интегрируемое ПО',
 ];

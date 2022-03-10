@@ -18,33 +18,32 @@ use yii\bootstrap4\Html;
             <div class="swiper-slide">
                 <img src="images/dist/slide-1.jpg" class="swiper-slide__img" alt="">
                 <div class="container swiper-slide__container">
-                    <div class="title-1">IT - Academy</div>
-                    <div class="swiper-slide__subtitle">Разместите своё резюме</div>
-                    <a href="" class="goldBtn swiper-slide__goldBtn">Подробнее</a>
+                    <div class="title-1"><?=Yii::t("index","slide1_text")?></div>
+                    <div class="swiper-slide__subtitle"><?=Yii::t("index","slide1_subtext")?></div>
+                    <a href="" class="goldBtn swiper-slide__goldBtn"><?=Yii::t("index","more")?></a>
                 </div>
             </div>
             <div class="swiper-slide">
                 <img src="images/dist/slide-1.jpg" class="swiper-slide__img" alt="">
                 <div class="container swiper-slide__container">
-                    <div class="title-1">Найдите специалиста</div>
-                    <div class="swiper-slide__subtitle">Разместите своё резюме</div>
-                    <a href="" class="goldBtn swiper-slide__goldBtn">Подробнее</a>
+                    <div class="title-1"><?=Yii::t("index","slide2_text")?></div>
+                    <div class="swiper-slide__subtitle"><?=Yii::t("index","slide2_subtext")?></div>
+                    <a href="" class="goldBtn swiper-slide__goldBtn"><?=Yii::t("index","more")?></a>
                 </div>
             </div>
             <div class="swiper-slide">
                 <img src="images/dist/slide-1.jpg" class="swiper-slide__img" alt="">
                 <div class="container swiper-slide__container">
-                    <div class="title-1">Лучшие IT - решения</div>
-                    <div class="swiper-slide__subtitle">Разместите своё резюме</div>
-                    <a href="" class="goldBtn swiper-slide__goldBtn">Подробнее</a>
+                    <div class="title-1"><?=Yii::t("index","slide3_text")?></div>
+                    <div class="swiper-slide__subtitle"><?=Yii::t("index","slide3_subtext")?></div>
+                    <a href="" class="goldBtn swiper-slide__goldBtn"><?=Yii::t("index","more")?></a>
                 </div>
             </div>
             <div class="swiper-slide">
                 <img src="images/dist/slide-1.jpg" class="swiper-slide__img" alt="">
                 <div class="container swiper-slide__container">
-                    <div class="title-1">Зарабатывайте на том,<br>
-                        что умеете</div>
-                    <div class="swiper-slide__subtitle">Разместите своё резюме</div>
+                    <div class="title-1"><?=Yii::t("index","slide4_text")?></div>
+                    <div class="swiper-slide__subtitle"><?=Yii::t("index","slide3_subtext")?></div>
                     <a href="" class="goldBtn swiper-slide__goldBtn">Подробнее</a>
                 </div>
             </div>
@@ -55,30 +54,30 @@ use yii\bootstrap4\Html;
     <div class="container slider-main__container">
         <ul class="slider-btns">
             <li class="slider-btns__item" data-slide="1">
-                <strong class="slider-btns__title">IT - Academy</strong>
+                <strong class="slider-btns__title"><?=Yii::t("index","slide1_text")?></strong>
                 <span class="slider-btns__descript">
-                            Отличный старт для успешной карьеры
+                            <?=Yii::t("index","slide1_subtext")?>
                         </span>
                 <span class="slider-btns__blue"></span>
             </li>
             <li class="slider-btns__item" data-slide="2">
-                <strong class="slider-btns__title">Найдите специалиста</strong>
+                <strong class="slider-btns__title"><?=Yii::t("index","slide2_text")?></strong>
                 <span class="slider-btns__descript">
-                            Для внедрения или доработки
+                           <?=Yii::t("index","slide2_subtext")?>
                         </span>
                 <span class="slider-btns__blue"></span>
             </li>
             <li class="slider-btns__item" data-slide="3">
-                <strong class="slider-btns__title">Лучшие IT - решения</strong>
+                <strong class="slider-btns__title"><?=Yii::t("index","slide3_text")?></strong>
                 <span class="slider-btns__descript">
-                            Для развития вашего бизнеса
+                            <?=Yii::t("index","slide3_subtext")?>
                         </span>
                 <span class="slider-btns__blue"></span>
             </li>
             <li class="slider-btns__item" data-slide="4">
-                <strong class="slider-btns__title">Зарабатывайте на том, что умеете</strong>
+                <strong class="slider-btns__title"><?=Yii::t("index","slide4_text")?></strong>
                 <span class="slider-btns__descript">
-                            Разместите своё резюме
+                           <?=Yii::t("index","slide4_subtext")?>
                         </span>
                 <span class="slider-btns__blue"></span>
             </li>
@@ -91,7 +90,7 @@ use yii\bootstrap4\Html;
     <!-- /.slider-text container -->
 
     <div class="popular">
-        <h3 class="h3 title-link"><span>Популярные продукты в нашем сервисе</span> <a href="" class="title-link__all"><span>Посмотреть всех</span> <svg class="title-link__all-icon"><use xlink:href="images/dist/sprite.svg#arrow-next"></use></svg></a></h3>
+        <h3 class="h3 title-link"><span><?=Yii::t("index","popular")?></span> <a href="" class="title-link__all"><span><?=Yii::t("index","see_all")?></span> <svg class="title-link__all-icon"><use xlink:href="images/dist/sprite.svg#arrow-next"></use></svg></a></h3>
         <div class="popular-slider js-popular-slider">
             <div>
                 <div class="box">
@@ -100,9 +99,9 @@ use yii\bootstrap4\Html;
                     </div>
                     <span class="box__logoDesc">1c Бухгалтерия</span>
                     <ul class="box__gray">
-                        <li>Использований: 1231</li>
-                        <li><svg class="like-icon"><use xlink:href="images/dist/sprite.svg#like"></use></svg>Средняя ценка: 94 133</li>
-                        <li><svg class="reviews-icon"><use xlink:href="images/dist/sprite.svg#reviews"></use></svg>Отзывы: 3 123</li>
+                        <li><?=Yii::t("product","uses")?>: 1231</li>
+                        <li><svg class="like-icon"><use xlink:href="images/dist/sprite.svg#like"></use></svg><?=Yii::t("product","average_rate")?>: 94 133</li>
+                        <li><svg class="reviews-icon"><use xlink:href="images/dist/sprite.svg#reviews"></use></svg><?=Yii::t("product","reviews")?>: 3 123</li>
                     </ul>
                 </div>
             </div>
@@ -113,9 +112,9 @@ use yii\bootstrap4\Html;
                     </div>
                     <span class="box__logoDesc">Битрикс 24</span>
                     <ul class="box__gray">
-                        <li>Использований: 1231</li>
-                        <li><svg class="like-icon"><use xlink:href="images/dist/sprite.svg#like"></use></svg>Средняя ценка: 94 133</li>
-                        <li><svg class="reviews-icon"><use xlink:href="images/dist/sprite.svg#reviews"></use></svg>Отзывы: 3 123</li>
+                        <li><?=Yii::t("product","uses")?>: 1231</li>
+                        <li><svg class="like-icon"><use xlink:href="images/dist/sprite.svg#like"></use></svg><?=Yii::t("product","average_rate")?>: 94 133</li>
+                        <li><svg class="reviews-icon"><use xlink:href="images/dist/sprite.svg#reviews"></use></svg><?=Yii::t("product","reviews")?>: 3 123</li>
                     </ul>
                 </div>
             </div>
@@ -126,9 +125,9 @@ use yii\bootstrap4\Html;
                     </div>
                     <span class="box__logoDesc">1c Бухгалтерия</span>
                     <ul class="box__gray">
-                        <li>Использований: 1231</li>
-                        <li><svg class="like-icon"><use xlink:href="images/dist/sprite.svg#like"></use></svg>Средняя ценка: 94 133</li>
-                        <li><svg class="reviews-icon"><use xlink:href="images/dist/sprite.svg#reviews"></use></svg>Отзывы: 3 123</li>
+                        <li><?=Yii::t("product","uses")?>: 1231</li>
+                        <li><svg class="like-icon"><use xlink:href="images/dist/sprite.svg#like"></use></svg><?=Yii::t("product","average_rate")?>: 94 133</li>
+                        <li><svg class="reviews-icon"><use xlink:href="images/dist/sprite.svg#reviews"></use></svg><?=Yii::t("product","reviews")?>: 3 123</li>
                     </ul>
                 </div>
             </div>
@@ -139,9 +138,9 @@ use yii\bootstrap4\Html;
                     </div>
                     <span class="box__logoDesc">Битрикс 24</span>
                     <ul class="box__gray">
-                        <li>Использований: 1231</li>
-                        <li><svg class="like-icon"><use xlink:href="images/dist/sprite.svg#like"></use></svg>Средняя ценка: 94 133</li>
-                        <li><svg class="reviews-icon"><use xlink:href="images/dist/sprite.svg#reviews"></use></svg>Отзывы: 3 123</li>
+                        <li><?=Yii::t("product","uses")?>: 1231</li>
+                        <li><svg class="like-icon"><use xlink:href="images/dist/sprite.svg#like"></use></svg><?=Yii::t("product","average_rate")?>: 94 133</li>
+                        <li><svg class="reviews-icon"><use xlink:href="images/dist/sprite.svg#reviews"></use></svg><?=Yii::t("product","reviews")?>: 3 123</li>
                     </ul>
                 </div>
             </div>
@@ -152,9 +151,9 @@ use yii\bootstrap4\Html;
                     </div>
                     <span class="box__logoDesc">1c Бухгалтерия</span>
                     <ul class="box__gray">
-                        <li>Использований: 1231</li>
-                        <li><svg class="like-icon"><use xlink:href="images/dist/sprite.svg#like"></use></svg>Средняя ценка: 94 133</li>
-                        <li><svg class="reviews-icon"><use xlink:href="images/dist/sprite.svg#reviews"></use></svg>Отзывы: 3 123</li>
+                        <li><?=Yii::t("product","uses")?>: 1231</li>
+                        <li><svg class="like-icon"><use xlink:href="images/dist/sprite.svg#like"></use></svg><?=Yii::t("product","average_rate")?>: 94 133</li>
+                        <li><svg class="reviews-icon"><use xlink:href="images/dist/sprite.svg#reviews"></use></svg><?=Yii::t("product","reviews")?>: 3 123</li>
                     </ul>
                 </div>
             </div>
@@ -165,9 +164,9 @@ use yii\bootstrap4\Html;
                     </div>
                     <span class="box__logoDesc">Битрикс 24</span>
                     <ul class="box__gray">
-                        <li>Использований: 1231</li>
-                        <li><svg class="like-icon"><use xlink:href="images/dist/sprite.svg#like"></use></svg>Средняя ценка: 94 133</li>
-                        <li><svg class="reviews-icon"><use xlink:href="images/dist/sprite.svg#reviews"></use></svg>Отзывы: 3 123</li>
+                        <li><?=Yii::t("product","uses")?>: 1231</li>
+                        <li><svg class="like-icon"><use xlink:href="images/dist/sprite.svg#like"></use></svg><?=Yii::t("product","average_rate")?>: 94 133</li>
+                        <li><svg class="reviews-icon"><use xlink:href="images/dist/sprite.svg#reviews"></use></svg><?=Yii::t("product","reviews")?>: 3 123</li>
                     </ul>
                 </div>
             </div>
@@ -180,23 +179,18 @@ use yii\bootstrap4\Html;
 
     <section class="need">
         <div class="container need__container">
-            <h4 class="h4 need__title">Мне нужен IT продукт, для того что бы:</h4>
+            <h4 class="h4 need__title"><?=Yii::t("index","need_text")?></h4>
             <div class="links">
-                <a href="" class="links__item">Настроить воронку продаж</a>
-                <a href="" class="links__item">Разместить данные в облачном хранилище</a>
-                <a href="" class="links__item">Защитить свои данные</a>
-                <a href="" class="links__item">Отследить качество работы сотрудников</a>
-                <a href="" class="links__item">Автоматизировать бизнес процессы</a>
-                <a href="" class="links__item">Автоматизировать отдел продаж</a>
-                <a href="" class="links__item">Автоматизировать отдел продаж</a>
-                <a href="" class="links__item">Настроить воронку продаж</a>
-                <a href="" class="links__item">Автоматизировать бизнес процессы</a>
-                <a href="" class="links__item">Отследить качество работы сотрудников</a>
-                <a href="" class="links__item">Автоматизировать бизнес процессы</a>
-                <a href="" class="links__item">Автоматизировать отдел продаж</a>
+                <a href="" class="links__item"><?=Yii::t("index","need1")?></a>
+                <a href="" class="links__item"><?=Yii::t("index","need2")?></a>
+                <a href="" class="links__item"><?=Yii::t("index","need3")?></a>
+                <a href="" class="links__item"><?=Yii::t("index","need4")?></a>
+                <a href="" class="links__item"><?=Yii::t("index","need5")?></a>
+                <a href="" class="links__item"><?=Yii::t("index","need6")?></a>
+                <a href="" class="links__item"><?=Yii::t("index","need7")?></a>
             </div>
             <!-- /.links -->
-            <a href="" class="goldBtn need__goldBtn">Найти свой вариант</a>
+            <a href="" class="goldBtn need__goldBtn"><?=Yii::t("index","need_btn")?></a>
         </div>
         <!-- /.container need__container -->
     </section>
@@ -205,7 +199,7 @@ use yii\bootstrap4\Html;
     <!-- /.need -->
 
     <div class="integrator">
-        <h3 class="h3 integrator__title title-link"><span>Лучшие интеграторы</span> <a href="" class="title-link__all"><span>Посмотреть всех</span> <svg class="title-link__all-icon"><use xlink:href="images/dist/sprite.svg#arrow-next"></use></svg></a></h3>
+        <h3 class="h3 integrator__title title-link"><span><?=Yii::t("index","best_integrators")?></span> <a href="" class="title-link__all"><span><?=Yii::t("index","see_all")?></span> <svg class="title-link__all-icon"><use xlink:href="images/dist/sprite.svg#arrow-next"></use></svg></a></h3>
 
         <div class="integrator-slider js-integrator-slider">
             <div>
@@ -213,18 +207,18 @@ use yii\bootstrap4\Html;
                     <img class="box__logo" src="images/dist/it-logo.svg" alt="">
                     <span class="box__logoDesc">IT WORLD LAB</span>
                     <ul class="box__gray">
-                        <li>Использований: 1231</li>
-                        <li><svg class="like-icon"><use xlink:href="images/dist/sprite.svg#like"></use></svg>Средняя ценка: 94 133</li>
-                        <li><svg class="reviews-icon"><use xlink:href="images/dist/sprite.svg#reviews"></use></svg>Отзывы: 3 123</li>
+                        <li><?=Yii::t("product","uses")?>: 1231</li>
+                        <li><svg class="like-icon"><use xlink:href="images/dist/sprite.svg#like"></use></svg><?=Yii::t("product","average_rate")?>: 94 133</li>
+                        <li><svg class="reviews-icon"><use xlink:href="images/dist/sprite.svg#reviews"></use></svg><?=Yii::t("product","reviews")?>: 3 123</li>
                     </ul>
 
-                    <div class="box__name">Интегрируемое ПО: 6</div>
+                    <div class="box__name"><?=Yii::t("product","integrate_soft")?>: 6</div>
                     <ul class="list-po">
                         <li class="list-po__item"><span class="list-po__wrap"><img src="images/dist/bitriks-small.png" alt=""></span>Битрикс24</li>
                         <li class="list-po__item"><span class="list-po__wrap"><img src="images/dist/sap-logo-small.svg" alt=""></span>1с - Бухгалтерия</li>
                         <li class="list-po__item"><span class="list-po__wrap"><img src="images/dist/bitriks-small.png" alt=""></span>SAP</li>
                     </ul>
-                    <a href="" class="box__link">Ещё...</a>
+                    <a href="" class="box__link"><?=Yii::t("index","more")?>...</a>
                 </div>
                 <!-- END box -->
             </div>
@@ -233,18 +227,18 @@ use yii\bootstrap4\Html;
                     <img class="box__logo" src="images/dist/it-world-lab-small.png" alt="">
                     <span class="box__logoDesc">IWL</span>
                     <ul class="box__gray">
-                        <li>Использований: 1231</li>
-                        <li><svg class="like-icon"><use xlink:href="images/dist/sprite.svg#like"></use></svg>Средняя ценка: 94 133</li>
-                        <li><svg class="reviews-icon"><use xlink:href="images/dist/sprite.svg#reviews"></use></svg>Отзывы: 3 123</li>
+                        <li><?=Yii::t("product","uses")?>: 1231</li>
+                        <li><svg class="like-icon"><use xlink:href="images/dist/sprite.svg#like"></use></svg><?=Yii::t("product","average_rate")?>: 94 133</li>
+                        <li><svg class="reviews-icon"><use xlink:href="images/dist/sprite.svg#reviews"></use></svg><?=Yii::t("product","reviews")?>: 3 123</li>
                     </ul>
 
-                    <div class="box__name">Интегрируемое ПО: 6</div>
+                    <div class="box__name"><?=Yii::t("product","integrate_soft")?>: 6</div>
                     <ul class="list-po">
                         <li class="list-po__item"><span class="list-po__wrap"><img src="images/dist/bitriks-small.png" alt=""></span>Битрикс24</li>
                         <li class="list-po__item"><span class="list-po__wrap"><img src="images/dist/sap-logo-small.svg" alt=""></span>1с - Бухгалтерия</li>
                         <li class="list-po__item"><span class="list-po__wrap"><img src="images/dist/bitriks-small.png" alt=""></span>SAP</li>
                     </ul>
-                    <a href="" class="box__link">Ещё...</a>
+                    <a href="" class="box__link"><?=Yii::t("index","more")?>...</a>
                 </div>
                 <!-- END box -->
             </div>
@@ -253,18 +247,18 @@ use yii\bootstrap4\Html;
                     <img class="box__logo" src="images/dist/it-logo.svg" alt="">
                     <span class="box__logoDesc">IT WORLD LAB</span>
                     <ul class="box__gray">
-                        <li>Использований: 1231</li>
-                        <li><svg class="like-icon"><use xlink:href="images/dist/sprite.svg#like"></use></svg>Средняя ценка: 94 133</li>
-                        <li><svg class="reviews-icon"><use xlink:href="images/dist/sprite.svg#reviews"></use></svg>Отзывы: 3 123</li>
+                        <li><?=Yii::t("product","uses")?>: 1231</li>
+                        <li><svg class="like-icon"><use xlink:href="images/dist/sprite.svg#like"></use></svg><?=Yii::t("product","average_rate")?>: 94 133</li>
+                        <li><svg class="reviews-icon"><use xlink:href="images/dist/sprite.svg#reviews"></use></svg><?=Yii::t("product","reviews")?>: 3 123</li>
                     </ul>
 
-                    <div class="box__name">Интегрируемое ПО: 6</div>
+                    <div class="box__name"><?=Yii::t("product","integrate_soft")?>: 6</div>
                     <ul class="list-po">
                         <li class="list-po__item"><span class="list-po__wrap"><img src="images/dist/bitriks-small.png" alt=""></span>Битрикс24</li>
                         <li class="list-po__item"><span class="list-po__wrap"><img src="images/dist/sap-logo-small.svg" alt=""></span>1с - Бухгалтерия</li>
                         <li class="list-po__item"><span class="list-po__wrap"><img src="images/dist/bitriks-small.png" alt=""></span>SAP</li>
                     </ul>
-                    <a href="" class="box__link">Ещё...</a>
+                    <a href="" class="box__link"><?=Yii::t("index","more")?>...</a>
                 </div>
                 <!-- END box -->
             </div>
@@ -273,18 +267,18 @@ use yii\bootstrap4\Html;
                     <img class="box__logo" src="images/dist/it-world-lab-small.png" alt="">
                     <span class="box__logoDesc">IWL</span>
                     <ul class="box__gray">
-                        <li>Использований: 1231</li>
-                        <li><svg class="like-icon"><use xlink:href="images/dist/sprite.svg#like"></use></svg>Средняя ценка: 94 133</li>
-                        <li><svg class="reviews-icon"><use xlink:href="images/dist/sprite.svg#reviews"></use></svg>Отзывы: 3 123</li>
+                        <li><?=Yii::t("product","uses")?>: 1231</li>
+                        <li><svg class="like-icon"><use xlink:href="images/dist/sprite.svg#like"></use></svg><?=Yii::t("product","average_rate")?>: 94 133</li>
+                        <li><svg class="reviews-icon"><use xlink:href="images/dist/sprite.svg#reviews"></use></svg><?=Yii::t("product","reviews")?>: 3 123</li>
                     </ul>
 
-                    <div class="box__name">Интегрируемое ПО: 6</div>
+                    <div class="box__name"><?=Yii::t("product","integrate_soft")?>: 6</div>
                     <ul class="list-po">
                         <li class="list-po__item"><span class="list-po__wrap"><img src="images/dist/bitriks-small.png" alt=""></span>Битрикс24</li>
                         <li class="list-po__item"><span class="list-po__wrap"><img src="images/dist/sap-logo-small.svg" alt=""></span>1с - Бухгалтерия</li>
                         <li class="list-po__item"><span class="list-po__wrap"><img src="images/dist/bitriks-small.png" alt=""></span>SAP</li>
                     </ul>
-                    <a href="" class="box__link">Ещё...</a>
+                    <a href="" class="box__link"><?=Yii::t("index","more")?>...</a>
                 </div>
                 <!-- END box -->
             </div>
@@ -293,18 +287,18 @@ use yii\bootstrap4\Html;
                     <img class="box__logo" src="images/dist/it-logo.svg" alt="">
                     <span class="box__logoDesc">IT WORLD LAB</span>
                     <ul class="box__gray">
-                        <li>Использований: 1231</li>
-                        <li><svg class="like-icon"><use xlink:href="images/dist/sprite.svg#like"></use></svg>Средняя ценка: 94 133</li>
-                        <li><svg class="reviews-icon"><use xlink:href="images/dist/sprite.svg#reviews"></use></svg>Отзывы: 3 123</li>
+                        <li><?=Yii::t("product","uses")?>: 1231</li>
+                        <li><svg class="like-icon"><use xlink:href="images/dist/sprite.svg#like"></use></svg><?=Yii::t("product","average_rate")?>: 94 133</li>
+                        <li><svg class="reviews-icon"><use xlink:href="images/dist/sprite.svg#reviews"></use></svg><?=Yii::t("product","reviews")?>: 3 123</li>
                     </ul>
 
-                    <div class="box__name">Интегрируемое ПО: 6</div>
+                    <div class="box__name"><?=Yii::t("product","integrate_soft")?>: 6</div>
                     <ul class="list-po">
                         <li class="list-po__item"><span class="list-po__wrap"><img src="images/dist/bitriks-small.png" alt=""></span>Битрикс24</li>
                         <li class="list-po__item"><span class="list-po__wrap"><img src="images/dist/sap-logo-small.svg" alt=""></span>1с - Бухгалтерия</li>
                         <li class="list-po__item"><span class="list-po__wrap"><img src="images/dist/bitriks-small.png" alt=""></span>SAP</li>
                     </ul>
-                    <a href="" class="box__link">Ещё...</a>
+                    <a href="" class="box__link"><?=Yii::t("index","more")?>...</a>
                 </div>
                 <!-- END box -->
             </div>
@@ -313,18 +307,18 @@ use yii\bootstrap4\Html;
                     <img class="box__logo" src="images/dist/it-world-lab-small.png" alt="">
                     <span class="box__logoDesc">IWL</span>
                     <ul class="box__gray">
-                        <li>Использований: 1231</li>
-                        <li><svg class="like-icon"><use xlink:href="images/dist/sprite.svg#like"></use></svg>Средняя ценка: 94 133</li>
-                        <li><svg class="reviews-icon"><use xlink:href="images/dist/sprite.svg#reviews"></use></svg>Отзывы: 3 123</li>
+                        <li><?=Yii::t("product","uses")?>: 1231</li>
+                        <li><svg class="like-icon"><use xlink:href="images/dist/sprite.svg#like"></use></svg><?=Yii::t("product","average_rate")?>: 94 133</li>
+                        <li><svg class="reviews-icon"><use xlink:href="images/dist/sprite.svg#reviews"></use></svg><?=Yii::t("product","reviews")?>: 3 123</li>
                     </ul>
 
-                    <div class="box__name">Интегрируемое ПО: 6</div>
+                    <div class="box__name"><?=Yii::t("product","integrate_soft")?>: 6</div>
                     <ul class="list-po">
                         <li class="list-po__item"><span class="list-po__wrap"><img src="images/dist/bitriks-small.png" alt=""></span>Битрикс24</li>
                         <li class="list-po__item"><span class="list-po__wrap"><img src="images/dist/sap-logo-small.svg" alt=""></span>1с - Бухгалтерия</li>
                         <li class="list-po__item"><span class="list-po__wrap"><img src="images/dist/bitriks-small.png" alt=""></span>SAP</li>
                     </ul>
-                    <a href="" class="box__link">Ещё...</a>
+                    <a href="" class="box__link"><?=Yii::t("index","more")?>...</a>
                 </div>
                 <!-- END box -->
             </div>

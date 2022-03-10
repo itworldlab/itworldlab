@@ -167,6 +167,13 @@ AppAsset::register($this);
                     ],
 
                     [
+                        "label" => '<i class="icon-users4"></i> Переводы',
+                        'url' => Url::to(['/lang/index']),
+                        'active' => strpos($_SERVER['REQUEST_URI'],"/lang/index") !== false,
+                        'options' => ['class' => 'nav-item']
+                    ],
+
+                    [
                         "label" => '<i class="icon-users4"></i> Пользователи',
                         'url' => Url::to(['/user/index']),
                         'active' => strpos($_SERVER['REQUEST_URI'],"/user/index") !== false,

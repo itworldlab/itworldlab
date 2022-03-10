@@ -81,10 +81,10 @@ $product_categories = \backend\models\product\ProductCategory::find()->all();
 </div>
 <header class="header">
     <div class="container header__container">
-        <a href="/" class="logo header__logo"><img src="/images/dist/logo.svg" alt=""></a>
+        <a href="<?=\yii\helpers\Url::to(['/'])?>" class="logo header__logo"><img src="/images/dist/logo.svg" alt=""></a>
         <ul class="menu">
             <li class="menu__item">
-                <a href="/product/index" class="menu__link">Продукты <svg class="menu__arrow"><use xlink:href="/images/dist/sprite.svg#arrow-bottom"></use></svg></a>
+                <a href="<?=\yii\helpers\Url::to(['/product/index'])?>" class="menu__link"><?=Yii::t("menu","products")?> <svg class="menu__arrow"><use xlink:href="/images/dist/sprite.svg#arrow-bottom"></use></svg></a>
                 <div class="box-list menu__box-list">
                     <ul class="box-list__top">
                         <?php foreach($product_categories as $category):?>
@@ -100,7 +100,7 @@ $product_categories = \backend\models\product\ProductCategory::find()->all();
                 </div>
             </li>
             <li class="menu__item">
-                <a href="" class="menu__link">Услуги <svg class="menu__arrow"><use xlink:href="/images/dist/sprite.svg#arrow-bottom"></use></svg></a>
+                <a href="" class="menu__link"><?=Yii::t("menu","services")?> <svg class="menu__arrow"><use xlink:href="/images/dist/sprite.svg#arrow-bottom"></use></svg></a>
                 <div class="box-list menu__box-list menu__box-list--posa1">
                     <ul class="box-list__top">
                         <li class="box-list__top-item"><a href="/integrators/index" class="box-list__top-link">
@@ -144,40 +144,41 @@ $product_categories = \backend\models\product\ProductCategory::find()->all();
                                 <span class="box-list__top-text">Онлайн бухгалтерия</span>
                             </a></li>
                     </ul>
-                    <div class="box-list__descript">Здесь будет текст с описанием категории которую вы выбрали...</div>
+                    <div class="box-list__descript">...</div>
                 </div>
             </li>
-            <li class="menu__item"><a href="/integrators/index" class="menu__link">Интеграторы</a></li>
-            <li class="menu__item"><a href="" class="menu__link">Обучение</a></li>
-            <li class="menu__item"><a href="/news/index" class="menu__link">Новости</a></li>
+            <li class="menu__item"><a href="/integrators/index" class="menu__link"><?=Yii::t("menu","integrators")?></a></li>
+            <li class="menu__item"><a href="" class="menu__link"><?=Yii::t("menu","learn")?></a></li>
+            <li class="menu__item"><a href="/news/index" class="menu__link"><?=Yii::t("menu","news")?></a></li>
         </ul>
         <div class="header__right">
             <a class="location header__location" href=""><svg class="location__icon"><use xlink:href="/images/dist/sprite.svg#location"></use></svg></a>
             <a href="" class="search-link header__search-link"><svg class="search-link__icon"><use xlink:href="/images/dist/sprite.svg#loupe"></use></svg></a>
             <ul class="lang header__lang">
                 <li class="lang__choose">
-                    <a class="lang__choose-link" href="">RU <svg class="lang__choose-icon"><use xlink:href="/images/dist/sprite.svg#arrow-bottom"></use></svg></a>
+                    <a class="lang__choose-link" href=""><img src="/images/<?=explode('-',Yii::$app->language)[0]?>.svg" style="width:20px;margin-right: 8px;margin-top: -3px;"/> <?=strtoupper(explode('-',Yii::$app->language)[0])?> <svg class="lang__choose-icon"><use xlink:href="/images/dist/sprite.svg#arrow-bottom"></use></svg></a>
                     <ul class="lang__dropdown">
-                        <li class="lang__dropdown-item"><a href="" class="lang__dropdown-link">KZ</a></li>
-                        <li class="lang__dropdown-item"><a href="" class="lang__dropdown-link">ENG</a></li>
-                        <li class="lang__dropdown-item"><a href="" class="lang__dropdown-link">CH</a></li>
+                        <li class="lang__dropdown-item"><a href="/?_lang=ru" class="lang__dropdown-link"><img src="/images/ru.svg" style="width:20px;"/> RU</a></li>
+                        <li class="lang__dropdown-item"><a href="/?_lang=en" class="lang__dropdown-link"><img src="/images/en.svg" style="width:20px;"/> ENG</a></li>
+                        <li class="lang__dropdown-item"><a href="/?_lang=uae" class="lang__dropdown-link"><img src="/images/ar.svg" style="width:20px;"/> UAE</a></li>
                     </ul>
                 </li>
             </ul>
-            <a href="#" class="blueBtn button">Регистрация / вход</a>
+            <a href="#" class="blueBtn button"><?=Yii::t("app","register")?> / <?=Yii::t("app","login")?></a>
         </div>
         <!-- /.header__right -->
         <a href="" class="header__mobile js-menuBtn"></a>
     </div>
     <!-- /.container header__container -->
     <div class="container header__bottom">
-        <strong>Самый большой</strong> супермаркет IT решений в Казахстане
+        <?=Yii::t("app","head_text");?>
+
     </div>
 </header>
 <ul class="mobileMenu" id="mobileMenu">
     <li class="mobileMenu__item mobileMenu__item-flex">
         <a href="" class="mobileMenu__link">
-            Регистрация / вход <svg class="reg mobileMenu__reg"><use xlink:href="/images/dist/sprite.svg#user"></use></svg>
+            <?=Yii::t("app","register")?> / <?=Yii::t("app","login")?> <svg class="reg mobileMenu__reg"><use xlink:href="/images/dist/sprite.svg#user"></use></svg>
         </a>
     </li>
     <li class="mobileMenu__item">
@@ -285,7 +286,7 @@ $product_categories = \backend\models\product\ProductCategory::find()->all();
 <footer class="footer">
     <div class="container footer__container">
         <nav class="footer__nav">
-            <h5 class="h5 footer__title">Продукты</h5>
+            <h5 class="h5 footer__title"><?=Yii::t("menu","products")?></h5>
             <div class="footer__nav-wrap">
                 <ul class="footer__menu">
                     <li class="footer__menu-item"><a href="" class="footer__menu-link">IaaS</a></li>

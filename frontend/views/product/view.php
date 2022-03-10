@@ -137,6 +137,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         array_push($product_props,$item['prop_id']);
                     }
 
+
                     $i = 0;
                     $col1 = [];
                     $col2 = [];

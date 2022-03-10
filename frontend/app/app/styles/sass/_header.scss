@@ -191,7 +191,7 @@
 }
 
 .lang__dropdown-item, .lang__choose-link {
-    color: #fff;
+    color: #222;
     font-size: 16px;
     font-weight: 500;
 }
@@ -222,7 +222,9 @@
 .lang__dropdown {
     display: none;
     left: 0;
-    padding: 5px 0;
+    background: #064ebe;
+    padding: 6px 4px;
+    width: 88px;
     position: absolute;
 }
 
