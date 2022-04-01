@@ -1,0 +1,137 @@
+.partner {
+    padding-top: 60px;
+}
+
+.partner__subtitle {
+    margin-bottom: 24px;
+}
+
+.partner-row {
+//    border: 1px solid green;
+    border: 1px solid #EFF1F2;
+    box-shadow: 0 1px 2px 0 rgba(22, 33, 54, 0.16);
+    border-radius: 12px;
+    margin-bottom: 12px;
+    padding-bottom: 16px;
+}
+
+.partner-row__header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 16px;
+}
+
+.partner-grid {
+    display: grid;
+}
+
+.partner-grid__column {
+    padding-right: 16px;
+}
+
+.partner-row__name {
+    background: url(../images/dist/caret-big-right.svg) no-repeat right center;
+    color: #1F2025;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 21px;
+    padding-right: 30px;
+}
+
+.partner-row__grid {
+    display: grid;
+    grid-column-gap: 25px;
+    grid-template-columns: 123px 203px 209px 305px 170px 220px;
+}
+
+.partner-grid__logo {
+    @include center();
+    height: 100%;
+}
+
+.partner-grid__title {
+    color: #737373;
+    display: block;
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.partner-row__list>li {
+    color: #737373;
+    font-size: 14px;
+    margin-top: 6px;
+    padding-left: 20px;
+}
+
+.partner-row__list-location {
+    background: url(../images/dist/location-icon.svg) no-repeat left top;
+}
+
+.partner-row__list-open {
+    background: url(../images/dist/Lightbulb-icon.svg) no-repeat left top;
+}
+
+.partner-row__faq-icon {
+    cursor: pointer;
+    display: inline-block;
+    fill: transparent;
+    height: 12px;
+    margin-left: 8px;
+    width: 12px;
+}
+
+.partner-row__text {
+    color: #737373;
+    font-size: 12px;
+    line-height: 1.17;
+}
+
+.goldStar {
+    background: url(../images/dist/star-gold.svg) no-repeat left top;
+    font-size: 14px;
+    padding-left: 20px;
+}
+
+.price {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+    margin-bottom: 8px;
+}
+
+.partner__showBtn {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 1395px) {
+    .partner-row__grid {
+        grid-column-gap: 15px;
+        grid-template-columns: 1fr 1.5fr 1.5fr 2fr 1fr 1.5fr;
+    }
+}
+
+@media (max-width: $media-2) {
+    .partner-row__grid {
+        display: block;
+    }
+    .partner-grid__column {
+        margin-top: 20px;
+        padding-left: 16px;
+    }
+}
+
+@media (max-width: $media-6) {
+    .partner__wrap {
+        display: grid;
+        grid-gap: 16px;
+        grid-template-columns: repeat(3, 244px);
+        overflow-y: auto;
+    }
+    .partner-row__header {
+        flex-direction: column;
+    }
+}

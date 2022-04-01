@@ -1,0 +1,93 @@
+.prices {
+    margin-top: 40px;
+}
+
+.package {
+    display: grid;
+    grid-column-gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 24px;
+    
+    &__item {
+        border: 1px solid #EFF1F2;
+        border-radius: 12px;;
+        box-shadow: 0 1px 2px 0 rgba(22, 33, 54, 0.16);
+        padding-bottom: 24px;
+        padding-left: 12px;
+        padding-right: 12px;
+        padding-top: 24px;
+    }
+
+    &__text {
+        color: #737373;
+        display: block;
+        font-size: 14px;
+        margin-top: 9px;
+    }
+
+    &__price {
+        display: block;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 19px;
+        margin-top: 8px;
+    }
+    
+    &__orangeBtn {
+        margin-top: 13px;
+    }
+    
+    &__list {
+        margin-left: -12px;
+        margin-right: -12px;
+        margin-top: 12px;
+        width: calc(100% + 24px);
+
+        > li {
+            font-size: 14px;
+            line-height: 16px;
+            margin-top: 10px;
+            min-height: 16px;
+            padding-left: 28px;
+            position: relative;
+
+            &.package__list-dot {
+
+                &:before {
+                    background: #1F2025;
+                    border-radius: 50%;
+                    content: '';
+                    height: 8px;
+                    left: 13px;
+                    position: absolute;
+                    top: calc(50% - 4px);
+                    width: 8px;
+                }
+            }
+
+
+
+//            &:first-child {
+//                border-bottom: 1px solid $outline-grey;
+//                border-top: 1px solid $outline-grey;
+//                margin-top: 0;
+//                padding-bottom: 12px;
+//                padding-top: 12px;
+//            }
+        }
+    }
+}
+
+@media (max-width: $media-2) {
+    .package {
+        grid-gap: 20px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 490px) {
+    .package {
+        grid-template-columns: repeat(4, 265px);
+        overflow-x: auto;
+    }
+}

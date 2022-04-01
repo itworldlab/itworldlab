@@ -21,6 +21,7 @@ class AppAsset extends AssetBundle
     ];
     public $js = [
 //        "https://code.jquery.com/jquery-2.2.4.min.js",
+//        'https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js',
         'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js',
         "js/jquery.fancybox.min.js",
         "js/select2.min.js",
@@ -29,7 +30,7 @@ class AppAsset extends AssetBundle
     ];
     public $depends = [
         'yii\web\YiiAsset',
-//        'yii\bootstrap4\BootstrapPluginAsset',
+        'yii\bootstrap4\BootstrapPluginAsset',
     ];
 
     public $jsOptions = [

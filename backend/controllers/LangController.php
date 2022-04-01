@@ -124,6 +124,8 @@ class LangController extends Controller
      */
     public function actionDelete($id)
     {
+        \Yii::$app->session->setFlash("error","Удаление запрещено");
+        return $this->goBack();
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);

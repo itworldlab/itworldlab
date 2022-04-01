@@ -1,24 +1,90 @@
+.swiper {
+    position: relative;
+}
+
+.section-slider {
+    position: relative;
+}
+
 .slider-main {
     overflow: hidden;
     padding-bottom: 20px;
     position: relative;
 }
 
+.slider-main--images {
+    
+    .swiper-slide__img {
+        border-radius: 12px;
+        height: auto;
+    }
+
+}
+
+.slider-main-text {
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    padding-top: 72px;
+    position: absolute;
+    right: 0;
+    top: 0;
+//    width: 100%;
+    z-index: 5;
+}
+
+.slider-main-text__container {
+    position: relative;
+}
+
+.slider-main--textLeft {
+    height: auto;
+    padding-top: 0;
+    
+    .swiper-slide__container {
+        padding-left: 84px;
+        padding-top: 90px;
+        top: auto;
+        transform: none;
+    }
+    
+    .title-1 {
+        margin-left: 0;
+        text-align: left;
+    }
+    
+    .swiper-slide__subtitle {
+        text-align: left;
+    }
+    
+    .swiper-slide__goldBtn {
+        margin-left: 0;
+    }
+}
+
+.slider-main-text__wrapper {
+    height: 100%;
+    
+    .swiper {
+        height: 100%;
+    }
+}
+
 .slider-main__container {
     margin-top: -50px;
     position: relative;
-    z-index: 2;
+    z-index: 6;
 }
 
 .swiper-slide__img {
     display: block;
-//    height: 767px;
-    height: 90vh;
+    height: 690px;
+//    height: 90vh;
     width: 100%;
 }
 
 .slider-main__bg {
-    height: 90vh;
+//    height: 90vh;
     position: absolute;
     right: 0;
     top: 0;
@@ -33,7 +99,7 @@
     &__item {
         background: #FFFFFF;
         border-radius: 12px;
-        box-shadow: 0px 10px 12px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 1px 2px 0 rgba(22, 33, 54, 0.16);
         cursor: pointer;
         padding: 16px;
         position: relative;
@@ -71,21 +137,14 @@
     }
 }
 
+.slider-btns--padding {
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
 @keyframes blue-line {
     from {width: 0;}
     to {width: 179px}
-}
-
-.swiper-slide__container {
-    bottom: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 3;
 }
 
 .title-1 {
@@ -112,9 +171,31 @@
     margin-top: 30px;
 }
 
+.main-img {
+    background: url(../images/dist/main.svg) no-repeat right top / auto 100%;
+    height: 690px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 4;
+}
+
 .slider-main .swiper-slide {
-    position: relative;
-    z-index: 3;
+    overflow: hidden;
+//    position: relative;
+//    z-index: 3;
+    
+//    &:after {
+//        background: url(../images/dist/main.svg) no-repeat right top;
+//        background-size: auto 100%;
+//        bottom: 0;
+//        content: '';
+//        left: 0;
+//        position: absolute;
+//        right: 0;
+//        top: 0;
+//    }
 }
 
 .slider-main .swiper-pagination {
@@ -132,7 +213,22 @@
     opacity: 1;
 }
 
+.swiper-slide__container {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@media (max-width: $media-1) {
+    .main-img {
+        background-position: right -300px top;
+    }
+}
+
 @media (max-width: $media-3) {
+    .main-img {
+        background-position: right -250px top;
+    }
     .slider-btns {
         grid-row-gap: 20px;
         grid-template-columns: repeat(2, 1fr);
@@ -151,6 +247,27 @@
         position: static;
         transform: none;
     }
+    .slider-main--textLeft .swiper-slide__container {
+        padding: 20px;
+    }
+}
+
+@media (max-width: $media-4) {
+    .main-img {
+        background-position: right -300px top;
+    }
+    .slider-main--images .swiper-slide__img {
+        min-height: 265px;
+    }
+}
+
+@media (max-width: $media-5) {
+    .main-img {
+        background-position: right -410px top;
+    }
+    .header__bottom {
+        padding-right: 15px;
+    }
 }
 
 @media (max-width: 430px) {
@@ -163,5 +280,20 @@
         &:last-child {
             margin-bottom: 0;
         }
+    }
+}
+
+@media (max-height: 850px) and (max-width: $media-3) {
+    .main-img {
+        background-position: right -200px top;
+    }
+}
+
+@media (max-height: 850px) and (max-width: $media-4) {
+    .header__bottom {
+        color: #333;
+    }
+    .main-img {
+        background-position: right -500px top;
     }
 }

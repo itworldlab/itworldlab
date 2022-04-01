@@ -23,7 +23,6 @@ use Yii;
  * @property int|null $status
 
  *
- * @property Product $product
  * @property User $user
  */
 class Review extends \yii\db\ActiveRecord
@@ -48,7 +47,6 @@ class Review extends \yii\db\ActiveRecord
             [['product_id', 'user_id'], 'required'],
             [['title'], 'string', 'max' => 100],
             [['plus', 'minus', 'total'], 'string', 'max' => 255],
-            [['product_id'], 'exist', 'skipOnError' => true, 'targetClass' => Product::className(), 'targetAttribute' => ['product_id' => 'id']],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
         ];
     }
@@ -74,16 +72,6 @@ class Review extends \yii\db\ActiveRecord
             'user_id' => Yii::t('app', 'User ID'),
             'status' => Yii::t('app', 'Status'),
         ];
-    }
-
-    /**
-     * Gets query for [[Product]].
-     *
-     * @return \yii\db\ActiveQuery
-     */
-    public function getProduct()
-    {
-        return $this->hasOne(Product::className(), ['id' => 'product_id']);
     }
 
     /**

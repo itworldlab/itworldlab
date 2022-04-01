@@ -2,8 +2,8 @@ let preprocessor = 'sass', // Preprocessor (sass, less, styl); 'sass' also work 
 		fileswatch   = 'html,htm,txt,json,md,woff2' // List of files extensions for watching & hard reload
 
 const { src, dest, parallel, series, watch } = require('gulp')
-//const browserSync  = require('browser-sync').create()
-//const bssi         = require('browsersync-ssi')
+const browserSync  = require('browser-sync').create()
+const bssi         = require('browsersync-ssi')
 const ssi          = require('ssi')
 const webpack      = require('webpack-stream')
 const sass         = require('gulp-sass')
@@ -20,18 +20,18 @@ const newer        = require('gulp-newer')
 const rsync        = require('gulp-rsync')
 const del          = require('del')
 
-// function browsersync() {
-// 	browserSync.init({
-// 		server: {
-// 			baseDir: 'app/',
-// 			middleware: bssi({ baseDir: 'app/', ext: '.html' })
-// 		},
-// 		ghostMode: { clicks: false },
-// 		notify: false,
-// 		online: true,
-// 		// tunnel: 'yousutename', // Attempt to use the URL https://yousutename.loca.lt
-// 	})
-// }
+function browsersync() {
+	browserSync.init({
+		server: {
+			baseDir: 'app/',
+			middleware: bssi({ baseDir: 'app/', ext: '.html' })
+		},
+		ghostMode: { clicks: false },
+		notify: false,
+		online: true,
+		// tunnel: 'yousutename', // Attempt to use the URL https://yousutename.loca.lt
+	})
+}
 
 function scripts() {
 	return src(['app/js/*.js', '!app/js/*.min.js'])
@@ -56,7 +56,7 @@ function scripts() {
 		})
 		.pipe(rename('app.min.js'))
 		.pipe(dest('app/js'))
-		// .pipe(browserSync.stream())
+		.pipe(browserSync.stream())
 }
 
 function styles() {
@@ -66,8 +66,8 @@ function styles() {
 		.pipe(autoprefixer({ overrideBrowserslist: ['last 100 versions'], grid: true }))
 		.pipe(cleancss({ level: { 1: { specialComments: 0 } },/* format: 'beautify' */ }))
 		.pipe(rename({ suffix: ".min" }))
-		.pipe(dest('../web/css'))
-		// .pipe(browserSync.stream())
+		.pipe(dest('app/css'))
+		.pipe(browserSync.stream())
 }
 
 function images() {
@@ -75,7 +75,7 @@ function images() {
 		.pipe(newer('app/images/dist'))
 		.pipe(imagemin())
 		.pipe(dest('app/images/dist'))
-		// .pipe(browserSync.stream())
+		.pipe(browserSync.stream())
 }
 
 function buildcopy() {
@@ -88,6 +88,11 @@ function buildcopy() {
 	.pipe(dest('../web'))
 }
 
+async function buildhtml() {
+	let includes = new ssi('app/', 'dist/', '/**/*.html')
+	includes.compile()
+	del('dist/parts', { force: true })
+}
 
 function cleandist() {
 	return del('dist/**/*', { force: true })
@@ -113,7 +118,7 @@ function startwatch() {
 	watch(`app/styles/${preprocessor}/**/*`, { usePolling: true }, styles)
 	watch(['app/js/**/*.js', '!app/js/**/*.min.js'], { usePolling: true }, scripts)
 	watch('app/images/src/**/*.{jpg,jpeg,png,webp,svg,gif}', { usePolling: true }, images)
-	///watch(`app/**/*.{${fileswatch}}`, { usePolling: true }).on('change', browserSync.reload)
+	watch(`app/**/*.{${fileswatch}}`, { usePolling: true }).on('change', browserSync.reload)
 }
 
 exports.scripts = scripts
@@ -121,5 +126,5 @@ exports.styles  = styles
 exports.images  = images
 exports.deploy  = deploy
 exports.assets  = series(scripts, styles, images)
-exports.build   = series(cleandist, scripts, styles, images, buildcopy)
-exports.default = series(scripts, styles, images, parallel(startwatch))
+exports.build   = series(cleandist, scripts, styles, images, buildcopy, buildhtml)
+exports.default = series(scripts, styles, images, parallel(browsersync, startwatch))

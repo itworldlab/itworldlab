@@ -1,0 +1,36 @@
+.allproducts {
+    padding-bottom: 60px;
+    padding-top: 60px;
+}
+
+.allproducts__grid {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 24px;
+}
+
+.listMenu {
+    margin-top: 24px;
+    
+    > li {
+        color: #737373;
+        font-size: 16px;
+        margin-bottom: 12px;
+        
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    
+    a {
+        color: #737373;
+        line-height: 19px;
+    }
+}
+
+@media (max-width: $media-3) {
+    .allproducts__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

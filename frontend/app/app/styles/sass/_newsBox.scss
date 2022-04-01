@@ -1,0 +1,225 @@
+.newsBox {
+    
+}
+
+.newsBox__grid {
+    display: grid;
+    grid-column-gap: 20px;
+    grid-template-columns: 1fr 432px;
+    margin-top: 24px;
+}
+
+.newsBox__grid-two {
+    display: grid;
+    grid-column-gap: 19px;
+    grid-row-gap: 24px;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 24px;
+}
+
+.newsBox__item-images {
+    position: relative;
+}
+
+.newsBox__item-images__img {
+    border-radius: 12px;
+    display: block;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.05));
+}
+
+.newsBox__item-sidebar {
+    box-shadow: 0 1px 2px 0 rgba(22, 33, 54, 0.16);
+    margin-bottom: 12px;
+    padding: 24px;
+    
+    .newsBox__descript {
+        font-size: 16px;
+        line-height: 19px;
+    }
+    
+    .newsBox__item-label {
+        margin-top: 12px;
+    }
+    
+    .newsBox__title {
+        margin-top: 0;
+    }
+}
+
+.newsBox__item-label {
+    background: rgba(#064EBE, .9);
+    border-radius: 12px;
+    color: #FFFFFF;
+    display: inline-block;
+    font-weight: 500;
+    padding: 12px;
+}
+
+.newsBox__item-images__label {
+    bottom: 24px;
+    left: 24px;
+    position: absolute;
+    z-index: 1;
+}
+
+.newsBox__title {
+    color: #1F2025;
+    margin-top: 12px;
+}
+
+.newsBox__descript {
+    color: #737373;
+    margin-top: 12px;
+}
+
+.hashtags {
+    color: $blue;
+    margin-top: 12px;
+    
+    a {
+        color: $blue;
+        display: inline-block;
+        margin-right: 4px;
+        
+        &:nth-last-child(1) {
+            margin-right: 0;
+        }
+    }
+}
+
+.newsBox__footer {
+    align-items: center;
+    color: #737373;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+}
+
+.newsBox__date {
+    background: url(../images/dist/clock.svg) no-repeat left top;
+    padding: 2px 0 2px 20px;
+}
+
+.newsBox__watch {
+    background: url(../images/dist/Eye.svg) no-repeat left top;
+    padding: 1px 0 0px 20px;
+}
+
+.articleNews {
+    margin-top: 24px;
+}
+
+.articleNews__title {
+    background: url(../images/dist/caret-big-prev.svg) no-repeat left center;
+    font-size: 36px;
+    
+    a {
+        display: block;
+        padding-left: 30px;
+    }
+}
+
+.articleNews__header {
+    align-items: center;
+    color: #737373;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+    max-width: 340px;
+}
+
+.articleNews__grid {
+    display: grid;
+    font-size: 16px;
+    grid-column-gap: 20px;
+    grid-template-columns: 1fr 545px;
+    line-height: 19px;
+    margin-top: 12px;
+}
+
+.articleNews__grid-text {
+    
+    h6 {
+        color: #1F2025;
+        margin-bottom: 12px;
+    }
+    
+    p {
+        margin-bottom: 24px;
+    }
+}
+
+.articleNews__grid-img {
+    
+    img {
+        border-radius: 12px;
+        border: 1px solid #EFF1F2;
+        box-shadow: 0 1px 2px 0 rgba(22, 33, 54, 0.16);
+        display: block;
+    }
+}
+
+.articleNews__img {
+    border: 1px solid #EFF1F2;
+    box-shadow: 0 1px 2px 0 rgba(22, 33, 54, 0.16);
+    border-radius: 12px;
+    display: block;
+    margin-bottom: 44px;
+    margin-top: 45px;
+}
+
+@media (max-width: $media-2) {
+    .newsBox__grid {
+        display: block;
+    }
+    .newsBox__grid-right {
+        display: grid;
+        grid-gap: 19px;
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 24px;
+        
+        .newsBox__item-sidebar {
+            margin-bottom: 0;
+        }
+    }
+}
+
+@media (max-width: $media-3) {
+    .articleNews__grid {
+        display: block;
+    }
+}
+
+@media (max-width: $media-4) {
+    .newsBox__grid-right {
+        display: block;
+    }
+    .newsBox__grid-right {
+        
+        .newsBox__item-sidebar {
+            margin-bottom: 12px;
+        }
+    }
+    
+}
+
+@media (max-width: $media-5) {
+    .newsBox__grid-two {
+        display: block;
+        
+        .newsBox__item {
+            margin-bottom: 12px;
+            
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+@media (max-width: $media-6) {
+    .newsBox__item-images__label {
+        bottom: 0;
+        left: 0;
+    }
+}

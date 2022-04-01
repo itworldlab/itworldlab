@@ -1,0 +1,74 @@
+<div class="filter">
+    <div class="filter__result">6 результатов</div>
+    <button type="button" class="whiteBtn filter__whiteBtn">Очистить фильтры</button>
+    <form class="filter__search" action="#" method="get">
+        <button type="submit" class="filter__search-submit"><svg class="filter__search-icon"><use xlink:href="images/dist/sprite.svg#loupe"></use></svg></button>
+        <input type="text" placeholder="Поиск интегратора по названию" class="filter__search-input" required>
+    </form>
+    <div class="filter__item">
+        <div class="filter__title">Интеграция:</div>
+        <input type="checkbox" class="filter__checkbox" id="check-1">
+        <label for="check-1" class="filter__label"><svg class="filter__svg"><use xlink:href="images/dist/sprite.svg#chart"></use></svg>CRM</label>
+        
+        <input type="checkbox" class="filter__checkbox" id="check-2">
+        <label for="check-2" class="filter__label"><svg class="filter__svg"><use xlink:href="images/dist/sprite.svg#truck-loading"></use></svg>WMS</label>
+        
+        <input type="checkbox" class="filter__checkbox" id="check-3">
+        <label for="check-3" class="filter__label"><svg class="filter__svg"><use xlink:href="images/dist/sprite.svg#bag"></use></svg>BPM</label>
+        
+        <input type="checkbox" class="filter__checkbox" id="check-4">
+        <label for="check-4" class="filter__label"><svg class="filter__svg"><use xlink:href="images/dist/sprite.svg#chart-pie"></use></svg>ERP</label>
+        
+        <input type="checkbox" class="filter__checkbox" id="check-5">
+        <label for="check-5" class="filter__label"><svg class="filter__svg"><use xlink:href="images/dist/sprite.svg#phone"></use></svg>IP - телефония</label>
+        
+        <input type="checkbox" class="filter__checkbox" id="check-6">
+        <label for="check-6" class="filter__label"><svg class="filter__svg"><use xlink:href="images/dist/sprite.svg#invoice"></use></svg>СЭД</label>
+        
+        <input type="checkbox" class="filter__checkbox" id="check-7">
+        <label for="check-7" class="filter__label"><svg class="filter__svg"><use xlink:href="images/dist/sprite.svg#shield"></use></svg>IT Безопасность</label>
+        
+        <input type="checkbox" class="filter__checkbox" id="check-8">
+        <label for="check-8" class="filter__label"><svg class="filter__svg"><use xlink:href="images/dist/sprite.svg#folder-lock"></use></svg>Онлайн бухгалтерия</label>
+    </div>
+    <!-- /.filter__item -->
+    
+    <div class="filter__item">
+        <div class="filter__title">Интегрируемое ПО:</div>
+        <input type="checkbox" class="filter__checkbox" id="check-9">
+        <label for="check-9" class="filter__label"><img src="images/dist/bitrix24.png" alt="" class="filter__label-img">Bitrix 24</label>
+        
+        <input type="checkbox" class="filter__checkbox" id="check-10">
+        <label for="check-10" class="filter__label"><img src="images/dist/1C_Company_logo.jpg" alt="" class="filter__label-img">1С CRM</label>
+        
+        <input type="checkbox" class="filter__checkbox" id="check-11">
+        <label for="check-11" class="filter__label"><img src="images/dist/SAP.png" alt="" class="filter__label-img">SAP</label>
+        
+        <input type="checkbox" class="filter__checkbox" id="check-12">
+        <label for="check-12" class="filter__label"><img src="images/dist/it-logo.png" alt="" class="filter__label-img">1С Бухгалтерия</label>
+        
+        <a href="" class="showAllBtn filter__showAllBtn">Посмотреть все <svg class="showAllBtn__icon"><use xlink:href="images/dist/sprite.svg#caret-big-right"></use></svg></a>
+    </div>
+    <!-- /.filter__item -->
+    
+    <div class="filter__item">
+        <div class="filter__title">Опыт работы:</div>
+        
+        <div class="chooseFilter">
+           <div class="chooseFilter__row">
+               <div class="chooseFilter__row-item">от <input class="chooseFilter__input js-from" value="1" type="text" disabled> года</div>
+               <div class="chooseFilter__row-item">до <input class="chooseFilter__input js-to" value="30" type="text" disabled>лет</div>
+               
+           </div>
+            <input class="js-range-slider" type="text" id="price_select" name="price_select" value="" />
+        </div>
+
+    </div>
+    <!-- /.filter__item -->
+    <div class="filter__item">
+        <div class="filter__title">Локация</div>
+        <a class="location-link" href=""><svg class="location-link__icon"><use xlink:href="images/dist/sprite.svg#location"></use></svg><span>Алматы, Казахстан</span></a>
+    </div>
+    <!-- /.filter__item -->
+</div>
+<!-- /.filter -->

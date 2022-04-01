@@ -1,0 +1,35 @@
+.itworldlab {
+    background: url(../images/dist/itworldlab-bg.png) no-repeat center top;
+    background-size: cover;
+    color: #fff;
+    margin-top: 60px;
+    padding-bottom: 48px;
+    padding-left: 24px;
+    padding-right: 600px;
+    padding-top: 48px;
+    
+    p {
+        margin-bottom: 10px;
+    }
+}
+
+.itworldlab__title {
+    color: #fff;
+    margin-bottom: 24px;
+}
+
+.itworldlab__goldBtn {
+    margin-top: 45px;
+}
+
+@media (max-width: $media-2) {
+    .itworldlab {
+        padding-right: 200px;
+    }
+}
+
+@media (max-width: 530px) {
+    .itworldlab {
+        padding-right: 24px;
+    }
+}

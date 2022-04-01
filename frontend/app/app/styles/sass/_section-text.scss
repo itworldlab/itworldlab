@@ -1,0 +1,35 @@
+.section-text {
+    align-items: center;
+    background: url(../images/dist/section-text-bg.jpg) no-repeat center top;
+    color: #FFFFFF;
+    display: flex;
+    margin-top: 70px;
+    min-height: 447px;
+}
+
+.section-text__container {
+    text-align: right;
+}
+
+.section-text__title {
+    color: #FFFFFF;
+    font-size: 36px;
+    line-height: 42px;
+    text-align: right;
+}
+
+.section-text__descript {
+    margin-top: 24px;
+}
+
+.section-text__goldBtn {
+    margin-left: auto;
+    margin-top: 24px;
+}
+
+@media (max-width: $media-5) {
+    .section-text__title {
+        font-size: 30px;
+        line-height: 36px;
+    }
+}

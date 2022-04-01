@@ -15,6 +15,7 @@ use yii\bootstrap4\ActiveForm;
     <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
     <?= $form->field($model, 'imageFile')->fileInput() ?>
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'link')->textInput(['maxlength' => true]) ?>
     <?php
     echo $form->field($model, 'category_id')->widget(Select2::classname(), [
         'data' => \yii\helpers\ArrayHelper::map(\backend\models\product\ProductCategory::GetAll(),'id','name'),
@@ -24,6 +25,26 @@ use yii\bootstrap4\ActiveForm;
     <?php
     echo $form->field($model, 'cats')->widget(Select2::classname(), [
         'data' => \yii\helpers\ArrayHelper::map(\backend\models\product\ProductCategory::GetAll(),'id','name'),
+        'options' => ['placeholder' => 'Выберите ...'],
+        'pluginOptions' => [
+            'multiple' => true,
+            'allowClear' => true
+        ],
+    ]);
+    ?>
+    <?php
+    echo $form->field($model, 'compatibility')->widget(Select2::classname(), [
+        'data' => \yii\helpers\ArrayHelper::map(\backend\models\product\Product::GetAll(),'id','name'),
+        'options' => ['placeholder' => 'Выберите ...'],
+        'pluginOptions' => [
+            'multiple' => true,
+            'allowClear' => true
+        ],
+    ]);
+    ?>
+    <?php
+    echo $form->field($model, 'analogs')->widget(Select2::classname(), [
+        'data' => \yii\helpers\ArrayHelper::map(\backend\models\product\Product::GetAll(),'id','name'),
         'options' => ['placeholder' => 'Выберите ...'],
         'pluginOptions' => [
             'multiple' => true,

@@ -1,67 +1,190 @@
-<div class="container">
-    <div class="news news--page">
+<div class="container newBox">
+    <div class="newsBox__wrapper">
         <ul class="breadcrumbs">
             <li class="breadcrumbs__item"><a href="/" class="breadcrumbs__link">Главная</a></li>
             <li class="breadcrumbs__item">Новости</li>
         </ul>
 
-        <div class="news__grid">
-            <div class="news__grid-item">
-                <a href="#" class="news__grid-img"></a>
-                <h3 class="h3 news__grid-title">Название новости</h3>
-                <p class="news__grid-text">Описание новости в несколько строк но не привышая 80 символов</p>
-                <a href="" class="news__grid-tag">#ключевые_слова</a>
-                <div class="news__grid-footer">
-                    <span>80 просмотров</span><span>14.12.2021</span>
+        <div class="newsBox__grid">
+            <div class="newsBox__grid-left">
+                <div class="newsBox__item">
+                    <div class="newsBox__item-images">
+                        <img src="/images/dist/news-img-1.jpg" class="newsBox__item-images__img" alt="">
+                        <span class="newsBox__item-label newsBox__item-images__label">Новости IT</span>
+                    </div>
+                    <h6 class="h6 newsBox__title">Название новости в несколько строк но не более 2х</h6>
+                    <p class="newsBox__descript">Описание новости в несколько строк, но не превышая 100 символов, после чего ставиться многоточие ...</p>
+                    <div class="hashtags">
+                        <a href="/news/view">#ключевые_слова</a>
+                        <a href="/news/view">#ключевые</a>
+                        <a href="/news/view">#ключевые_слова</a>
+                    </div>
+                    <div class="newsBox__footer">
+                        <span class="newsBox__date">14.12.2021</span>
+                        <span class="newsBox__watch">80 просмотров</span>
+                    </div>
+                </div>
+                <div class="newsBox__grid-two">
+                    <div class="newsBox__item">
+                        <div class="newsBox__item-images">
+                            <img src="/images/dist/news-img-1.jpg" class="newsBox__item-images__img" alt="">
+                            <span class="newsBox__item-label newsBox__item-images__label">Новости IT</span>
+                        </div>
+                        <h6 class="h6 newsBox__title">Название новости в несколько строк но не более 2х</h6>
+                        <p class="newsBox__descript">Описание новости в несколько строк, но не превышая 100 символов, после чего ставиться многоточие ...</p>
+                        <div class="hashtags">
+                            <a href="/news/view">#ключевые_слова</a>
+                            <a href="/news/view">#ключевые</a>
+                            <a href="/news/view">#ключевые_слова</a>
+                        </div>
+                        <div class="newsBox__footer">
+                            <span class="newsBox__date">14.12.2021</span>
+                            <span class="newsBox__watch">80 просмотров</span>
+                        </div>
+                    </div>
+                    <div class="newsBox__item">
+                        <div class="newsBox__item-images">
+                            <img src="/images/dist/news-img-1.jpg" class="newsBox__item-images__img " alt="">
+                            <span class="newsBox__item-label newsBox__item-images__label">Новости IT</span>
+                        </div>
+                        <h6 class="h6 newsBox__title">Название новости в несколько строк но не более 2х</h6>
+                        <p class="newsBox__descript">Описание новости в несколько строк, но не превышая 100 символов, после чего ставиться многоточие ...</p>
+                        <div class="hashtags">
+                            <a href="/news/view">#ключевые_слова</a>
+                            <a href="/news/view">#ключевые</a>
+                            <a href="/news/view">#ключевые_слова</a>
+                        </div>
+                        <div class="newsBox__footer">
+                            <span class="newsBox__date">14.12.2021</span>
+                            <span class="newsBox__watch">80 просмотров</span>
+                        </div>
+                    </div>
+                    <div class="newsBox__item">
+                        <div class="newsBox__item-images">
+                            <img src="/images/dist/news-img-1.jpg" class="newsBox__item-images__img" alt="">
+                            <span class="newsBox__item-label newsBox__item-images__label">Новости IT</span>
+                        </div>
+                        <h6 class="h6 newsBox__title">Название новости в несколько строк но не более 2х</h6>
+                        <p class="newsBox__descript">Описание новости в несколько строк, но не превышая 100 символов, после чего ставиться многоточие ...</p>
+                        <div class="hashtags">
+                            <a href="/news/view">#ключевые_слова</a>
+                            <a href="/news/view">#ключевые</a>
+                            <a href="/news/view">#ключевые_слова</a>
+                        </div>
+                        <div class="newsBox__footer">
+                            <span class="newsBox__date">14.12.2021</span>
+                            <span class="newsBox__watch">80 просмотров</span>
+                        </div>
+                    </div>
+                    <div class="newsBox__item">
+                        <div class="newsBox__item-images">
+                            <img src="/images/dist/news-img-1.jpg" class="newsBox__item-images__img" alt="">
+                            <span class="newsBox__item-label newsBox__item-images__label">Новости IT</span>
+                        </div>
+                        <h6 class="h6 newsBox__title">Название новости в несколько строк но не более 2х</h6>
+                        <p class="newsBox__descript">Описание новости в несколько строк, но не превышая 100 символов, после чего ставиться многоточие ...</p>
+                        <div class="hashtags">
+                            <a href="/news/view">#ключевые_слова</a>
+                            <a href="/news/view">#ключевые</a>
+                            <a href="/news/view">#ключевые_слова</a>
+                        </div>
+                        <div class="newsBox__footer">
+                            <span class="newsBox__date">14.12.2021</span>
+                            <span class="newsBox__watch">80 просмотров</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.newsBox__grid-two -->
+            </div>
+            <!-- /.newsBox__grid-left -->
+            <div class="newsBox__grid-right">
+                <div class="newsBox__item newsBox__item-sidebar">
+                    <h6 class="h6 newsBox__title">Название новости</h6>
+                    <p class="newsBox__descript">Описание новости в несколько строк, но не превышая 100 символов, после чего ставиться многоточие ...</p>
+                    <span class="newsBox__item-label">Новости IT</span>
+                    <div class="hashtags">
+                        <a href="/news/view">#ключевые_слова</a>
+                        <a href="/news/view">#ключевые</a>
+                        <a href="/news/view">#ключевые_слова</a>
+                    </div>
+                    <div class="newsBox__footer">
+                        <span class="newsBox__date">14.12.2021</span>
+                        <span class="newsBox__watch">80 просмотров</span>
+                    </div>
+                </div>
+                <div class="newsBox__item newsBox__item-sidebar">
+                    <h6 class="h6 newsBox__title">Название новости</h6>
+                    <p class="newsBox__descript">Описание новости в несколько строк, но не превышая 100 символов, после чего ставиться многоточие ...</p>
+                    <span class="newsBox__item-label">Новости IT</span>
+                    <div class="hashtags">
+                        <a href="/news/view">#ключевые_слова</a>
+                        <a href="/news/view">#ключевые</a>
+                        <a href="/news/view">#ключевые_слова</a>
+                    </div>
+                    <div class="newsBox__footer">
+                        <span class="newsBox__date">14.12.2021</span>
+                        <span class="newsBox__watch">80 просмотров</span>
+                    </div>
+                </div>
+                <div class="newsBox__item newsBox__item-sidebar">
+                    <h6 class="h6 newsBox__title">Название новости</h6>
+                    <p class="newsBox__descript">Описание новости в несколько строк, но не превышая 100 символов, после чего ставиться многоточие ...</p>
+                    <span class="newsBox__item-label">Новости IT</span>
+                    <div class="hashtags">
+                        <a href="/news/view">#ключевые_слова</a>
+                        <a href="/news/view">#ключевые</a>
+                        <a href="/news/view">#ключевые_слова</a>
+                    </div>
+                    <div class="newsBox__footer">
+                        <span class="newsBox__date">14.12.2021</span>
+                        <span class="newsBox__watch">80 просмотров</span>
+                    </div>
+                </div>
+                <div class="newsBox__item newsBox__item-sidebar">
+                    <h6 class="h6 newsBox__title">Название новости</h6>
+                    <p class="newsBox__descript">Описание новости в несколько строк, но не превышая 100 символов, после чего ставиться многоточие ...</p>
+                    <span class="newsBox__item-label">Новости IT</span>
+                    <div class="hashtags">
+                        <a href="/news/view">#ключевые_слова</a>
+                        <a href="/news/view">#ключевые</a>
+                        <a href="/news/view">#ключевые_слова</a>
+                    </div>
+                    <div class="newsBox__footer">
+                        <span class="newsBox__date">14.12.2021</span>
+                        <span class="newsBox__watch">80 просмотров</span>
+                    </div>
+                </div>
+                <div class="newsBox__item newsBox__item-sidebar">
+                    <h6 class="h6 newsBox__title">Название новости</h6>
+                    <p class="newsBox__descript">Описание новости в несколько строк, но не превышая 100 символов, после чего ставиться многоточие ...</p>
+                    <span class="newsBox__item-label">Новости IT</span>
+                    <div class="hashtags">
+                        <a href="/news/view">#ключевые_слова</a>
+                        <a href="/news/view">#ключевые</a>
+                        <a href="/news/view">#ключевые_слова</a>
+                    </div>
+                    <div class="newsBox__footer">
+                        <span class="newsBox__date">14.12.2021</span>
+                        <span class="newsBox__watch">80 просмотров</span>
+                    </div>
+                </div>
+                <div class="newsBox__item newsBox__item-sidebar">
+                    <h6 class="h6 newsBox__title">Название новости</h6>
+                    <p class="newsBox__descript">Описание новости в несколько строк, но не превышая 100 символов, после чего ставиться многоточие ...</p>
+                    <span class="newsBox__item-label">Новости IT</span>
+                    <div class="hashtags">
+                        <a href="/news/view">#ключевые_слова</a>
+                        <a href="/news/view">#ключевые</a>
+                        <a href="/news/view">#ключевые_слова</a>
+                    </div>
+                    <div class="newsBox__footer">
+                        <span class="newsBox__date">14.12.2021</span>
+                        <span class="newsBox__watch">80 просмотров</span>
+                    </div>
                 </div>
             </div>
-            <div class="news__grid-item">
-                <a href="#" class="news__grid-img"></a>
-                <h3 class="h3 news__grid-title">Название новости</h3>
-                <p class="news__grid-text">Описание новости в несколько строк но не привышая 80 символов</p>
-                <a href="" class="news__grid-tag">#ключевые_слова</a>
-                <div class="news__grid-footer">
-                    <span>80 просмотров</span><span>14.12.2021</span>
-                </div>
-            </div>
-            <div class="news__grid-item">
-                <a href="#" class="news__grid-img"></a>
-                <h3 class="h3 news__grid-title">Название новости</h3>
-                <p class="news__grid-text">Описание новости в несколько строк но не привышая 80 символов</p>
-                <a href="" class="news__grid-tag">#ключевые_слова</a>
-                <div class="news__grid-footer">
-                    <span>80 просмотров</span><span>14.12.2021</span>
-                </div>
-            </div>
-            <div class="news__grid-item">
-                <a href="#" class="news__grid-img"></a>
-                <h3 class="h3 news__grid-title">Название новости</h3>
-                <p class="news__grid-text">Описание новости в несколько строк но не привышая 80 символов</p>
-                <a href="" class="news__grid-tag">#ключевые_слова</a>
-                <div class="news__grid-footer">
-                    <span>80 просмотров</span><span>14.12.2021</span>
-                </div>
-            </div>
-            <div class="news__grid-item">
-                <a href="#" class="news__grid-img"></a>
-                <h3 class="h3 news__grid-title">Название новости</h3>
-                <p class="news__grid-text">Описание новости в несколько строк но не привышая 80 символов</p>
-                <a href="" class="news__grid-tag">#ключевые_слова</a>
-                <div class="news__grid-footer">
-                    <span>80 просмотров</span><span>14.12.2021</span>
-                </div>
-            </div>
-            <div class="news__grid-item">
-                <a href="#" class="news__grid-img"></a>
-                <h3 class="h3 news__grid-title">Название новости</h3>
-                <p class="news__grid-text">Описание новости в несколько строк но не привышая 80 символов</p>
-                <a href="" class="news__grid-tag">#ключевые_слова</a>
-                <div class="news__grid-footer">
-                    <span>80 просмотров</span><span>14.12.2021</span>
-                </div>
-            </div>
+            <!-- /.newsBox__grid-right -->
         </div>
-        <!-- /.news__grid -->
     </div>
-    <!-- /.newsPage -->
+    <!-- /.newsBox__wrapper -->
 </div>

@@ -57,6 +57,7 @@ if(isset($_GET['category_id']))
                 'format' => 'raw'
             ],
             'type',
+            'category_id',
 //            'install_count',
 //            'logo',
 //            'rate_average',

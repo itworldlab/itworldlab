@@ -118,7 +118,7 @@ class ProductController extends Controller
                     Yii::$app->session->setFlash("error",Html::errorSummary($model));
                 }
             }
-            if($model->save() && $model->SetCats()){
+            if($model->save() && $model->SetCats() && $model->SetComp() && $model->SetAnalogs()){
                 Yii::$app->session->setFlash("success","Сохранено");
                 return $this->redirect('index');
             }else{
@@ -150,7 +150,7 @@ class ProductController extends Controller
                     Yii::$app->session->setFlash("error",Html::errorSummary($model));
                 }
             }
-            if($model->save() && $model->SetCats()){
+            if($model->save() && $model->SetCats() && $model->SetComp() && $model->SetAnalogs()){
                 Yii::$app->session->setFlash("success","Сохранено");
                 return $this->redirect('index');
             }else{

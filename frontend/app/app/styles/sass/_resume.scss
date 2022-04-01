@@ -1,44 +1,37 @@
 .resume {
-    background: #E9F3FF;
-    padding-top: 13px;
+    background: url(../images/dist/resume-bg.jpg) no-repeat center top;
+    color: #FFFFFF;
+    height: 447px;
+    margin-top: 60px;
+    text-align: right;
 }
 
 .resume__container {
-    align-items: center;
+    align-items: flex-end;
     display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
 }
 
-.resume__subtitle {
+.resume__title {
+    color: #FFFFFF;
+    font-size: 36px;
+    line-height: 1.17;
+}
+
+.resume__descript {
     font-size: 16px;
     line-height: 22px;
-    margin-top: 19px;
+    margin-top: 15px;
 }
 
-.resume__btn {
-    margin-top: 20px;
+.resume__goldBtn {
+    margin-top: 24px;
 }
 
-@media (max-width: $media-3) {
-    .resume {
-        padding-top: 24px;
-    }
-    .resume__container {
-        flex-direction: column-reverse;
-    }
-    .resume__subtitle {
-        text-align: center;
-    }
-    .resume__text {
-        margin-bottom: 25px;
-        text-align: center;
-    }
-}
-
-@media (max-width: $media-5) {
-    .resume__subtitle {
-        margin-top: 8px;
-    }
-    .resume__btn {
-        min-width: 192px;
+@media (max-width: $media-6) {
+    .resume__title {
+        font-size: 30px;
     }
 }

@@ -4,31 +4,31 @@ if(isset($_GET['category_id'])){
     $cat = ['/product/view','id'=>$model->id,'category_id'=>$_GET['category_id']];
 }
 ?>
-<div class="catalog__table-row">
-    <div class="catalog__table-logo">
-        <img src="/uploads/<?=$model->logo?>" alt="" style="max-width:150px;">
-        <span class="price catalog__table-mobile">от 250 000 Т* <svg class="price__faq"><use xlink:href="images/dist/sprite.svg#faq"></use></svg></span>
+<div class="partner-row">
+    <div class="partner-row__header">
+        <a class="partner-row__name" href="<?=\yii\helpers\Url::to($cat)?>"><?=$model->name?></a>
+        <a href="" class="product__header-compare compareBtn"><img src="/images/dist/Exchange.svg" alt="">Добавить в сравнение</a>
     </div>
 
-    <div class="catalog__table-descript">
-        <strong class="h3 catalog__table-name"><?=$model->name?></strong>
-        <p class="catalog__table-text"><?=$model->short_descr?></p>
-    </div>
-    <div class="catalog__table-raiting">
-        <ul class="stars">
-            <li class="stars__item"><a href="" class="stars__link"><svg class="stars__icon"><use xlink:href="images/dist/sprite.svg#star"></use></svg></a></li>
-            <li class="stars__item"><a href="" class="stars__link"><svg class="stars__icon"><use xlink:href="images/dist/sprite.svg#star"></use></svg></a></li>
-            <li class="stars__item"><a href="" class="stars__link"><svg class="stars__icon"><use xlink:href="images/dist/sprite.svg#star"></use></svg></a></li>
-            <li class="stars__item"><a href="" class="stars__link"><svg class="stars__icon"><use xlink:href="images/dist/sprite.svg#star"></use></svg></a></li>
-            <li class="stars__item"><a href="" class="stars__link"><svg class="stars__icon stars__icon--black"><use xlink:href="images/dist/sprite.svg#star-black"></use></svg></a></li>
-        </ul>
-        <ul class="box__gray">
-            <li><svg class="like-icon"><use xlink:href="images/dist/sprite.svg#like"></use></svg>Средняя ценка: 94 133</li>
-            <li><svg class="reviews-icon"><use xlink:href="images/dist/sprite.svg#reviews"></use></svg>Отзывы: 3 123</li>
-        </ul>
-    </div>
-    <div class="catalog__table-price">
-        <span class="price catalog__table-hiddenMobile">от 250 000 Т*</span>
-        <a href="<?=\yii\helpers\Url::to($cat)?>" class="compare catalog__table-compare">Подробнее <svg class="compare__icon"><use xlink:href="images/dist/sprite.svg#exchange"></use></svg></a>
+    <div class="partner-row__grid partner-row__grid-five" style="padding-left:20px;">
+        <a href="<?=\yii\helpers\Url::to($cat)?>" class="partner-grid__logo"><img src="/uploads/<?=$model->logo?>" alt=""></a>
+        <div class="partner-grid__column">
+            <span class="partner-grid__title">Локация и опыт:</span>
+            <ul class="partner-row__list">
+                <li class="partner-row__list-location">Офис в: Алматы <svg class="partner-row__faq-icon"><use xlink:href="images/dist/sprite.svg#faq"></use></svg></li>
+                <li class="partner-row__list-open">Открыты с: 2008 г.</li>
+            </ul>
+        </div>
+        <div class="partner-grid__column">
+            <?=mb_substr($model->short_descr,0,100)?>
+        </div>
+        <div class="partner-grid__column">
+            <span class="partner-grid__title">Цена:</span>
+            <span class="price">от 250 000 Т* <svg class="partner-row__faq-icon"><use xlink:href="images/dist/sprite.svg#faq"></use></svg></span>
+            <p class="partner-row__text">Конечную цену узнавайте у интеграторов или вендеров</p>
+        </div>
+        <div class="partner-grid__column">
+            <a href="<?=\yii\helpers\Url::to($cat)?>" class="product__header-compare compareBtn"><img src="/images/dist/sed.svg" alt="">Подробнее</a>
+        </div>
     </div>
 </div>

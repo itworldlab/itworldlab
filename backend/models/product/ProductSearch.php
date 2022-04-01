@@ -17,9 +17,9 @@ class ProductSearch extends Product
     public function rules()
     {
         return [
-            [['id', 'install_count', 'rate_count', 'admin_id', 'status'], 'integer'],
+            [['id', 'install_count', 'rate_count', 'admin_id', 'status', 'category_id'], 'integer'],
             [['rating', 'rate_average', 'rate_boon', 'rate_func', 'rate_support', 'rate_price'], 'number'],
-//            [['logo'], 'safe'],
+            [['name','short_descr','descr'], 'string'],
         ];
     }
 
@@ -41,9 +41,7 @@ class ProductSearch extends Product
      */
     public function search($params)
     {
-        $query = Product::find();
-
-        // add conditions that should always apply here
+        $query = Product::find()->joinWith(["product_lang","product_lang"]);
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -60,6 +58,7 @@ class ProductSearch extends Product
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
+            'category_id' => $this->category_id,
             'rating' => $this->rating,
             'install_count' => $this->install_count,
             'rate_average' => $this->rate_average,
@@ -72,7 +71,9 @@ class ProductSearch extends Product
             'status' => $this->status,
         ]);
 
-        $query->andFilterWhere(['like', 'logo', $this->logo]);
+        $query->andFilterWhere(['like', 'product_lang.name', (string)$this->name]);
+        $query->andFilterWhere(['like', 'product_lang.short_descr', (string)$this->short_descr]);
+        $query->andFilterWhere(['like', 'product_lang.descr', (string)$this->descr]);
 
         return $dataProvider;
     }

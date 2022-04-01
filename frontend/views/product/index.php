@@ -19,72 +19,63 @@ $cats = \backend\models\product\ProductCategory::find()->all();
 
 ?>
 <div class="container">
-    <div class="catalog">
-        <?php
-        $form = \yii\bootstrap4\ActiveForm::begin();
-        ?>
-        <div class="select-filtr">
-            <div class="selectBox">
-                <span class="selectBox__name">Категория</span>
-                <select class="js-select-placeholder">
-                    <option></option>
-                    <?php foreach($cats as $cat){
-                        echo "<option value='".$cat->id."'>".$cat->name."</option>";
-                    }
-                    ?>
-                </select>
+    <div class="catalog-services">
+        <div class="filter">
+            <div class="filter__result">6 результатов</div>
+            <button type="button" class="whiteBtn filter__whiteBtn">Очистить фильтры</button>
+            <form class="filter__search" action="#" method="get">
+                <button type="submit" class="filter__search-submit"><svg class="filter__search-icon"><use xlink:href="/images/dist/sprite.svg#loupe"></use></svg></button>
+                <input type="text" placeholder="Поиск продукта по названию" class="filter__search-input" required>
+            </form>
+            <div class="filter__item">
+                <div class="filter__title">Интеграция:</div>
+                <?php foreach($cats as $cat):?>
+                    <input type="checkbox" class="filter__checkbox" id="cat<?=$cat->id?>">
+                    <label for="cat<?=$cat->id?>" class="filter__label"><svg class="filter__svg"><use xlink:href="/uploads/<?=$cat->icon?>"></use></svg><?=$cat->name?></label>
+                <?php endforeach;?>
             </div>
-            <div class="selectBox">
-                <span class="selectBox__name"><?=$plat->name?></span>
-                <select class="js-select-placeholder">
-                    <option></option>
-                    <?php foreach($plat->props as $prop){
-                      echo "<option value='".$prop->id."'>".$prop->name."</option>";
-                    }
-                    ?>
-                </select>
-            </div>
+            <!-- /.filter__item -->
 
-            <div class="selectBox">
-                <span class="selectBox__name"><?=$company_type->name?></span>
-                <select class="js-select-placeholder">
-                    <option></option>
-                    <?php foreach($company_type->props as $prop){
-                        echo "<option value='".$prop->id."'>".$prop->name."</option>";
-                    }
-                    ?>
-                </select>
+            <div class="filter__item">
+                <div class="filter__title">Интегрируемое ПО:</div>
+                <input type="checkbox" class="filter__checkbox" id="check-9">
+                <label for="check-9" class="filter__label"><img src="/images/dist/bitrix24.png" alt="" class="filter__label-img">Bitrix 24</label>
+
+                <input type="checkbox" class="filter__checkbox" id="check-10">
+                <label for="check-10" class="filter__label"><img src="/images/dist/1C_Company_logo.jpg" alt="" class="filter__label-img">1С CRM</label>
+
+                <input type="checkbox" class="filter__checkbox" id="check-11">
+                <label for="check-11" class="filter__label"><img src="/images/dist/SAP.png" alt="" class="filter__label-img">SAP</label>
+
+                <input type="checkbox" class="filter__checkbox" id="check-12">
+                <label for="check-12" class="filter__label"><img src="/images/dist/it-logo.png" alt="" class="filter__label-img">1С Бухгалтерия</label>
+
+                <a href="" class="showAllBtn filter__showAllBtn">Посмотреть все <svg class="showAllBtn__icon"><use xlink:href="/images/dist/sprite.svg#caret-big-right"></use></svg></a>
             </div>
-            <div class="selectBox">
-                <span class="selectBox__name"><?=$pay_type->name?></span>
-                <select class="js-select-placeholder">
-                    <option></option>
-                    <?php foreach($pay_type->props as $prop){
-                        echo "<option value='".$prop->id."'>".$prop->name."</option>";
-                    }
-                    ?>
-                </select>
+            <!-- /.filter__item -->
+
+            <div class="filter__item">
+                <div class="filter__title">Опыт работы:</div>
+
+                <div class="chooseFilter">
+                    <div class="chooseFilter__row">
+                        <div class="chooseFilter__row-item">от <input class="chooseFilter__input js-from" value="1" type="text" disabled> года</div>
+                        <div class="chooseFilter__row-item">до <input class="chooseFilter__input js-to" value="30" type="text" disabled>лет</div>
+
+                    </div>
+                    <input class="js-range-slider" type="text" id="price_select" name="price_select" value="" />
+                </div>
+
             </div>
-            <div class="selectBox">
-                <span class="selectBox__name"><?=$deploy->name?></span>
-                <select class="js-select-placeholder">
-                    <option></option>
-                    <?php foreach($deploy->props as $prop){
-                        echo "<option value='".$prop->id."'>".$prop->name."</option>";
-                    }
-                    ?>
-                </select>
+            <!-- /.filter__item -->
+            <div class="filter__item">
+                <div class="filter__title">Локация</div>
+                <a class="location-link" href=""><svg class="location-link__icon"><use xlink:href="/images/dist/sprite.svg#location"></use></svg><span>Алматы, Казахстан</span></a>
             </div>
+            <!-- /.filter__item -->
         </div>
-        <?php \yii\bootstrap4\ActiveForm::end()?>
-
-        <div class="catalog__table">
-            <div class="catalog__table-header">
-                <span>Результатов:&nbsp; <span class="text-muted"><?=$productsDataProvider->count?></span> </span>
-                <span>Наименование <svg class="catalog__table-icon"><use xlink:href="/images/dist/sprite.svg#sort"></use></svg></span>
-                <span>Рейтинг <svg class="catalog__table-icon"><use xlink:href="/images/dist/sprite.svg#sort"></use></svg></span>
-            </div>
-            <!-- /.catalog__table-header -->
+        <!-- /.filter -->
+        <div class="catalog-services__content">
             <?php
             echo \yii\widgets\ListView::widget([
                 'dataProvider' => $productsDataProvider,
@@ -93,12 +84,8 @@ $cats = \backend\models\product\ProductCategory::find()->all();
             ]);
             ?>
         </div>
-        <!-- /.catalog__table -->
+        <!-- /.catalog-services__content -->
     </div>
-    <!-- /.catalog -->
+    <!-- /.catalog-services -->
+
 </div>
-<script>
-    document.addEventListener("DOMContentLoaded",function(){
-       // $(".select2-selection__clear").hide();
-    });
-</script>

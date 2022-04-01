@@ -18,6 +18,12 @@ return [
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
         'assetManager' => [
+            'bundles' => [
+                'yii\bootstrap\BootstrapPluginAsset' => [
+                    'css' => [],
+                ],
+
+            ],
             /*'bundles' => [
                 'yii\web\JqueryAsset' => [
                     'js'=>[]

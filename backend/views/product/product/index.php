@@ -26,10 +26,27 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
+        'layout' => "{summary}\n{pager}\n{items}\n{pager}",
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+            'id',
+//            ['class' => 'yii\grid\SerialColumn'],
+            [
+                'format' => 'raw',
+                'attribute' => 'category_id',
+                'filter' => \yii\helpers\ArrayHelper::map(\backend\models\product\ProductCategory::GetAll(),'id','name'),
+                'value' => function($data){
+                    if(!empty($data->category)){
+                        $ret = "";
+                        if($data->link != null){
+                            $ret = "1_|||";
+                        }
+                        $ret .= $data->category->name;
+                        return $ret;
+                    }
+                    return "";
+                }
+            ],
 
-//            'id',
             [
                 'class' => 'lav45\translate\grid\ActionColumn',
                 'languages' => Lang::getList(),
@@ -37,6 +54,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             'name',
             'short_descr',
+//            'descr',
             [
                 'attribute' => 'logo',
                 'value' => function($data){

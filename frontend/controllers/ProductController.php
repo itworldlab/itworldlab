@@ -2,6 +2,8 @@
 
 namespace frontend\controllers;
 
+use backend\models\product\ProductAnalog;
+use backend\models\product\ProductCompatibility;
 use backend\models\product\PropType;
 use frontend\models\product\Product;
 use frontend\models\product\ProductSearch;
@@ -43,11 +45,22 @@ class ProductController extends Controller
     public function actionView($id){
         $model = $this->findModel($id);
 
-        $prop_types = PropType::find()->asArray(true)->all();
+        $prop_types = PropType::find()->asArray(true);
+
+        if(!isset($_GET['category_id'])){
+            $prop_types = $prop_types->where(['category_id'=>\Yii::$app->request->get("category_id")]);
+        }else{
+            $prop_types = $prop_types->where(['category_id'=>0]);
+        }
+
+        $compatibility = ProductCompatibility::find()->where(['product_id'=>$model->id])->all();
+        $analogs = ProductAnalog::find()->where(['product_id'=>$model->id])->all();
 
         return $this->render("view",[
             'model' => $model,
-            'prop_types' => $prop_types
+            'prop_types' => $prop_types->all(),
+            'compatibility' => $compatibility,
+            'analogs' => $analogs
         ]);
     }
 

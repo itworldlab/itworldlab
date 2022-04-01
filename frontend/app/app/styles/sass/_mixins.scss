@@ -132,12 +132,6 @@
     }
 }
 
-@mixin btnCenter() {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-}
-
 @mixin center() {
     align-items: center;
     display: flex;
