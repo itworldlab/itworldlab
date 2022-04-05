@@ -17,7 +17,7 @@ class PostSearch extends Post
     public function rules()
     {
         return [
-            [['id', 'views', 'created_at', 'created_id', 'updated_at', 'updated_id', 'status', 'category_id', 'region_id'], 'integer'],
+            [['id', 'views', 'created_at', 'created_id', 'updated_at', 'updated_id', 'status', 'category_id'], 'integer'],
             [['image'], 'safe'],
         ];
     }
@@ -66,7 +66,7 @@ class PostSearch extends Post
             'updated_id' => $this->updated_id,
             'status' => $this->status,
             'category_id' => $this->category_id,
-            'region_id' => $this->region_id,
+//            'region_id' => $this->region_id,
         ]);
 
         $query->andFilterWhere(['like', 'image', $this->image]);

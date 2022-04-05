@@ -16,7 +16,6 @@ use yii\bootstrap4\Html;
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
                 <?php foreach($slides as $slide):?>
-                <!-- Slides -->
                 <div class="swiper-slide">
                     <picture>
                         <source srcset="/uploads/<?=$slide->image?>" media="(max-width: 576px)">
@@ -25,9 +24,7 @@ use yii\bootstrap4\Html;
                 </div>
                 <?php endforeach?>
             </div>
-            <!-- If we need pagination -->
             <div class="swiper-pagination"></div>
-            <!-- If we need navigation buttons -->
             <div class="swiper-button-prev"><svg class="swiper-button-prev__svg"><use xlink:href="/images/dist/sprite.svg#caret-big-left"></use></svg></div>
             <div class="swiper-button-next"><svg class="swiper-button-prev__svg"><use xlink:href="/images/dist/sprite.svg#caret-big-right"></use></svg></div>
         </div>

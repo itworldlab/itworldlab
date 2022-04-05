@@ -200,6 +200,18 @@ AppAsset::register($this);
                         'active' => strpos($_SERVER['REQUEST_URI'],"/company/company/index") !== false,
                         'options' => ['class' => 'nav-item']
                     ],
+                    [
+                        "label" => '<i class="icon-newspaper"></i> Новости',
+                        'url' => Url::to(['/post/index']),
+                        'active' => strpos($_SERVER['REQUEST_URI'],"/post/index") !== false,
+                        'options' => ['class' => 'nav-item']
+                    ],
+                    [
+                        "label" => '<i class="icon-list"></i> Слайдер',
+                        'url' => Url::to(['/main-slide/index']),
+                        'active' => strpos($_SERVER['REQUEST_URI'],"/main-slide/index") !== false,
+                        'options' => ['class' => 'nav-item']
+                    ],
                 ];
 
                 if(Yii::$app->user->identity['cat'] == 1){

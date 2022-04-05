@@ -7,6 +7,7 @@ use Yii;
 use yii\bootstrap4\Html;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
+use yii\web\ForbiddenHttpException;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
@@ -117,8 +118,23 @@ class MainSlideController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($model->load(Yii::$app->request->post())) {
+            $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
+            if($model->validate()){
+                if (!$model->upload()) {
+                    Yii::$app->session->setFlash("error",Html::errorSummary($model));
+                }
+            }
+            if($model->save()){
+                Yii::$app->session->setFlash("success","Сохранено");
+//                return $this->redirect(['create','prop_type_id'=>$prop_type_id]);
+                return $this->redirect('/main-slide/index');
+            }else{
+                if(!empty($model->errors)){
+                    Yii::$app->session->setFlash("error",Html::errorSummary($model));
+                }
+            }
+
         }
 
         return $this->render('update', [
@@ -135,6 +151,8 @@ class MainSlideController extends Controller
      */
     public function actionDelete($id)
     {
+
+        throw new ForbiddenHttpException("Удаление запрещено");
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);

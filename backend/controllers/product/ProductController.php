@@ -11,6 +11,7 @@ use backend\models\product\ProductSearch;
 use yii\bootstrap4\Html;
 use yii\filters\AccessControl;
 use yii\web\Controller;
+use yii\web\ForbiddenHttpException;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
@@ -173,6 +174,9 @@ class ProductController extends Controller
      */
     public function actionDelete($id)
     {
+        throw new ForbiddenHttpException("Удаление запрещено");
+        Yii::$app->db->createCommand("DELETE FROM products_categories WHERE product_id=".$id)->execute();
+        Yii::$app->db->createCommand("DELETE FROM products_props WHERE product_id=".$id)->execute();
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);

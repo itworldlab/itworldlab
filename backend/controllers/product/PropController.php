@@ -7,6 +7,7 @@ use backend\models\product\Prop;
 use backend\models\product\PropSearch;
 use yii\bootstrap4\Html;
 use yii\web\Controller;
+use yii\web\ForbiddenHttpException;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
@@ -137,6 +138,9 @@ class PropController extends Controller
      */
     public function actionDelete($id)
     {
+
+        throw new ForbiddenHttpException("Удаление запрещено");
+
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);

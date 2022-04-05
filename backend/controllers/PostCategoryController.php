@@ -5,6 +5,7 @@ namespace backend\controllers;
 use backend\models\post\PostCategory;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
+use yii\web\ForbiddenHttpException;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
@@ -121,6 +122,9 @@ class PostCategoryController extends Controller
      */
     public function actionDelete($id)
     {
+
+        throw new ForbiddenHttpException("Удаление запрещено");
+
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);

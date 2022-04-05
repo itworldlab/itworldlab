@@ -7,6 +7,7 @@ use backend\models\Review;
 use backend\models\ReviewSearch;
 use yii\bootstrap4\Html;
 use yii\web\Controller;
+use yii\web\ForbiddenHttpException;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
@@ -121,6 +122,8 @@ class ReviewController extends Controller
      */
     public function actionDelete($id, $user_id)
     {
+
+        throw new ForbiddenHttpException("Удаление запрещено");
         $this->findModel($id, $user_id)->delete();
 
         return $this->redirect(['index']);

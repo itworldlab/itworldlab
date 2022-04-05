@@ -6,6 +6,7 @@ use backend\models\company\CompaniesProducts;
 use backend\models\company\CompaniesProductsItemsSearch;
 use backend\models\company\CompaniesProductsSearch;
 use yii\web\Controller;
+use yii\web\ForbiddenHttpException;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
@@ -118,6 +119,7 @@ class CompaniesProductsController extends Controller
      */
     public function actionDelete($id)
     {
+        throw new ForbiddenHttpException("Удаление запрещено");
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);

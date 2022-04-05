@@ -95,7 +95,7 @@ class SiteController extends Controller
         $slides = MainSlide::find()->all();
         $products = Product::find()->orderBy(new Expression('rand()'))->limit(3)->all();
         $tags = MainTag::find()->orderBy(new Expression('rand()'))->all();
-        $companies = Company::find()->orderBy(new Expression('rand()'))->limit(3)->all();
+        $companies = Company::find()->orderBy(new Expression('rand()'))->limit(4)->all();
         $posts = Post::find()->orderBy(new Expression('rand()'))->limit(3)->all();
 //        $this->layout = "main2";
         $model = new Integrator();

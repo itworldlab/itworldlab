@@ -93,6 +93,7 @@
         <div class="func__wrap">
             <ul class="list-func">
                 <?php
+                if(!empty($model->cats))
                 foreach($model->cats as $cat):
                 ?>
                 <li><?=\backend\models\company\CompanyCategory::findOne($cat)->name?></li>

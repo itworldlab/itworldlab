@@ -1,5 +1,6 @@
 <?php
 
+use lav45\translate\models\Lang;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\ActionColumn;
@@ -27,6 +28,12 @@ $this->params['breadcrumbs'][] = $this->title;
             'title',
             'descr',
             'status',
+            'image',
+            [
+                'class' => 'lav45\translate\grid\ActionColumn',
+                'languages' => Lang::getList(),
+                'header' => 'Переводы'
+            ],
             'sort',
             ['class' => 'yii\grid\ActionColumn'],
         ],

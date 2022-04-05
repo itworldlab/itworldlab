@@ -29,10 +29,10 @@ use yii\widgets\ActiveForm;
     ?>
 
     <?php
-    echo $form->field($model, 'region_id')->widget(Select2::classname(), [
+    /*echo $form->field($model, 'region_id')->widget(Select2::classname(), [
         'data' => \yii\helpers\ArrayHelper::map(\backend\models\Region::GetAll(),'id','name'),
         'options' => ['placeholder' => 'Выберите ...'],
-    ]);
+    ]);*/
     ?>
 
     <div class="form-group">

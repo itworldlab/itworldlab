@@ -5,6 +5,7 @@ namespace backend\controllers\product;
 use backend\models\product\ProductTarif;
 use backend\models\product\ProductTarifSearch;
 use yii\web\Controller;
+use yii\web\ForbiddenHttpException;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
@@ -114,6 +115,9 @@ class ProductTarifController extends Controller
      */
     public function actionDelete($id, $product_id)
     {
+
+        throw new ForbiddenHttpException("Удаление запрещено");
+
         $this->findModel($id, $product_id)->delete();
 
         return $this->redirect(['index']);

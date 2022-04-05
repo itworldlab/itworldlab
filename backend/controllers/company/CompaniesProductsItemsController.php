@@ -5,6 +5,7 @@ namespace backend\controllers\company;
 use backend\models\company\CompaniesProductsItems;
 use backend\models\company\CompaniesProductsItemsSearch;
 use yii\web\Controller;
+use yii\web\ForbiddenHttpException;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
@@ -112,6 +113,8 @@ class CompaniesProductsItemsController extends Controller
      */
     public function actionDelete($id, $companies_products_id)
     {
+
+        throw new ForbiddenHttpException("Удаление запрещено");
         $this->findModel($id, $companies_products_id)->delete();
 
         return $this->redirect(['index']);

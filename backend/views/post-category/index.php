@@ -8,7 +8,7 @@ use yii\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Post Categories';
+$this->title = 'Категория новостей';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="post-category-index">
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Post Category', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Добавить категорию', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
 
@@ -26,12 +26,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            [
-                'class' => ActionColumn::className(),
-                'urlCreator' => function ($action, PostCategory $model, $key, $index, $column) {
-                    return Url::toRoute([$action, 'id' => $model->id]);
-                 }
-            ],
+            'name',
         ],
     ]); ?>
 

@@ -5,6 +5,7 @@ namespace backend\controllers;
 use backend\models\MainTag;
 use backend\models\MainTagSearch;
 use yii\web\Controller;
+use yii\web\ForbiddenHttpException;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
@@ -111,6 +112,8 @@ class MainTagController extends Controller
      */
     public function actionDelete($id)
     {
+
+        throw new ForbiddenHttpException("Удаление запрещено");
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);

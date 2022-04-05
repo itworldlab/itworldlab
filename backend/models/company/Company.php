@@ -135,7 +135,7 @@ class Company extends \yii\db\ActiveRecord
             [['logo_image', 'wall_image','name','short_descr','addr'], 'string', 'max' => 100],
             [['descr'],'string'],
             [['cats','regs'],'safe'],
-            [['imageFile'], 'file', 'skipOnEmpty' => true, 'extensions' => 'svg'],
+            [['imageFile'], 'file', 'skipOnEmpty' => true, 'extensions' => 'svg,png,jpg,jpeg'],
             [['category_id'], 'exist', 'skipOnError' => false, 'targetClass' => CompanyCategory::className(), 'targetAttribute' => ['category_id' => 'id']],
             [['region_id'], 'exist', 'skipOnError' => false, 'targetClass' => Region::className(), 'targetAttribute' => ['region_id' => 'id']],
         ];
