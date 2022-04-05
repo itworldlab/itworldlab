@@ -2,12 +2,18 @@
 
 namespace frontend\controllers;
 
+use backend\models\company\Company;
+use backend\models\MainSlide;
+use backend\models\MainTag;
+use backend\models\post\Post;
 use common\models\Integrator;
+use frontend\models\product\Product;
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
 use Yii;
 use yii\base\InvalidArgumentException;
 use yii\base\Model;
+use yii\db\Expression;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
@@ -86,10 +92,20 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $this->view->title = "Самый большой супермаркет IT решений в Казахстане";
+        $slides = MainSlide::find()->all();
+        $products = Product::find()->orderBy(new Expression('rand()'))->limit(3)->all();
+        $tags = MainTag::find()->orderBy(new Expression('rand()'))->all();
+        $companies = Company::find()->orderBy(new Expression('rand()'))->limit(3)->all();
+        $posts = Post::find()->orderBy(new Expression('rand()'))->limit(3)->all();
 //        $this->layout = "main2";
         $model = new Integrator();
         return $this->render('index',[
-            'model' => $model
+            'model' => $model,
+            'slides' => $slides,
+            'products' => $products,
+            'tags' => $tags,
+            'companies' => $companies,
+            'posts' => $posts
         ]);
     }
 

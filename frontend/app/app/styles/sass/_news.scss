@@ -46,3 +46,11 @@
         }
     }
 }
+
+@media (max-width: $media-5) {
+    .news__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 245px);
+        overflow-x: auto;
+    }
+}

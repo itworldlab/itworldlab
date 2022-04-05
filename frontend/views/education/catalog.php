@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="selectBox">
+    <!--<div class="selectBox">
         <select class="select selectBox__select">
             <option value="">Продукт</option>
             <option value="">Продукт 1</option>
@@ -15,142 +15,37 @@
             <option value="">Продукт 1</option>
             <option value="">Продукт 2</option>
         </select>
-    </div>
+    </div>-->
     <!-- /.selectBox -->
 
     <div class="edu-catalog">
+
+        <?php
+        for($i = 0; $i <= 30; $i++):
+        ?>
         <div class="edu-catalog__item">
             <div class="edu-catalog__header">
                 <img src="/images/dist/1C_Company_logo_small.svg" class="edu-catalog__logo" alt="">
-                <h6 class="h6 edu-catalog__title">1с Бухгалтерия: основы пользования</h6>
+                <h6 class="h6 edu-catalog__title"><?=Yii::t("learning","name_test")?></h6>
             </div>
             <div class="edu-catalog__descript">
                 <div class="edu-catalog__left">
-                    <div class="edu-catalog__small">Описание:</div>
+                    <div class="edu-catalog__small"><?=Yii::t("product","descr")?>:</div>
                     <div class="edu-catalog__text">
-                        Название курса и краткое описание курса, в несколько строк Название курса и краткое описание курса, в несколько строк, но не более 3х.
+                        <?=Yii::t("learning","descr")?>
                     </div>
                 </div>
                 <div class="edu-catalog__right">
-                    <div class="edu-catalog__small">Информация:</div>
+                    <div class="edu-catalog__small"><?=Yii::t("learning","info")?>:</div>
                     <ul class="edu-catalog__list">
-                        <li>Обучившихся: 1 124</li>
-                        <li>Длительность курса: 1 233 ч.</li>
+                        <li><?=Yii::t("learning","learned")?>: -</li>
+                        <li><?=Yii::t("learning","hours")?>: -.</li>
                     </ul>
                 </div>
             </div>
-            <a href="" class="blueBtn edu-catalog__blueBtn">Показать курс</a>
+            <a href="" class="blueBtn edu-catalog__blueBtn"><?=Yii::t("learning","view_cource")?></a>
         </div>
-        <div class="edu-catalog__item">
-            <div class="edu-catalog__header">
-                <img src="/images/dist/1C_Company_logo_small.svg" class="edu-catalog__logo" alt="">
-                <h6 class="h6 edu-catalog__title">1с Бухгалтерия: основы пользования</h6>
-            </div>
-            <div class="edu-catalog__descript">
-                <div class="edu-catalog__left">
-                    <div class="edu-catalog__small">Описание:</div>
-                    <div class="edu-catalog__text">
-                        Название курса и краткое описание курса, в несколько строк Название курса и краткое описание курса, в несколько строк, но не более 3х.
-                    </div>
-                </div>
-                <div class="edu-catalog__right">
-                    <div class="edu-catalog__small">Информация:</div>
-                    <ul class="edu-catalog__list">
-                        <li>Обучившихся: 1 124</li>
-                        <li>Длительность курса: 1 233 ч.</li>
-                    </ul>
-                </div>
-            </div>
-            <a href="" class="blueBtn edu-catalog__blueBtn">Показать курс</a>
-        </div>
-        <div class="edu-catalog__item">
-            <div class="edu-catalog__header">
-                <img src="/images/dist/1C_Company_logo_small.svg" class="edu-catalog__logo" alt="">
-                <h6 class="h6 edu-catalog__title">1с Бухгалтерия: основы пользования</h6>
-            </div>
-            <div class="edu-catalog__descript">
-                <div class="edu-catalog__left">
-                    <div class="edu-catalog__small">Описание:</div>
-                    <div class="edu-catalog__text">
-                        Название курса и краткое описание курса, в несколько строк Название курса и краткое описание курса, в несколько строк, но не более 3х.
-                    </div>
-                </div>
-                <div class="edu-catalog__right">
-                    <div class="edu-catalog__small">Информация:</div>
-                    <ul class="edu-catalog__list">
-                        <li>Обучившихся: 1 124</li>
-                        <li>Длительность курса: 1 233 ч.</li>
-                    </ul>
-                </div>
-            </div>
-            <a href="" class="blueBtn edu-catalog__blueBtn">Показать курс</a>
-        </div>
-        <div class="edu-catalog__item">
-            <div class="edu-catalog__header">
-                <img src="/images/dist/1C_Company_logo_small.svg" class="edu-catalog__logo" alt="">
-                <h6 class="h6 edu-catalog__title">1с Бухгалтерия: основы пользования</h6>
-            </div>
-            <div class="edu-catalog__descript">
-                <div class="edu-catalog__left">
-                    <div class="edu-catalog__small">Описание:</div>
-                    <div class="edu-catalog__text">
-                        Название курса и краткое описание курса, в несколько строк Название курса и краткое описание курса, в несколько строк, но не более 3х.
-                    </div>
-                </div>
-                <div class="edu-catalog__right">
-                    <div class="edu-catalog__small">Информация:</div>
-                    <ul class="edu-catalog__list">
-                        <li>Обучившихся: 1 124</li>
-                        <li>Длительность курса: 1 233 ч.</li>
-                    </ul>
-                </div>
-            </div>
-            <a href="" class="blueBtn edu-catalog__blueBtn">Показать курс</a>
-        </div>
-        <div class="edu-catalog__item">
-            <div class="edu-catalog__header">
-                <img src="/images/dist/1C_Company_logo_small.svg" class="edu-catalog__logo" alt="">
-                <h6 class="h6 edu-catalog__title">1с Бухгалтерия: основы пользования</h6>
-            </div>
-            <div class="edu-catalog__descript">
-                <div class="edu-catalog__left">
-                    <div class="edu-catalog__small">Описание:</div>
-                    <div class="edu-catalog__text">
-                        Название курса и краткое описание курса, в несколько строк Название курса и краткое описание курса, в несколько строк, но не более 3х.
-                    </div>
-                </div>
-                <div class="edu-catalog__right">
-                    <div class="edu-catalog__small">Информация:</div>
-                    <ul class="edu-catalog__list">
-                        <li>Обучившихся: 1 124</li>
-                        <li>Длительность курса: 1 233 ч.</li>
-                    </ul>
-                </div>
-            </div>
-            <a href="" class="blueBtn edu-catalog__blueBtn">Показать курс</a>
-        </div>
-        <div class="edu-catalog__item">
-            <div class="edu-catalog__header">
-                <img src="/images/dist/1C_Company_logo_small.svg" class="edu-catalog__logo" alt="">
-                <h6 class="h6 edu-catalog__title">1с Бухгалтерия: основы пользования</h6>
-            </div>
-            <div class="edu-catalog__descript">
-                <div class="edu-catalog__left">
-                    <div class="edu-catalog__small">Описание:</div>
-                    <div class="edu-catalog__text">
-                        Название курса и краткое описание курса, в несколько строк Название курса и краткое описание курса, в несколько строк, но не более 3х.
-                    </div>
-                </div>
-                <div class="edu-catalog__right">
-                    <div class="edu-catalog__small">Информация:</div>
-                    <ul class="edu-catalog__list">
-                        <li>Обучившихся: 1 124</li>
-                        <li>Длительность курса: 1 233 ч.</li>
-                    </ul>
-                </div>
-            </div>
-            <a href="" class="blueBtn edu-catalog__blueBtn">Показать курс</a>
-        </div>
+        <?php endfor?>
     </div>
     <!-- /.edu-catalog -->
 </div>

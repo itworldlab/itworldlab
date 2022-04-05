@@ -25,9 +25,8 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
             'id',
+            'name',
             [
                 'class' => 'lav45\translate\grid\ActionColumn',
                 'languages' => Lang::getList(),

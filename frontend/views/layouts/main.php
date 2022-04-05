@@ -13,6 +13,7 @@ use yii\bootstrap4\NavBar;
 
 AppAsset::register($this);
 $product_categories = \backend\models\product\ProductCategory::find()->all();
+$company_categories = \backend\models\company\CompanyCategory::GetAll();
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -55,6 +56,21 @@ $product_categories = \backend\models\product\ProductCategory::find()->all();
 </head>
 <body>
 <?php $this->beginBody() ?>
+<style>
+    .pagination{
+        margin-top:50px;
+        margin-bottom: 25px;
+    }
+    .pagination > li > a{
+        padding: 10px;
+        border: 1px solid #222;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .news__grid-img{
+        max-height: 250px;
+    }
+</style>
 <script>
     document.addEventListener("DOMContentLoaded",function(){
         $(".btn-modal").click(function(e){
@@ -100,98 +116,52 @@ $product_categories = \backend\models\product\ProductCategory::find()->all();
 <div class="wrapper">
     <header class="header header--static">
         <div class="container header__container">
-            <a href="/" class="logo header__logo"><img src="/images/logo.svg" style="max-width: 155px;" alt="Самый крупный маркетплейс IT решений Казахстана"></a>
+            <a href="<?=\yii\helpers\Url::to(['/'])?>" class="logo header__logo"><img src="/images/logo.svg" alt=""></a>
             <ul class="menu">
                 <li class="menu__item">
-                    <a href="/product/index" class="menu__link">Продукты <svg class="menu__arrow"><use xlink:href="/images/dist/sprite.svg#arrow-bottom"></use></svg></a>
+                    <a href="<?=\yii\helpers\Url::to(['/product/index'])?>" class="menu__link"><?=Yii::t("menu","products")?> <svg class="menu__arrow"><use xlink:href="/images/dist/sprite.svg#arrow-bottom"></use></svg></a>
                     <div class="box-list menu__box-list">
                         <ul class="box-list__top">
                             <?php foreach($product_categories as $category):?>
                                 <li class="box-list__top-item">
                                     <a href="<?=\yii\helpers\Url::to(['/product/index','category_id'=>$category->id])?>" class="box-list__top-link">
-                                        <span class="box-list__top-wrap"><img src="/uploads/<?=$category->icon?>" alt=""></span>
+                                        <span class="box-list__top-wrap"><img src="/uploads/<?=$category->icon?>"></span>
                                         <span class="box-list__top-text"><?=$category->name?></span>
                                     </a>
                                 </li>
                             <?php endforeach;?>
                         </ul>
-                        <div class="box-list__descript">Здесь будет текст с описанием категории которую вы выбрали...</div>
                     </div>
                 </li>
                 <li class="menu__item">
-                    <a href="/integrators/index" class="menu__link">Услуги <svg class="menu__arrow"><use xlink:href="/images/dist/sprite.svg#arrow-bottom"></use></svg></a>
-                    <div class="box-list menu__box-list menu__box-list--posa1">
-                        <ul class="box-list__top">
-                            <li class="box-list__top-item"><a href="" class="box-list__top-link">
-                                    <span class="box-list__top-wrap"><img src="/images/dist/iaas.svg" alt=""></span>
-                                    <span class="box-list__top-text">IaaS</span>
-                                </a></li>
-                            <li class="box-list__top-item"><a href="" class="box-list__top-link">
-                                    <span class="box-list__top-wrap"><img src="/images/dist/it.svg" alt=""></span>
-                                    <span class="box-list__top-text">IT Безопасность</span>
-                                </a></li>
-                            <li class="box-list__top-item"><a href="" class="box-list__top-link">
-                                    <span class="box-list__top-wrap"><img src="/images/dist/crm.svg" alt=""></span>
-                                    <span class="box-list__top-text">CRM</span>
-                                </a></li>
-                            <li class="box-list__top-item"><a href="" class="box-list__top-link">
-                                    <span class="box-list__top-wrap"><img src="/images/dist/bpm.svg" alt=""></span>
-                                    <span class="box-list__top-text">BPM</span>
-                                </a></li>
-                            <li class="box-list__top-item"><a href="" class="box-list__top-link">
-                                    <span class="box-list__top-wrap"><img src="/images/dist/rpa.svg" alt=""></span>
-                                    <span class="box-list__top-text">RPA</span>
-                                </a></li>
-                            <li class="box-list__top-item"><a href="" class="box-list__top-link">
-                                    <span class="box-list__top-wrap"><img src="/images/dist/phone.svg" alt=""></span>
-                                    <span class="box-list__top-text">IP<br>              телефония</span>
-                                </a></li>
-                            <li class="box-list__top-item"><a href="" class="box-list__top-link">
-                                    <span class="box-list__top-wrap"><img src="/images/dist/sed.svg" alt=""></span>
-                                    <span class="box-list__top-text">СЭД</span>
-                                </a></li>
-                            <li class="box-list__top-item"><a href="" class="box-list__top-link">
-                                    <span class="box-list__top-wrap"><img src="/images/dist/erp.svg" alt=""></span>
-                                    <span class="box-list__top-text">ERP</span>
-                                </a></li>
-                            <li class="box-list__top-item"><a href="" class="box-list__top-link">
-                                    <span class="box-list__top-wrap"><img src="/images/dist/office.svg" alt=""></span>
-                                    <span class="box-list__top-text">Офисные приложения</span>
-                                </a></li>
-                            <li class="box-list__top-item"><a href="" class="box-list__top-link">
-                                    <span class="box-list__top-wrap"><img src="/images/dist/online-b.svg" alt=""></span>
-                                    <span class="box-list__top-text">Онлайн бухгалтерия</span>
-                                </a></li>
-                        </ul>
-                        <div class="box-list__descript">Здесь будет текст с описанием категории которую вы выбрали...</div>
-                    </div>
+                    <a href="<?=\yii\helpers\Url::to(['/company/index'])?>" class="menu__link"><?=Yii::t("menu","services")?></a>
                 </li>
-                <li class="menu__item"><a href="/integrators/index" class="menu__link">Интеграторы</a></li>
-                <li class="menu__item"><a href="/education/index" class="menu__link">Обучение</a></li>
-                <li class="menu__item"><a href="/news/index" class="menu__link">Новости</a></li>
+                <li class="menu__item"><a href="<?=\yii\helpers\Url::to(['/education/index'])?>" class="menu__link"><?=Yii::t("menu","learn")?></a></li>
+                <li class="menu__item"><a href="<?=\yii\helpers\Url::to(['/news/index'])?>" class="menu__link"><?=Yii::t("menu","news")?></a></li>
             </ul>
             <div class="header__right">
-                <a class="location header__location" href=""><svg class="location__icon"><use xlink:href="/images/dist/sprite.svg#location"></use></svg></a>
-                <a href="" class="search-link header__search-link"><svg class="search-link__icon"><use xlink:href="/images/dist/sprite.svg#loupe"></use></svg></a>
+                <a class="location header__location" href="#"><svg class="location__icon"><use xlink:href="/images/dist/sprite.svg#location"></use></svg></a>
+                <a href="#" class="search-link header__search-link"><svg class="search-link__icon"><use xlink:href="/images/dist/sprite.svg#loupe"></use></svg></a>
                 <ul class="lang header__lang">
                     <li class="lang__choose">
-                        <a class="lang__choose-link" href=""><img src="/images/<?=explode('-',Yii::$app->language)[0]?>.svg" style="width:20px;margin-right: 8px;margin-top: -3px;"/> <?=strtoupper(explode('-',Yii::$app->language)[0])?> <svg class="lang__choose-icon"><use xlink:href="/images/dist/sprite.svg#arrow-bottom"></use></svg></a>
+                        <a class="lang__choose-link" href="#"><img src="/images/<?=explode('-',Yii::$app->language)[0]?>.svg" style="width:20px;margin-right: 8px;margin-top: -3px;"/> <?=strtoupper(explode('-',Yii::$app->language)[0])?> <svg class="lang__choose-icon"><use xlink:href="/images/dist/sprite.svg#arrow-bottom"></use></svg></a>
                         <ul class="lang__dropdown">
                             <li class="lang__dropdown-item"><a href="/?_lang=ru" class="lang__dropdown-link"><img src="/images/ru.svg" style="width:20px;"/> RU</a></li>
                             <li class="lang__dropdown-item"><a href="/?_lang=en" class="lang__dropdown-link"><img src="/images/en.svg" style="width:20px;"/> ENG</a></li>
-                            <li class="lang__dropdown-item"><a href="/?_lang=uae" class="lang__dropdown-link"><img src="/images/ar.svg" style="width:20px;"/> UAE</a></li>
                         </ul>
                     </li>
                 </ul>
-                <a href="<?=\yii\helpers\Url::to(['/site/login','modal'=>1])?>" data-toggle="modal" data-target="#modal" class="btn-modal blueBtn" style="font-weight: bold;">Регистрация / вход</a>
+                <a href="<?=\yii\helpers\Url::to(['/site/login','modal'=>1])?>" data-toggle="modal" data-target="#modal" class="blueBtn header__blueBtn js-btn" style="font-weight: bold;"><?=Yii::t("app","register")?> / <?=Yii::t("app","login")?></a>
             </div>
             <!-- /.header__right -->
-            <a href="" class="header__mobile js-menuBtn"></a>
+            <a href="#" class="header__mobile js-menuBtn"><img src="/images/dist/Menu-white.svg"/></a>
         </div>
+        <!-- /.container header__container -->
+
     </header>
     <ul class="mobileMenu" id="mobileMenu">
         <li class="mobileMenu__item mobileMenu__item-flex">
-            <a href="" class="mobileMenu__link">
+            <a href="#" class="mobileMenu__link">
                 Регистрация / вход <svg class="reg mobileMenu__reg"><use xlink:href="/images/dist/sprite.svg#user"></use></svg>
             </a>
         </li>
@@ -200,9 +170,9 @@ $product_categories = \backend\models\product\ProductCategory::find()->all();
                 RU
             </div>
             <ul class="mobileMenu__langList js-hidden">
-                <li><a href="">KZ</a></li>
-                <li><a href="">ENG</a></li>
-                <li><a href="">CH</a></li>
+                <li><a href="#">KZ</a></li>
+                <li><a href="#">ENG</a></li>
+                <li><a href="#">CH</a></li>
             </ul>
         </li>
         <li class="mobileMenu__item">
@@ -210,7 +180,9 @@ $product_categories = \backend\models\product\ProductCategory::find()->all();
             <div class="mobileMenu__slideUp js-hidden">
                 <ul class="verticalMenu">
                     <?php foreach($product_categories as $category):?>
-                        <li class="verticalMenu__item"><a href="<?=\yii\helpers\Url::to(['/product/index','category_id'=>$category->id])?>" class="verticalMenu__link"><?=$category->name?> <span class="verticalMenu__link-wrap"><img src="/uploads/<?=$category->icon?>" alt=""></span></a></li>
+                        <li class="verticalMenu__item">
+                            <a href="<?=\yii\helpers\Url::to(['/product/index','category_id'=>$category->id])?>" class="verticalMenu__link"><?=$category->name?> <span class="verticalMenu__link-wrap"><img src="/uploads/<?=$category->icon?>" alt=""></span></a>
+                        </li>
                     <?php endforeach;?>
                 </ul>
             </div>
@@ -219,10 +191,16 @@ $product_categories = \backend\models\product\ProductCategory::find()->all();
             <div class="mobileMenu__menu js-title">Услуги</div>
             <div class="mobileMenu__slideUp js-hidden">
                 <ul class="verticalMenu">
-                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">IaaS <span class="verticalMenu__link-wrap"><img src="/images/dist/iaas.svg" alt=""></span></a></li>
-                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">IT Безопасность <span class="verticalMenu__link-wrap"><img src="/images/dist/it.svg" alt=""></span></a></li>
-                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">CRM <span class="verticalMenu__link-wrap"><img src="/images/dist/crm.svg" alt=""></span></a></li>
-                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">BPM <span class="verticalMenu__link-wrap"><img src="/images/dist/bpm.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="#" class="verticalMenu__link">IaaS <span class="verticalMenu__link-wrap"><img src="/images/dist/iaas.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="#" class="verticalMenu__link">IT Безопасность <span class="verticalMenu__link-wrap"><img src="/images/dist/it.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="#" class="verticalMenu__link">CRM <span class="verticalMenu__link-wrap"><img src="/images/dist/crm.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="#" class="verticalMenu__link">BPM <span class="verticalMenu__link-wrap"><img src="/images/dist/bpm.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="#" class="verticalMenu__link">RPA <span class="verticalMenu__link-wrap"><img src="/images/dist/rpa.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="#" class="verticalMenu__link">IP - телефония <span class="verticalMenu__link-wrap"><img src="/images/dist/phone.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="#" class="verticalMenu__link">СЭД <span class="verticalMenu__link-wrap"><img src="/images/dist/sed.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="#" class="verticalMenu__link">ERP <span class="verticalMenu__link-wrap"><img src="/images/dist/erp.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="#" class="verticalMenu__link">Офисные приложения <span class="verticalMenu__link-wrap"><img src="/images/dist/office.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="#" class="verticalMenu__link">Онлайн бухгалтерия <span class="verticalMenu__link-wrap"><img src="/images/dist/online-b.svg" alt=""></span></a></li>
                 </ul>
             </div>
         </li>
@@ -230,10 +208,16 @@ $product_categories = \backend\models\product\ProductCategory::find()->all();
             <div class="mobileMenu__menu js-title">Интеграторы</div>
             <div class="mobileMenu__slideUp js-hidden">
                 <ul class="verticalMenu">
-                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">IaaS <span class="verticalMenu__link-wrap"><img src="/images/dist/iaas.svg" alt=""></span></a></li>
-                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">IT Безопасность <span class="verticalMenu__link-wrap"><img src="/images/dist/it.svg" alt=""></span></a></li>
-                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">CRM <span class="verticalMenu__link-wrap"><img src="/images/dist/crm.svg" alt=""></span></a></li>
-                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">Онлайн бухгалтерия <span class="verticalMenu__link-wrap"><img src="/images/dist/online-b.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="#" class="verticalMenu__link">IaaS <span class="verticalMenu__link-wrap"><img src="/images/dist/iaas.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="#" class="verticalMenu__link">IT Безопасность <span class="verticalMenu__link-wrap"><img src="/images/dist/it.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="#" class="verticalMenu__link">CRM <span class="verticalMenu__link-wrap"><img src="/images/dist/crm.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="#" class="verticalMenu__link">BPM <span class="verticalMenu__link-wrap"><img src="/images/dist/bpm.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="#" class="verticalMenu__link">RPA <span class="verticalMenu__link-wrap"><img src="/images/dist/rpa.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="#" class="verticalMenu__link">IP - телефония <span class="verticalMenu__link-wrap"><img src="/images/dist/phone.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="#" class="verticalMenu__link">СЭД <span class="verticalMenu__link-wrap"><img src="/images/dist/sed.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="#" class="verticalMenu__link">ERP <span class="verticalMenu__link-wrap"><img src="/images/dist/erp.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="#" class="verticalMenu__link">Офисные приложения <span class="verticalMenu__link-wrap"><img src="/images/dist/office.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="#" class="verticalMenu__link">Онлайн бухгалтерия <span class="verticalMenu__link-wrap"><img src="/images/dist/online-b.svg" alt=""></span></a></li>
                 </ul>
             </div>
         </li>
@@ -241,16 +225,16 @@ $product_categories = \backend\models\product\ProductCategory::find()->all();
             <div class="mobileMenu__menu js-title">Обучение</div>
             <div class="mobileMenu__slideUp js-hidden">
                 <ul class="verticalMenu">
-                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">IaaS <span class="verticalMenu__link-wrap"><img src="/images/dist/iaas.svg" alt=""></span></a></li>
-                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">IT Безопасность <span class="verticalMenu__link-wrap"><img src="/images/dist/it.svg" alt=""></span></a></li>
-                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">CRM <span class="verticalMenu__link-wrap"><img src="/images/dist/crm.svg" alt=""></span></a></li>
-                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">BPM <span class="verticalMenu__link-wrap"><img src="/images/dist/bpm.svg" alt=""></span></a></li>
-                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">RPA <span class="verticalMenu__link-wrap"><img src="/images/dist/rpa.svg" alt=""></span></a></li>
-                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">IP - телефония <span class="verticalMenu__link-wrap"><img src="/images/dist/phone.svg" alt=""></span></a></li>
-                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">СЭД <span class="verticalMenu__link-wrap"><img src="/images/dist/sed.svg" alt=""></span></a></li>
-                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">ERP <span class="verticalMenu__link-wrap"><img src="/images/dist/erp.svg" alt=""></span></a></li>
-                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">Офисные приложения <span class="verticalMenu__link-wrap"><img src="/images/dist/office.svg" alt=""></span></a></li>
-                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">Онлайн бухгалтерия <span class="verticalMenu__link-wrap"><img src="/images/dist/online-b.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="#" class="verticalMenu__link">IaaS <span class="verticalMenu__link-wrap"><img src="/images/dist/iaas.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="#" class="verticalMenu__link">IT Безопасность <span class="verticalMenu__link-wrap"><img src="/images/dist/it.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="#" class="verticalMenu__link">CRM <span class="verticalMenu__link-wrap"><img src="/images/dist/crm.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="#" class="verticalMenu__link">BPM <span class="verticalMenu__link-wrap"><img src="/images/dist/bpm.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="#" class="verticalMenu__link">RPA <span class="verticalMenu__link-wrap"><img src="/images/dist/rpa.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="#" class="verticalMenu__link">IP - телефония <span class="verticalMenu__link-wrap"><img src="/images/dist/phone.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="#" class="verticalMenu__link">СЭД <span class="verticalMenu__link-wrap"><img src="/images/dist/sed.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="#" class="verticalMenu__link">ERP <span class="verticalMenu__link-wrap"><img src="/images/dist/erp.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="#" class="verticalMenu__link">Офисные приложения <span class="verticalMenu__link-wrap"><img src="/images/dist/office.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="#" class="verticalMenu__link">Онлайн бухгалтерия <span class="verticalMenu__link-wrap"><img src="/images/dist/online-b.svg" alt=""></span></a></li>
                 </ul>
             </div>
         </li>
@@ -258,16 +242,16 @@ $product_categories = \backend\models\product\ProductCategory::find()->all();
             <div class="mobileMenu__menu js-title">Новости</div>
             <div class="mobileMenu__slideUp js-hidden">
                 <ul class="verticalMenu">
-                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">IaaS <span class="verticalMenu__link-wrap"><img src="/images/dist/iaas.svg" alt=""></span></a></li>
-                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">IT Безопасность <span class="verticalMenu__link-wrap"><img src="/images/dist/it.svg" alt=""></span></a></li>
-                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">CRM <span class="verticalMenu__link-wrap"><img src="/images/dist/crm.svg" alt=""></span></a></li>
-                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">BPM <span class="verticalMenu__link-wrap"><img src="/images/dist/bpm.svg" alt=""></span></a></li>
-                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">RPA <span class="verticalMenu__link-wrap"><img src="/images/dist/rpa.svg" alt=""></span></a></li>
-                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">IP - телефония <span class="verticalMenu__link-wrap"><img src="/images/dist/phone.svg" alt=""></span></a></li>
-                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">СЭД <span class="verticalMenu__link-wrap"><img src="/images/dist/sed.svg" alt=""></span></a></li>
-                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">ERP <span class="verticalMenu__link-wrap"><img src="/images/dist/erp.svg" alt=""></span></a></li>
-                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">Офисные приложения <span class="verticalMenu__link-wrap"><img src="/images/dist/office.svg" alt=""></span></a></li>
-                    <li class="verticalMenu__item"><a href="" class="verticalMenu__link">Онлайн бухгалтерия <span class="verticalMenu__link-wrap"><img src="/images/dist/online-b.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="#" class="verticalMenu__link">IaaS <span class="verticalMenu__link-wrap"><img src="/images/dist/iaas.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="#" class="verticalMenu__link">IT Безопасность <span class="verticalMenu__link-wrap"><img src="/images/dist/it.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="#" class="verticalMenu__link">CRM <span class="verticalMenu__link-wrap"><img src="/images/dist/crm.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="#" class="verticalMenu__link">BPM <span class="verticalMenu__link-wrap"><img src="/images/dist/bpm.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="#" class="verticalMenu__link">RPA <span class="verticalMenu__link-wrap"><img src="/images/dist/rpa.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="#" class="verticalMenu__link">IP - телефония <span class="verticalMenu__link-wrap"><img src="/images/dist/phone.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="#" class="verticalMenu__link">СЭД <span class="verticalMenu__link-wrap"><img src="/images/dist/sed.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="#" class="verticalMenu__link">ERP <span class="verticalMenu__link-wrap"><img src="/images/dist/erp.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="#" class="verticalMenu__link">Офисные приложения <span class="verticalMenu__link-wrap"><img src="/images/dist/office.svg" alt=""></span></a></li>
+                    <li class="verticalMenu__item"><a href="#" class="verticalMenu__link">Онлайн бухгалтерия <span class="verticalMenu__link-wrap"><img src="/images/dist/online-b.svg" alt=""></span></a></li>
                 </ul>
             </div>
         </li>
@@ -283,54 +267,52 @@ $product_categories = \backend\models\product\ProductCategory::find()->all();
                 <h5 class="h5 footer__title"><?=Yii::t("menu","products")?></h5>
                 <div class="footer__nav-wrap">
                     <ul class="footer__menu">
-                        <li class="footer__menu-item"><a href="" class="footer__menu-link">IaaS</a></li>
-                        <li class="footer__menu-item"><a href="" class="footer__menu-link">IT Безопасность</a></li>
-                        <li class="footer__menu-item"><a href="" class="footer__menu-link">CRM</a></li>
-                        <li class="footer__menu-item"><a href="" class="footer__menu-link">BPM</a></li>
-                        <li class="footer__menu-item"><a href="" class="footer__menu-link">RPA</a></li>
+                        <?php $i = 0; foreach($product_categories as $category):?>
+                            <?php if($i < 5):?>
+                            <li class="footer__menu-item"><a href="<?=\yii\helpers\Url::to(['/product/index','category_id'=>$category->id])?>" class="footer__menu-link"><?=$category->name?></a></li>
+                        <?php endif; $i++; endforeach;?>
                     </ul>
                     <ul class="footer__menu">
-                        <li class="footer__menu-item"><a href="" class="footer__menu-link">IP телефония</a></li>
-                        <li class="footer__menu-item"><a href="" class="footer__menu-link">СЭД</a></li>
-                        <li class="footer__menu-item"><a href="" class="footer__menu-link">ERP</a></li>
-                        <li class="footer__menu-item"><a href="" class="footer__menu-link">Офисные приложения</a></li>
-                        <li class="footer__menu-item"><a href="" class="footer__menu-link">Онлайн бухгалтерия</a></li>
+                        <?php $i = 0; foreach($product_categories as $category):?>
+                            <?php if($i >= 5):?>
+                            <li class="footer__menu-item"><a href="<?=\yii\helpers\Url::to(['/product/index','category_id'=>$category->id])?>" class="footer__menu-link"><?=$category->name?></a></li>
+                        <?php endif; $i++; endforeach;?>
                     </ul>
                 </div>
                 <!-- /.footer__nav-wrap -->
             </nav>
             <nav class="footer__nav">
-                <h5 class="h5 footer__title">Услуги</h5>
+                <h5 class="h5 footer__title"><?=Yii::t("menu","services")?></h5>
                 <ul class="footer__menu">
-                    <li class="footer__menu-item"><a href="" class="footer__menu-link">Интеграторы</a></li>
-                    <li class="footer__menu-item"><a href="" class="footer__menu-link">Разработка ПО</a></li>
-                    <li class="footer__menu-item"><a href="" class="footer__menu-link">Аутсорсинг</a></li>
-                    <li class="footer__menu-item"><a href="" class="footer__menu-link">Консалтинг</a></li>
+                    <li class="footer__menu-item"><a href="#" class="footer__menu-link"><?=Yii::t("menu","integrators")?></a></li>
+                    <li class="footer__menu-item"><a href="#" class="footer__menu-link"><?=Yii::t("menu","software_development")?></a></li>
+                    <li class="footer__menu-item"><a href="#" class="footer__menu-link"><?=Yii::t("menu","autsorsing")?></a></li>
+                    <li class="footer__menu-item"><a href="#" class="footer__menu-link"><?=Yii::t("menu","consulting")?></a></li>
                 </ul>
             </nav>
             <nav class="footer__nav">
                 <h5 class="h5 footer__title">HH</h5>
                 <ul class="footer__menu">
-                    <li class="footer__menu-item"><a href="" class="footer__menu-link">Найти сотрудника</a></li>
-                    <li class="footer__menu-item"><a href="" class="footer__menu-link">Поиск работы</a></li>
+                    <li class="footer__menu-item"><a href="#" class="footer__menu-link"><?=Yii::t("menu","find_employee")?></a></li>
+                    <li class="footer__menu-item"><a href="#" class="footer__menu-link"><?=Yii::t("menu","find_job")?></a></li>
                 </ul>
             </nav>
             <nav class="footer__nav">
-                <h5 class="h5 footer__title">Курсы</h5>
+                <h5 class="h5 footer__title"><?=Yii::t("menu","cources")?></h5>
                 <ul class="footer__menu">
-                    <li class="footer__menu-item"><a href="" class="footer__menu-link">Повышение квалификации</a></li>
-                    <li class="footer__menu-item"><a href="" class="footer__menu-link">Обучение с 0</a></li>
-                    <li class="footer__menu-item"><a href="" class="footer__menu-link">Обучени сотрудников</a></li>
+                    <li class="footer__menu-item"><a href="#" class="footer__menu-link"><?=Yii::t("menu","lvl_up")?></a></li>
+                    <li><a href="#"><?=Yii::t("menu","learn_from_zero")?></a></li>
+                    <li><a href="#"><?=Yii::t("menu","learn_empl")?></a></li>
                 </ul>
             </nav>
             <nav class="footer__nav">
-                <a href="/" class="footer__logo"><img src="/images/logo.svg" alt=""></a>
+                <a href="<?=\yii\helpers\Url::to(['/'])?>" class="footer__logo"><img src="/images/logo.svg" alt=""></a>
                 <ul class="footer__menu">
-                    <li class="footer__menu-item"><a href="" class="footer__menu-link">Карта сайта</a></li>
-                    <li class="footer__menu-item"><a href="" class="footer__menu-link">Поддержка</a></li>
-                    <li class="footer__menu-item"><a href="" class="footer__menu-link">F.A.Q.</a></li>
-                    <li class="footer__menu-item"><a href="" class="footer__menu-link">Зарегистрировать продукт</a></li>
-                    <li class="footer__menu-item"><a href="" class="footer__menu-link">Подать заявку интеграторам</a></li>
+                    <li class="footer__menu-item"><a href="#" class="footer__menu-link"><?=Yii::t("menu","sitemap")?></a></li>
+                    <li class="footer__menu-item"><a href="#" class="footer__menu-link"><?=Yii::t("menu","support2")?></a></li>
+                    <li class="footer__menu-item"><a href="#" class="footer__menu-link">F.A.Q.</a></li>
+                    <li class="footer__menu-item"><a href="#" class="footer__menu-link"><?=Yii::t("menu","register_product")?></a></li>
+                    <li class="footer__menu-item"><a href="#" class="footer__menu-link"><?=Yii::t("menu","get_investor_req")?></a></li>
                 </ul>
             </nav>
         </div>

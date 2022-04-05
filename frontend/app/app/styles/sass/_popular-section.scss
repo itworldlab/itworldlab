@@ -67,3 +67,11 @@
         }
     }
 }
+
+@media (max-width: $media-5) {
+    .popular-section__wrap {
+        display: grid;
+        grid-template-columns: repeat(3, 244px);
+        overflow-x: auto;
+    }
+}

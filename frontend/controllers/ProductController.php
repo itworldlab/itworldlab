@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 
+use backend\models\company\Company;
 use backend\models\product\ProductAnalog;
 use backend\models\product\ProductCompatibility;
 use backend\models\product\PropType;
@@ -56,8 +57,15 @@ class ProductController extends Controller
         $compatibility = ProductCompatibility::find()->where(['product_id'=>$model->id])->all();
         $analogs = ProductAnalog::find()->where(['product_id'=>$model->id])->all();
 
+        $comps = [];
+        foreach($model->companies as $company){
+            $comps[] = $company->company_id;
+        }
+        $companies = Company::find()->where(['in','id',$comps])->all();
+
         return $this->render("view",[
             'model' => $model,
+            'companies' => $companies,
             'prop_types' => $prop_types->all(),
             'compatibility' => $compatibility,
             'analogs' => $analogs

@@ -112,7 +112,7 @@ class CategoryController extends Controller
 
         if ($model->load(Yii::$app->request->post())) {
             $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
-            if($model->validate()){
+            if($model->validate() && $model->imageFile){
                 if (!$model->upload()) {
                     Yii::$app->session->setFlash("error",Html::errorSummary($model));
                 }

@@ -14,7 +14,8 @@ return [
     'name' => 'IT World Lab',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
-    'language' => 'ru-RU',
+//    'language' => 'en-US',
+//    'sourceLanguage' => 'en-US',
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
         'assetManager' => [
@@ -45,10 +46,11 @@ return [
                 '*' => [
                     'class' => 'yii\i18n\PhpMessageSource',
                     'basePath' => '@frontend/messages',
-                    //'sourceLanguage' => 'en-US',
                     'fileMap' => [
                         'app' => 'app.php',
                         'product' => 'product.php',
+                        'menu' => 'menu.php',
+                        'integrator' => 'integrator.php',
                     ],
                 ],
             ],
@@ -87,14 +89,14 @@ return [
                     'pattern' => '',
                     'route' => 'site/index',
                 ],
-                [
+                /*[
                     'pattern' => '<_lang:' . Lang::PATTERN . '>/product/<id:\d+>',
                     'route' => 'product/view',
                 ],
                 [
                     'pattern' => '<_lang:' . Lang::PATTERN . '>',
                     'route' => 'product/index',
-                ]
+                ]*/
             ],
         ],
     ],

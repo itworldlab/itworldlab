@@ -73,6 +73,13 @@
     }
 }
 
+@media (max-width: $media-5) {
+    .integrator__wrap {
+        grid-template-columns: repeat(4, 244px);
+        overflow-x: auto;
+    }
+}
+
 @media (max-width: 420px) {
     .integrator__wrap {
         display: block;

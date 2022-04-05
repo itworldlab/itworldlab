@@ -21,14 +21,14 @@ $cats = \backend\models\product\ProductCategory::find()->all();
 <div class="container">
     <div class="catalog-services">
         <div class="filter">
-            <div class="filter__result">6 результатов</div>
-            <button type="button" class="whiteBtn filter__whiteBtn">Очистить фильтры</button>
+            <div class="filter__result"><?=$productsDataProvider->totalCount?> <?=Yii::t("product","results")?></div>
+            <button type="button" class="whiteBtn filter__whiteBtn"><?=Yii::t("product","clear_filters")?></button>
             <form class="filter__search" action="#" method="get">
                 <button type="submit" class="filter__search-submit"><svg class="filter__search-icon"><use xlink:href="/images/dist/sprite.svg#loupe"></use></svg></button>
-                <input type="text" placeholder="Поиск продукта по названию" class="filter__search-input" required>
+                <input type="text" placeholder="<?=Yii::t("product","search_placeholder")?>" class="filter__search-input" required>
             </form>
             <div class="filter__item">
-                <div class="filter__title">Интеграция:</div>
+                <div class="filter__title"><?=Yii::t("product","integration")?>:</div>
                 <?php foreach($cats as $cat):?>
                     <input type="checkbox" class="filter__checkbox" id="cat<?=$cat->id?>">
                     <label for="cat<?=$cat->id?>" class="filter__label"><svg class="filter__svg"><use xlink:href="/uploads/<?=$cat->icon?>"></use></svg><?=$cat->name?></label>
@@ -36,7 +36,7 @@ $cats = \backend\models\product\ProductCategory::find()->all();
             </div>
             <!-- /.filter__item -->
 
-            <div class="filter__item">
+            <!--<div class="filter__item">
                 <div class="filter__title">Интегрируемое ПО:</div>
                 <input type="checkbox" class="filter__checkbox" id="check-9">
                 <label for="check-9" class="filter__label"><img src="/images/dist/bitrix24.png" alt="" class="filter__label-img">Bitrix 24</label>
@@ -51,10 +51,10 @@ $cats = \backend\models\product\ProductCategory::find()->all();
                 <label for="check-12" class="filter__label"><img src="/images/dist/it-logo.png" alt="" class="filter__label-img">1С Бухгалтерия</label>
 
                 <a href="" class="showAllBtn filter__showAllBtn">Посмотреть все <svg class="showAllBtn__icon"><use xlink:href="/images/dist/sprite.svg#caret-big-right"></use></svg></a>
-            </div>
+            </div>-->
             <!-- /.filter__item -->
 
-            <div class="filter__item">
+            <!--<div class="filter__item">
                 <div class="filter__title">Опыт работы:</div>
 
                 <div class="chooseFilter">
@@ -66,16 +66,23 @@ $cats = \backend\models\product\ProductCategory::find()->all();
                     <input class="js-range-slider" type="text" id="price_select" name="price_select" value="" />
                 </div>
 
-            </div>
+            </div>-->
             <!-- /.filter__item -->
             <div class="filter__item">
-                <div class="filter__title">Локация</div>
-                <a class="location-link" href=""><svg class="location-link__icon"><use xlink:href="/images/dist/sprite.svg#location"></use></svg><span>Алматы, Казахстан</span></a>
+                <div class="filter__title"><?=Yii::t("product","location")?></div>
+                <a class="location-link" href=""><svg class="location-link__icon"><use xlink:href="/images/dist/sprite.svg#location"></use></svg><span><?=Yii::t("product","position")?></span></a>
             </div>
             <!-- /.filter__item -->
         </div>
         <!-- /.filter -->
         <div class="catalog-services__content">
+            <!--<div class="filter-btns-wrap">
+                <a href="" class="filter-btn">Бизнес-услуги <svg class="filter-btn__svg"><use xlink:href="/images/dist/sprite.svg#close"></use></svg></a>
+                <a href="" class="filter-btn">Средний бизнес<svg class="filter-btn__svg"><use xlink:href="/images/dist/sprite.svg#close"></use></svg></a>
+                <a href="" class="filter-btn">Разовая оплата<svg class="filter-btn__svg"><use xlink:href="/images/dist/sprite.svg#close"></use></svg></a>
+                <a href="" class="filter-btn">Windows<svg class="filter-btn__svg"><use xlink:href="/images/dist/sprite.svg#close"></use></svg></a>
+            </div>-->
+
             <?php
             echo \yii\widgets\ListView::widget([
                 'dataProvider' => $productsDataProvider,
@@ -84,7 +91,6 @@ $cats = \backend\models\product\ProductCategory::find()->all();
             ]);
             ?>
         </div>
-        <!-- /.catalog-services__content -->
     </div>
     <!-- /.catalog-services -->
 

@@ -68,7 +68,7 @@
     margin-top: 15px;
     padding-left: 26px;
     position: relative;
-    
+
     &:after {
         border: 1px solid #737373;
         border-radius: 3px;
@@ -80,7 +80,7 @@
         width: 17px;
         z-index: 1;
     }
-    
+
     &:before {
         border-bottom: 2px solid #1F2025;
         border-left: 2px solid #1F2025;
@@ -104,16 +104,16 @@
 
 .filter__checkbox {
     display: none;
-    
+
     &:checked {
-        
+
         + .filter__label {
             color: #1F2025;
-            
+
             .filter__svg {
                 fill: #1F2025;
             }
-            
+
             &:before {
                 opacity: 1;
             }
@@ -184,7 +184,7 @@
     top: 15px;
     text-align: center;
     width: 20px;
-    
+
     i {
         display: none !important;
     }
@@ -195,11 +195,11 @@
     color: #737373 !important;
     top: 20px;
     z-index: 5;
-    
+
     &:before {
         display: none !important;
     }
-    
+
     .rouble {
         display: none;
     }
@@ -209,15 +209,36 @@
     align-items: center;
     color: #0038FF;
     display: flex;
-    
+
     &__icon {
         fill: #737373;
         height: 12px;
         margin-right: 10px;
         width: 12px;
     }
-    
+
     span {
         border-bottom: 1px dotted #0038FF;
     }
+}
+
+.filter-btns-wrap {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+
+.filter-btn {
+    align-items: center;
+    color: #737373;
+    display: flex;
+    margin-right: 17px;
+}
+
+.filter-btn__svg {
+    fill: #737373;
+    height: 5px;
+    margin-left: 9px;
+    width: 5px;
 }

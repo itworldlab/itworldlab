@@ -25,6 +25,7 @@
 }
 
 .need__title {
+    color: #fff;
     text-align: right;
 }
 
@@ -74,5 +75,24 @@
                 margin-right: 10px;
             }
         }
+    }
+}
+
+@media (max-width: $media-5) {
+    .need {
+        border-radius: 0 0 50px 50px;
+        overflow: hidden;
+    }
+    .need__title {
+        text-align: left;
+    }
+    .links {
+        justify-content: flex-start;
+    }
+    .links__item {
+        padding: 12px 16px;
+    }
+    .need__goldBtn {
+        margin-right: auto;
     }
 }

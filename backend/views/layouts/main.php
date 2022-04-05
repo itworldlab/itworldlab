@@ -193,6 +193,13 @@ AppAsset::register($this);
                         'active' => strpos($_SERVER['REQUEST_URI'],"/product/index") !== false,
                         'options' => ['class' => 'nav-item']
                     ],
+
+                    [
+                        "label" => '<i class="icon-list"></i> Компании',
+                        'url' => Url::to(['/company/company/index']),
+                        'active' => strpos($_SERVER['REQUEST_URI'],"/company/company/index") !== false,
+                        'options' => ['class' => 'nav-item']
+                    ],
                 ];
 
                 if(Yii::$app->user->identity['cat'] == 1){

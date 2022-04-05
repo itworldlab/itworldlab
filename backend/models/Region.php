@@ -30,6 +30,10 @@ class Region extends \yii\db\ActiveRecord
         return 'region';
     }
 
+    public static function GetAll(){
+        return Region::find()->all();
+    }
+
 
 
     public function behaviors()

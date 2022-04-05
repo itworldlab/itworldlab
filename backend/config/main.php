@@ -9,6 +9,7 @@ $params = array_merge(
 return [
     'id' => 'iwl-backend',
     'language' => 'ru-RU',
+    'sourceLanguage' => 'en-EN',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],

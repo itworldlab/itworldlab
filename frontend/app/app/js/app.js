@@ -29,6 +29,20 @@ document.addEventListener('DOMContentLoaded', () => {
         speed: 2000,
         loop: true,
         observer: true,
+        autoplay: {
+            delay: 4000,
+        },
+
+        pagination: {
+            clickable: true,
+            el: '.slider-main .swiper-pagination',
+        },
+
+        // Navigation arrows
+        navigation: {
+            nextEl: '.slider-main .swiper-button-next',
+            prevEl: '.slider-main .swiper-button-prev',
+        },
 //        effect: 'fade',
 
         on: {

@@ -11,10 +11,16 @@ body {
     font-weight: 400;
     font-size: 14px;
     line-height: 1.14;
+    @media (max-width: $media-5) {
+        font-size: 12px;
+        line-height: 1.3;
+    }
 }
 
 input {
     font-size: 14px;
+    font-family: roboto;
+    font-weight: 400;
 }
 
 button {
@@ -55,6 +61,10 @@ h1, .h1 {
 h2, .h2 {
     color: #1F2025;
     font-size: 24px;
+    @media (max-width: $media-5) {
+        font-size: 18px;
+        line-height: 21px;
+    }
 }
 
 h3, .h3 {
@@ -78,6 +88,10 @@ h5, .h5 {
 
 h6, .h6 {
     font-size: 16px;
+    @media (max-width: $media-5) {
+        font-size: 14px;
+        line-height: 16px;
+    }
 }
 
 strong {
@@ -155,6 +169,16 @@ a {
     overflow-x: hidden;
 }
 
+.blackBtn {
+    background: #1F2025;
+    border-radius: 8px;
+    color: #FFFFFF;
+    display: inline-block;
+    font-size: 16px;
+    min-width: 120px;
+    padding: 16px;
+}
+
 .goldBtn {
     background: #FFC121;
     border-radius: 12px;
@@ -228,6 +252,11 @@ a {
     font-weight: 400;
     font-size: 14px;
     padding-right: 27px;
+
+
+    @media (max-width: $media-5) {
+        font-size: 0;
+    }
 }
 
 .title-more__icon {
@@ -235,6 +264,9 @@ a {
     height: 10px;
     margin-left: 17px;
     width: 6px;
+    @media (max-width: $media-5) {
+        fill: #0038FF;
+    }
 }
 
 .compareBtn--rightImg {
@@ -273,6 +305,9 @@ a {
         line-height: 16px;
         margin-right: 25px;
         padding-left: 18px;
+        @media (max-width: $media-5) {
+            font-size: 12px;
+        }
     }
 
     &--vertical {

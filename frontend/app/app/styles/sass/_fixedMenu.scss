@@ -1,5 +1,5 @@
 .fixedMenu {
-    
+
     &.is-fixed {
         background: #fff;
         left: 0;
@@ -7,12 +7,13 @@
         right: 0;
         top: 0;
         z-index: 5;
-        
+
         .fixedMenu__container {
             margin-bottom: 0;
         }
     }
 }
+
 .fixedMenu__container {
     align-items: center;
     border: 1px solid #EFF1F2;
@@ -32,19 +33,20 @@
 
 .fixedMenu__item {
     margin-right: 25px;
-    
+
     &:last-child {
         margin-right: 0;
     }
-    
-    &.is-active {
-        @include text-decor-under(#FFC121, 4px);
-    }
+
 }
 
 .fixedMenu__link {
     display: block;
     padding: 16px 0;
+
+    &.is-active {
+        @include text-decor-under(#FFC121, 4px);
+    }
 }
 
 .fixedMenu__left {
@@ -71,7 +73,7 @@
     }
     .fixedMenu__list {
         display: none;
-        
+
         &.is-active {
             display: block;
         }

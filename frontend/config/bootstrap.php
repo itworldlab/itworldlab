@@ -1,5 +1,5 @@
 <?php
-Yii::$container->set('lav45\translate\TranslatedBehavior', [
+\Yii::$container->set('lav45\translate\TranslatedBehavior', [
     'language' => isset($_GET['_lang']) ? $_GET['_lang'] : "ru"
 ]);
 \yii\base\Event::on('yii\base\Controller', 'beforeAction', function($event) {
@@ -12,3 +12,4 @@ Yii::$container->set('lav45\translate\TranslatedBehavior', [
     $negotiator->attach($event->action);
     $negotiator->negotiate();
 });
+

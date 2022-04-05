@@ -5,3 +5,7 @@
 .nav-item > a:hover {
     color: #222;
 }
+
+.select2-container{
+    width:100% !important;
+}

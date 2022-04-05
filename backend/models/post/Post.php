@@ -18,7 +18,7 @@ use Yii;
  * @property int|null $updated_id
  * @property int|null $status
  * @property string|null $image
- * @property int $post_category_id
+ * @property int $category_id
  * @property int|null $region_id
  *
  * @property PostCategory $postCategory
@@ -29,6 +29,7 @@ use Yii;
 class Post extends \yii\db\ActiveRecord
 {
     use TranslatedTrait;
+    public $imageFile;
     /**
      * {@inheritdoc}
      */
@@ -52,17 +53,37 @@ class Post extends \yii\db\ActiveRecord
         ];
     }
 
+    public function upload()
+    {
+        if(!$this->imageFile)
+            return false;
+
+        if ($this->validate()) {
+            $file = Yii::$app->security->generateRandomString(10).".".$this->imageFile->extension;
+//            $this->imageFile->saveAs('uploads/' .$file);
+            $this->imageFile->saveAs(Yii::getAlias("@frontend").'/web/uploads/' .$file);
+            $this->imageFile = null;
+            $this->image = $file;
+            return true;
+        } else {
+            $this->addError("imageFile","Ошибка картинки");
+            return false;
+        }
+    }
+
     /**
      * {@inheritdoc}
      */
     public function rules()
     {
         return [
-            [['views', 'created_at', 'created_id', 'updated_at', 'updated_id', 'status', 'post_category_id', 'region_id'], 'integer'],
-            [['post_category_id'], 'required'],
-            [['image'], 'string', 'max' => 255],
-            [['post_category_id'], 'exist', 'skipOnError' => true, 'targetClass' => PostCategory::className(), 'targetAttribute' => ['post_category_id' => 'id']],
+            [['views', 'created_at', 'created_id', 'updated_at', 'updated_id', 'status', 'category_id', 'region_id'], 'integer'],
+            [['category_id'], 'required'],
+            [['image','title'], 'string', 'max' => 255],
+            ['descr','string'],
+            [['category_id'], 'exist', 'skipOnError' => true, 'targetClass' => PostCategory::className(), 'targetAttribute' => ['category_id' => 'id']],
             [['region_id'], 'exist', 'skipOnError' => true, 'targetClass' => Region::className(), 'targetAttribute' => ['region_id' => 'id']],
+            [['imageFile'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png,jpg,jpeg'],
         ];
     }
 
@@ -80,7 +101,7 @@ class Post extends \yii\db\ActiveRecord
             'updated_id' => 'Updated ID',
             'status' => 'Status',
             'image' => 'Image',
-            'post_category_id' => 'Post Category ID',
+            'category_id' => 'Post Category ID',
             'region_id' => 'Region ID',
         ];
     }
@@ -92,7 +113,7 @@ class Post extends \yii\db\ActiveRecord
      */
     public function getPostCategory()
     {
-        return $this->hasOne(PostCategory::className(), ['id' => 'post_category_id']);
+        return $this->hasOne(PostCategory::className(), ['id' => 'category_id']);
     }
 
     /**

@@ -4,9 +4,12 @@ namespace backend\controllers;
 
 use backend\models\post\Post;
 use backend\models\post\PostSearch;
+use Yii;
+use yii\bootstrap4\Html;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * PostController implements the CRUD actions for Post model.
@@ -69,12 +72,22 @@ class PostController extends Controller
     {
         $model = new Post();
 
-        if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'id' => $model->id]);
+        if ($model->load(Yii::$app->request->post())) {
+            $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
+            if($model->validate()){
+                if (!$model->upload()) {
+                    Yii::$app->session->setFlash("error",Html::errorSummary($model));
+                }
             }
-        } else {
-            $model->loadDefaultValues();
+            if($model->save()){
+                Yii::$app->session->setFlash("success","Сохранено");
+                return $this->redirect('/post/index');
+            }else{
+                if(!empty($model->errors)){
+                    Yii::$app->session->setFlash("error",Html::errorSummary($model));
+                }
+            }
+
         }
 
         return $this->render('create', [
@@ -93,8 +106,22 @@ class PostController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($model->load(Yii::$app->request->post())) {
+            $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
+            if($model->validate()){
+                if (!$model->upload()) {
+                    Yii::$app->session->setFlash("error",Html::errorSummary($model));
+                }
+            }
+            if($model->save()){
+                Yii::$app->session->setFlash("success","Сохранено");
+                return $this->redirect('/post/index');
+            }else{
+                if(!empty($model->errors)){
+                    Yii::$app->session->setFlash("error",Html::errorSummary($model));
+                }
+            }
+
         }
 
         return $this->render('update', [

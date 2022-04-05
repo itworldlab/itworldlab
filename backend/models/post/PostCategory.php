@@ -2,6 +2,8 @@
 
 namespace backend\models\post;
 
+use lav45\translate\TranslatedBehavior;
+use lav45\translate\TranslatedTrait;
 use Yii;
 
 /**
@@ -14,6 +16,7 @@ use Yii;
  */
 class PostCategory extends \yii\db\ActiveRecord
 {
+    use TranslatedTrait;
     /**
      * {@inheritdoc}
      */
@@ -22,12 +25,31 @@ class PostCategory extends \yii\db\ActiveRecord
         return 'post_category';
     }
 
+    public function behaviors()
+    {
+        return [
+            [
+                'class' => TranslatedBehavior::className(),
+                'translateRelation' => 'postCategoryLangs', // Specify the name of the connection that will store transfers
+                'languageAttribute' => 'lang_id', // post_lang field from the table that will store the target language
+                'translateAttributes' => [
+                    'name',
+                ]
+            ]
+        ];
+    }
+
+    public static function GetAll(){
+        return PostCategory::find()->all();
+    }
     /**
      * {@inheritdoc}
      */
     public function rules()
     {
-        return [];
+        return [
+            ['name','string'],
+        ];
     }
 
     /**
@@ -37,6 +59,7 @@ class PostCategory extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
+            'name' => 'Название',
         ];
     }
 

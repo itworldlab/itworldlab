@@ -1,5 +1,6 @@
 <?php
 
+use kartik\select2\Select2;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
@@ -10,7 +11,9 @@ use yii\widgets\ActiveForm;
 
 <div class="post-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
+
+    <?= $form->field($model, 'imageFile')->fileInput() ?>
 
     <?= $form->field($model, 'title')->textInput() ?>
     <?= $form->field($model, 'descr')->textarea() ?>
@@ -18,11 +21,19 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'status')->textInput() ?>
 
-    <?= $form->field($model, 'image')->textInput(['maxlength' => true]) ?>
+    <?php
+    echo $form->field($model, 'category_id')->widget(Select2::classname(), [
+        'data' => \yii\helpers\ArrayHelper::map(\backend\models\post\PostCategory::GetAll(),'id','name'),
+        'options' => ['placeholder' => 'Выберите ...'],
+    ]);
+    ?>
 
-    <?= $form->field($model, 'post_category_id')->textInput() ?>
-
-    <?= $form->field($model, 'region_id')->textInput() ?>
+    <?php
+    echo $form->field($model, 'region_id')->widget(Select2::classname(), [
+        'data' => \yii\helpers\ArrayHelper::map(\backend\models\Region::GetAll(),'id','name'),
+        'options' => ['placeholder' => 'Выберите ...'],
+    ]);
+    ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

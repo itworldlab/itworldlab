@@ -1,5 +1,6 @@
 <?php
 
+use lav45\translate\models\Lang;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\ActionColumn;
@@ -26,10 +27,13 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
             'id',
-            'views',
+            'title',
+            [
+                'class' => 'lav45\translate\grid\ActionColumn',
+                'languages' => Lang::getList(),
+                'header' => 'Переводы'
+            ],
             'created_at',
             'created_id',
             'updated_at',
@@ -38,12 +42,7 @@ $this->params['breadcrumbs'][] = $this->title;
             //'image',
             //'post_category_id',
             //'region_id',
-            [
-                'class' => ActionColumn::className(),
-                'urlCreator' => function ($action, Post $model, $key, $index, $column) {
-                    return Url::toRoute([$action, 'id' => $model->id]);
-                 }
-            ],
+            ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
 
